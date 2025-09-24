@@ -1,0 +1,71 @@
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
+export default function SalesConference() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-white p-6">
+      {/* Heading */}
+      <h1 className="text-4xl md:text-6xl font-bold text-center text-gray-900 mb-4">
+        SALES SECRET WITH EFK
+      </h1>
+
+      {/* Webinar Time */}
+      <div className="text-center mb-10">
+        <div className="inline-block bg-red-500 text-white px-6 py-3 rounded-2xl shadow-lg text-xl md:text-2xl font-semibold">
+          📺 Live Webinar — 7:30PM Thursday
+        </div>
+      </div>
+
+      {/* What we will be doing */}
+      <section className="max-w-3xl mx-auto mb-12">
+        <h2 className="text-2xl font-bold mb-4 text-center">What We Will Be Doing</h2>
+        <ul className="space-y-4 text-lg">
+          <li>✅ How to sell to people with their emotion — people don’t buy product/service, they buy the solution it provides.</li>
+          <li>✅ How to find buyers even if you don’t have a service to render, especially in products where you can take a percentage.</li>
+          <li>✅ 2 strategies I use to send proposals to clients so they reply instantly, instead of just saying “I am a Business expert”.</li>
+        </ul>
+      </section>
+
+      {/* Testimonials */}
+      <section className="max-w-5xl mx-auto mb-12">
+        <h2 className="text-2xl font-bold text-center mb-6">Testimonials</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[1, 2, 3].map((num) => (
+            <Card key={num} className="rounded-2xl shadow-md">
+              <CardContent className="p-4 flex flex-col items-center">
+                <img
+                  src={`https://via.placeholder.com/150?text=Image+${num}`}
+                  alt={`Testimonial ${num}`}
+                  className="rounded-xl mb-4"
+                />
+                <p className="text-gray-700 text-center">“This session changed the way I sell forever!”</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Join Now Button with Animation */}
+      <div className="flex justify-center">
+        <motion.div
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
+        >
+          <Button
+            asChild
+            className="px-8 py-4 text-lg bg-blue-600 hover:bg-blue-700 text-white rounded-2xl shadow-lg"
+          >
+            <a
+              href="https://chat.whatsapp.com/LSzdPnJn7agJ15Go0iA3Fz?mode=ems_copy_t"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              🚀 Join Now
+            </a>
+          </Button>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
