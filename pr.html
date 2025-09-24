@@ -1,39 +1,208 @@
-import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sales Secret with EFK - Premium Offer</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #fff8dc, #ffffff);
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
 
-export default function PremiumOffer() {
-  const [timeLeft, setTimeLeft] = useState(600); // 10 minutes in seconds
+header h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
 
-  useEffect(() => {
-    if (timeLeft <= 0) return;
-    const timer = setInterval(() => setTimeLeft((prev) => prev - 1), 1000);
-    return () => clearInterval(timer);
-  }, [timeLeft]);
+.premium {
+  color: #e6b800;
+}
 
-  const minutes = Math.floor(timeLeft / 60);
-  const seconds = timeLeft % 60;
+.section {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: left;
+}
 
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-yellow-50 to-white p-6">
-      {/* Heading */}
-      <h1 className="text-4xl md:text-6xl font-bold text-center text-gray-900 mb-2">
-        SALES SECRET WITH EFK <span className="text-yellow-500">★ Premium</span>
-      </h1>
+.section h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
 
-      {/* Premium Section */}
-      <section className="max-w-3xl mx-auto mb-12">
-        <h2 className="text-2xl font-bold mb-4 text-center">Premium Offer</h2>
-        <ul className="space-y-3 text-lg">
-          <li>🎥 2 Video Courses Available (Access to only 1)</li>
-          <li>➡️ Expert AI/Animation Video Course</li>
-          <li>➡️ Facebook/Instagram Ads Course</li>
-        </ul>
-      </section>
+.section ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+}
 
-      {/* What you will be learning */}
-      <section className="max-w-3xl mx-auto mb-12">
+.section ul li {
+  margin: 10px 0;
+}
+
+h3 {
+  margin-top: 20px;
+  font-size: 1.3rem;
+}
+
+.testimonials .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img {
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.center {
+  text-align: center;
+}
+
+.payment-box {
+  background: #f1f1f1;
+  padding: 15px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.price {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.strike {
+  text-decoration: line-through;
+  color: red;
+}
+
+.countdown {
+  font-size: 1.5rem;
+  color: red;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  color: #fff;
+  background: #28a745;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.btn:hover {
+  background: #218838;
+  transform: scale(1.05);
+    }
+    
+  </style>
+<body>
+  <!-- Heading -->
+  <header>
+    <h1>SALES SECRET WITH EFK <span class="premium">★ Premium</span></h1>
+  </header>
+
+  <!-- Premium Offer -->
+  <section class="section">
+    <h2>Premium Offer</h2>
+    <ul>
+      <li>🎥 2 Video Courses Available (Access to only 1)</li>
+      <li>➡️ Expert AI/Animation Video Course</li>
+      <li>➡️ Facebook/Instagram Ads Course</li>
+    </ul>
+  </section>
+
+  <!-- What You Will Learn -->
+  <section class="section">
+    <h2>What You Will Be Learning in the Upcoming Premium Live</h2>
+    <ul>
+      <li>✅ How to find clients to buy your product</li>
+      <li>✅ How to find foreign clients (platforms)</li>
+      <li>✅ How to present yourself so clients purchase from you</li>
+      <li>✅ How to offer your service in different ways</li>
+      <li>✅ How to win your money back from EFK</li>
+    </ul>
+    <h3>Bonus+</h3>
+    <p>💡 How to use AI to create a photoshoot and earn from it.</p>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section testimonials">
+    <h2>Testimonials</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/150?text=Image+1" alt="Testimonial 1"/>
+        <p>“This premium offer gave me massive results!”</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150?text=Image+2" alt="Testimonial 2"/>
+        <p>“The strategies completely changed my business.”</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150?text=Image+3" alt="Testimonial 3"/>
+        <p>“Highly recommend! Worth every naira.”</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment Section -->
+  <section class="section center">
+    <h2>Get Access Now</h2>
+    <p>Pay Into 👇</p>
+    <div class="payment-box">
+      <p><strong>Account Number:</strong> 2366806333</p>
+      <p><strong>Bank:</strong> United Bank of Africa (UBA)</p>
+      <p><strong>Name:</strong> ABESIN ENIOLA</p>
+    </div>
+    <p class="price">N15,000 <span class="strike">15,000</span> 👉 Pay 7,500 only</p>
+
+    <!-- Countdown -->
+    <div id="countdown" class="countdown"></div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/+2348057091133" target="_blank" class="btn">
+      📤 Forward Payment Screenshot
+    </a>
+  </section>
+
+  <script>
+    // Countdown timer: 10 minutes
+    let timeLeft = 600;
+    const countdownEl = document.getElementById(\"countdown\");
+
+    function updateCountdown() {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      countdownEl.textContent = `Offer Ends In: ${minutes}:${seconds < 10 ? \"0\" : \"\"}${seconds}`;
+      if (timeLeft > 0) timeLeft--;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
         <h2 className="text-2xl font-bold mb-4 text-center">What You Will Be Learning in the Upcoming Premium Live</h2>
         <ul className="space-y-3 text-lg">
           <li>✅ How to find clients to buy your product</li>
