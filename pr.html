@@ -186,21 +186,29 @@ h3 {
     </a>
   </section>
 
-  <script>
-    // Countdown timer: 10 minutes
-    let timeLeft = 600;
-    const countdownEl = document.getElementById(\"countdown\");
+<script>
+  // Countdown timer: 10 minutes (600 seconds)
+  let timeLeft = 600;
+  const countdownEl = document.getElementById("countdown");
 
-    function updateCountdown() {
-      const minutes = Math.floor(timeLeft / 60);
-      const seconds = timeLeft % 60;
-      countdownEl.textContent = `Offer Ends In: ${minutes}:${seconds < 10 ? \"0\" : \"\"}${seconds}`;
-      if (timeLeft > 0) timeLeft--;
+  function updateCountdown() {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+
+    countdownEl.textContent = `Offer Ends In: ${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+
+    if (timeLeft > 0) {
+      timeLeft--;
+    } else {
+      clearInterval(timer); // stop countdown
+      countdownEl.textContent = "⏰ Offer has expired!";
     }
+  }
 
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
+  const timer = setInterval(updateCountdown, 1000);
+  updateCountdown(); // run once immediately
+</script>
+
 </body>
 </html>
         
