@@ -1,0 +1,17 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+h1, h2, h4 {
+  font-weight: bold;
+}
+a.btn-success {
+  background-color: green !important;
+  border: none;
+}
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+    
