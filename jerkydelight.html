@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jerky Delight Kilishi Premium</title>
+  <link rel="icon" href="logod.jpg">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fffdf8;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: #8B0000;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #FFD700;
+      color: #111;
+    }
+
+    /* Mobile nav toggle */
+   /* Mobile nav toggle */
+    .menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #8B0000;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 220px;
+        padding: 15px;
+        border-radius: 0 0 10px 10px;
+      }
+      nav.active {
+        display: flex;
+      }
+      nav a {
+        padding: 12px;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+      }
+      nav a:last-child {
+        border-bottom: none;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* Hero section */
+    .hero {
+      position: relative;
+      text-align: center;
+      color: white;
+      padding: 80px 20px;
+      background: url('1759230740306.jpg') center/cover no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .hero h2 {
+      position: relative;
+      font-size: 30px;
+      margin: 0 auto 20px;
+      z-index: 1;
+    }
+
+    .btn {
+      position: relative;
+      display: inline-block;
+      padding: 12px 20px;
+      background: #FFD700;
+      color: #111;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      z-index: 1;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #e6c200;
+    }
+
+    /* Video */
+    .video {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    /* Slider */
+    .slider-container {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+      background: #f9f9f9;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .slider {
+      display: flex;
+      gap: 15px;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    .slider img {
+      min-width: 250px;
+      max-height: 200px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .slider img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Arrows */
+    .arrow {
+      background: rgba(0,0,0,0.6);
+      color: white;
+      border: none;
+      padding: 15px;
+      cursor: pointer;
+      font-size: 24px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .arrow.left { left: 10px; }
+    .arrow.right { right: 10px; }
+
+    .arrow:hover {
+      background: rgba(0,0,0,0.9);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      animation: zoomIn 0.4s;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* Sections */
+    .description {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .cta {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .promo {
+      text-align: center;
+      padding: 20px;
+      background: #FFD700;
+      font-weight: bold;
+    }
+
+    .testimonials {
+      padding: 30px 20px;
+      background: #f9f9f9;
+      justify-content: center;
+    }
+
+    .testimonial {
+      margin-bottom: 20px;
+      font-style: italic;
+      width: 12ox;
+      height: 150px;
+      justify-content: center;
+      display: block;
+      border-radius: 10px;
+    }
+
+    footer {
+      background: #8B0000;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Jerky Kilishi Premium</h1>
+    <span class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</span>
+    <nav id="navMenu">
+      <a href="#">Home</a>
+      <a href="gallery delight .html">Gallery</a>
+      <a href="contactdelight.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2> Without Jerky Kilishi No You Fit Collect That Lady Contact? </h2>
+    <a href="https://wa.me/07085257062" class="btn">Chat on WhatsApp</a>
+  </section>
+
+  <div class="video">
+    <iframe width="350" height="200" src="https://youtube.com/shorts/9ZwAtVitaDw?si=Nno_6MJrlNTuGl07" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <section class="slider-container">
+    <button class="arrow left" onclick="slideLeft()">&#10094;</button>
+    <div class="slider" id="slider">
+      <img src="1759235138186.jpg" alt="Kilishi" onclick="openLightbox(this)">
+      <img src="1759230740306.jpg" alt="Kilishi 1" onclick="openLightbox(this)">
+      <img src="1759230661172.jpg" alt="Kilishi 2" onclick="openLightbox(this)">
+      <img src="1759230595428.jpg" alt="Kilishi 3" onclick="openLightbox(this)">
+      <img src="1759228428960.jpg" alt="Kilishi 4" onclick="openLightbox(this)">
+     
+    </div>
+    <button class="arrow right" onclick="slideRight()">&#10095;</button>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <div class="description">
+    <h3>About Kilishi</h3>
+    <p>Kilishi wey dey burst brain! Spicy, crunchy, and unforgettable. 
+       Made with love, meat, and pepper wey get power. 
+       Na the taste wey go make you come back again and again. this one na confirm update</p>
+  </div>
+
+  <div class="cta">
+    <a href="https://wa.me/07085257062" class="btn">Order Now on WhatsApp</a>
+  </div>
+
+  <div class="promo">
+    You wan become the best Kilishi seller in your area? Slide DM let me show you way!
+  </div>
+
+  <section class="testimonials">
+    <h3 style="text-align: center;">Customer Way Sabi!!</h3>
+    <center>
+   <img class="testimonial" src="1759230709131.jpg">
+    <img class="testimonial" src="1759230718234.jpg">
+    <img class="testimonial" src="1759230726131.jpg">
+    <img class="testimonial" src="1759230701949.jpg">
+    </center>
+  </section>
+
+  <div class="cta">
+    <a href="https://wa.me/07085257062" class="btn">Get More Details</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Kilishi Premium | Lagos | Call/WhatsApp: 07085257062</p>
+    <span >Develop by <a href="https://wa.me/2348057091133" style="color: rgb(64, 96, 240);font-weight: bolder;">EFK</a></span>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+ function toggleMenu() {
+  const navMenu = document.getElementById("navMenu");
+  const menuToggle = document.getElementById("menuToggle");
+  navMenu.classList.toggle("active");
+  menuToggle.textContent = navMenu.classList.contains("active") ? "✖" : "☰";
+}
+
+    // Slider
+    const slider = document.getElementById("slider");
+    let scrollAmount = 0;
+
+    function slideRight() {
+      if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
+        scrollAmount = 0;
+      } else {
+        scrollAmount += slider.clientWidth;
+      }
+      slider.scrollTo({ left: scrollAmount, behavior: "smooth" });
+    }
+
+    function slideLeft() {
+      if (scrollAmount <= 0) {
+        scrollAmount = slider.scrollWidth - slider.clientWidth;
+      } else {
+        scrollAmount -= slider.clientWidth;
+      }
+      slider.scrollTo({ left: scrollAmount, behavior: "smooth" });
+    }
+
+    setInterval(slideRight, 3000);
+
+    // Lightbox
+    function openLightbox(img) {
+      document.getElementById("lightbox").style.display = "flex";
+      document.getElementById("lightbox-img").src = img.src;
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
+```
