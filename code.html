@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Furniture - Christmas Special Offers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a472a;
+            --secondary: #b91c1c;
+            --accent: #fbbf24;
+            --light: #fefce8;
+            --dark: #0c4a1e;
+            --text: #333333;
+            --text-light: #666666;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --christmas-red: #c41e3a;
+            --christmas-green: #165b33;
+            --gold: #d4af37;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--christmas-green), var(--primary));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            font-size: 2.5rem;
+            color: var(--accent);
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0;
+        }
+        
+        .logo span {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+        }
+        
+        .christmas-offer {
+            background-color: var(--christmas-red);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .snowflakes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .snowflake {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 40, 20, 0.85), rgba(10, 40, 20, 0.9)), url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--light);
+        }
+        
+        .christmas-countdown {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 1.5rem;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+        
+        .countdown-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .countdown-item {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 0.8rem;
+            min-width: 70px;
+        }
+        
+        .countdown-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .countdown-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 4rem 0;
+            background-color: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--christmas-green);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background-color: var(--christmas-red);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--christmas-red);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            z-index: 2;
+        }
+        
+        .product-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .product-info p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+        
+        .discount-price {
+            color: var(--christmas-red);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(to right, var(--christmas-green), var(--primary));
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: scale(1.05);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--christmas-red);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.8rem;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--christmas-red);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        .developer {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .countdown-timer {
+                flex-wrap: wrap;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .christmas-offer {
+                font-size: 0.9rem;
+                padding: 0.6rem 1.2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Christmas Offer -->
+    <header>
+        <div class="snowflakes" id="snowflakes"></div>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <i class="fas fa-couch"></i>
+                    <div>
+                        <h1>Mark Furniture</h1>
+                        <span>Quality Furniture Since 2005</span>
+                    </div>
+                </div>
+                <div class="christmas-offer">
+                    <i class="fas fa-gift"></i>
+                    <span>CHRISTMAS SALE: UP TO 40% OFF + FREE DELIVERY</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Transform Your Home This Christmas</h2>
+                <p>Celebrate the festive season with our exclusive Christmas collection. Premium quality furniture at unbeatable prices. Make your home holiday-ready with Mark Furniture!</p>
+                
+                <div class="christmas-countdown">
+                    <div class="countdown-title">Holiday Sale Ends In:</div>
+                    <div class="countdown-timer">
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="days">12</div>
+                            <div class="countdown-label">Days</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="hours">18</div>
+                            <div class="countdown-label">Hours</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="minutes">45</div>
+                            <div class="countdown-label">Minutes</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="seconds">30</div>
+                            <div class="countdown-label">Seconds</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="https://wa.me/2348057091133?text=Hi%20Mark%20Furniture!%20I'm%20interested%20in%20your%20Christmas%20offers." class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Christmas Special Collection</h2>
+                <p>Discover our festive furniture selection with exclusive holiday discounts</p>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-badge">Christmas Deal</div>
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1758&q=80" alt="Premium Leather Sofa" class="product-img">
+                    <div class="product-info">
+                        <h3>Premium Leather Sofa Set</h3>
+                        <p>Luxurious 3-seater sofa with matching armchairs. Perfect for your living room this Christmas.</p>
+                        <div class="price">
+                            <span class="original-price">₦450,000</span>
+                            <span class="discount-price">₦299,999</span>
+                        </div>
+                        <a href="https://wa.me/2348057091133?text=Hi%20Mark%20Furniture!%20I'm%20interested%20in%20the%20Premium%20Leather%20Sofa%20Set." class="whatsapp-btn" target="_blank" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
+                            <i class="fab fa-whatsapp"></i> Inquire Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-badge">30% OFF</div>
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Dining Table Set" class="product-img">
+                    <div class="product-info">
+                        <h3>Christmas Dining Set</h3>
+                        <p>Elegant 6-seater dining table with comfortable chairs. Host unforgettable holiday meals.</p>
+                        <div class="price">
+                            <span class="original-price">₦320,000</span>
+                            <span class="discount-price">₦224,000</span>
+                        </div>
+                        <a href="https://wa.me/2348057091133?text=Hi%20Mark%20Furniture!%20I'm%20interested%20in%20the%20Christmas%20Dining%20Set." class="whatsapp-btn" target="_blank" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
+                            <i class="fab fa-whatsapp"></i> Inquire Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-badge">Free Delivery</div>
+                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="King Size Bed" class="product-img">
+                    <div class="product-info">
+                        <h3>King Size Bed Frame</h3>
+                        <p>Solid wood bed frame with comfortable headboard. Add luxury to your bedroom this holiday.</p>
+                        <div class="price">
+                            <span class="original-price">₦280,000</span>
+                            <span class="discount-price">₦196,000</span>
+                        </div>
+                        <a href="https://wa.me/2348057091133?text=Hi%20Mark%20Furniture!%20I'm%20interested%20in%20the%20King%20Size%20Bed%20Frame." class="whatsapp-btn" target="_blank" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
+                            <i class="fab fa-whatsapp"></i> Inquire Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-badge">Christmas Special</div>
+                    <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80" alt="Bookshelf" class="product-img">
+                    <div class="product-info">
+                        <h3>Modern Bookshelf Unit</h3>
+                        <p>Stylish 5-tier bookshelf perfect for storing books, decorations, and holiday displays.</p>
+                        <div class="price">
+                            <span class="original-price">₦180,000</span>
+                            <span class="discount-price">₦135,000</span>
+                        </div>
+                        <a href="https://wa.me/2348057091133?text=Hi%20Mark%20Furniture!%20I'm%20interested%20in%20the%20Modern%20Bookshelf%20Unit." class="whatsapp-btn" target="_blank" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
+                            <i class="fab fa-whatsapp"></i> Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price List Section -->
+    <section class="products" style="background-color: white; padding-top: 0;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Complete Price List</h2>
+                <p>All prices include Christmas discounts. Contact us for custom furniture requests.</p>
+            </div>
+            
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+                    <thead>
+                        <tr style="background-color: var(--christmas-green); color: white;">
+                            <th style="padding: 1rem; text-align: left;">Product</th>
+                            <th style="padding: 1rem; text-align: left;">Original Price</th>
+                            <th style="padding: 1rem; text-align: left;">Christmas Price</th>
+                            <th style="padding: 1rem; text-align: left;">Discount</th>
+                            <th style="padding: 1rem; text-align: left;">Delivery</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 1rem;">Premium Leather Sofa Set</td>
+                            <td style="padding: 1rem;">₦450,000</td>
+                            <td style="padding: 1rem; color: var(--christmas-red); font-weight: 600;">₦299,999</td>
+                            <td style="padding: 1rem;">33% OFF</td>
+                            <td style="padding: 1rem;">FREE</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 1rem;">Christmas Dining Set (6 chairs)</td>
+                            <td style="padding: 1rem;">₦320,000</td>
+                            <td style="padding: 1rem; color: var(--christmas-red); font-weight: 600;">₦224,000</td>
+                            <td style="padding: 1rem;">30% OFF</td>
+                            <td style="padding: 1rem;">FREE</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 1rem;">King Size Bed Frame</td>
+                            <td style="padding: 1rem;">₦280,000</td>
+                            <td style="padding: 1rem; color: var(--christmas-red); font-weight: 600;">₦196,000</td>
+                            <td style="padding: 1rem;">30% OFF</td>
+                            <td style="padding: 1rem;">FREE</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 1rem;">Modern Bookshelf Unit</td>
+                            <td style="padding: 1rem;">₦180,000</td>
+                            <td style="padding: 1rem; color: var(--christmas-red); font-weight: 600;">₦135,000</td>
+                            <td style="padding: 1rem;">25% OFF</td>
+                            <td style="padding: 1rem;">FREE</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 1rem;">Coffee Table Set</td>
+                            <td style="padding: 1rem;">₦150,000</td>
+                            <td style="padding: 1rem; color: var(--christmas-red); font-weight: 600;">₦112,500</td>
+                            <td style="padding: 1rem;">25% OFF</td>
+                            <td style="padding: 1rem;">FREE</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 1rem;">Office Desk & Chair</td>
+                            <td style="padding: 1rem;">₦220,000</td>
+                            <td style="padding: 1rem; color: var(--christmas-red); font-weight: 600;">₦165,000</td>
+                            <td style="padding: 1rem;">25% OFF</td>
+                            <td style="padding: 1rem;">FREE</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem; font-style: italic; color: var(--text-light);">
+                * All prices are in Nigerian Naira. Free delivery within Lagos for orders above ₦150,000.
+            </p>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Don't Miss Our Christmas Deals!</h2>
+                <p>Limited time offer! Contact us now via WhatsApp to place your order or schedule a showroom visit. Our furniture experts are ready to assist you.</p>
+                
+                <a href="https://wa.me/2348057091133?text=Hi%20Mark%20Furniture!%20I'd%20like%20to%20inquire%20about%20your%20Christmas%20furniture%20offers." class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Chat Now on WhatsApp
+                </a>
+                
+                <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.9;">
+                    <i class="fas fa-phone-alt"></i> Call us: 0805 709 1133 | 0903 456 7890
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Mark Furniture</h3>
+                    <p>Quality furniture for homes and offices since 2005. We bring comfort and style to your spaces with premium materials and craftsmanship.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/qualitymarkfurniture" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/2348057091133" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:info@markfurniture.com" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#products">Christmas Collection</a>
+                    <a href="#pricing">Price List</a>
+                    <a href="https://wa.me/2348057091133">Order via WhatsApp</a>
+                    <a href="#contact">Contact Us</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Furniture Street, Lagos Island, Lagos</p>
+                    <p><i class="fas fa-phone"></i> 0805 709 1133</p>
+                    <p><i class="fas fa-envelope"></i> info@markfurniture.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 9AM-6PM | Sun: 12PM-5PM</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Mark Furniture. All rights reserved. | Designed by <a href="https://wa.me/2348057091133?text=Hi%20EFk!%20I%20saw%20your%20work%20on%20Mark%20Furniture%20website." class="developer" target="_blank">EFk</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Create snowflakes
+        function createSnowflakes() {
+            const snowflakesContainer = document.getElementById('snowflakes');
+            const snowflakeCount = 30;
+            
+            for (let i = 0; i < snowflakeCount; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
+                
+                // Random size between 2px and 6px
+                const size = Math.random() * 4 + 2;
+                snowflake.style.width = `${size}px`;
+                snowflake.style.height = `${size}px`;
+                
+                // Random position
+                snowflake.style.left = `${Math.random() * 100}%`;
+                snowflake.style.top = `${Math.random() * 100}%`;
+                
+                // Random opacity
+                snowflake.style.opacity = Math.random() * 0.5 + 0.3;
+                
+                // Animation
+                const duration = Math.random() * 10 + 10;
+                snowflake.style.animation = `fall ${duration}s linear infinite`;
+                
+                // Add animation styles
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes fall {
+                        0% {
+                            transform: translateY(-100px) translateX(0px) rotate(0deg);
+                            opacity: ${Math.random() * 0.5 + 0.3};
+                        }
+                        100% {
+                            transform: translateY(100vh) translateX(${Math.random() * 100 - 50}px) rotate(360deg);
+                            opacity: 0;
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                snowflakesContainer.appendChild(snowflake);
+            }
+        }
+        
+        // Countdown timer
+        function updateCountdown() {
+            // Set the date we're counting down to (Christmas)
+            const christmasDate = new Date("December 25, 2025 23:59:59").getTime();
+            const now = new Date().getTime();
+            const timeLeft = christmasDate - now;
+            
+            // Calculate days, hours, minutes, seconds
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            // Update the display
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+        }
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            createSnowflakes();
+            updateCountdown();
+            // Update countdown every second
+            setInterval(updateCountdown, 1000);
+            
+            // Add click event to all WhatsApp buttons
+            document.querySelectorAll('.whatsapp-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    // You could add analytics tracking here
+                    console.log('WhatsApp button clicked');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
