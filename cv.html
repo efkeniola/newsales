@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABESIN ISIAKA ENIOLA - Website Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        /* Modern CV Container */
+        .cv-modern {
+            width: 210mm;
+            min-height: 297mm;
+            background: white;
+            box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header Section */
+        .cv-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 40px;
+            position: relative;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .profile-main {
+            flex: 1;
+        }
+        
+        .name {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        
+        .title {
+            font-size: 20px;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .tagline {
+            font-size: 16px;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+            background: #ecf0f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .profile-image i {
+            font-size: 70px;
+            color: #667eea;
+        }
+        
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Contact Bar */
+        .contact-bar {
+            display: flex;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 15px 40px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-icon {
+            width: 35px;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Main Content */
+        .cv-content {
+            display: flex;
+            flex: 1;
+            padding: 30px 0;
+        }
+        
+        .left-panel {
+            flex: 1;
+            padding: 0 30px 0 40px;
+            border-right: 1px solid #eee;
+        }
+        
+        .right-panel {
+            flex: 1.5;
+            padding: 0 40px 0 30px;
+        }
+        
+        /* Section Styling */
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f0f0f0;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: #667eea;
+        }
+        
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .skill-item {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s;
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .skill-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        /* Education */
+        .education-item {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 2px solid #e0e0e0;
+            position: relative;
+        }
+        
+        .education-item:before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #667eea;
+        }
+        
+        .education-degree {
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .education-institution {
+            color: #666;
+            margin-bottom: 3px;
+            font-size: 14px;
+        }
+        
+        .education-year {
+            color: #667eea;
+            font-weight: 500;
+            font-size: 13px;
+        }
+        
+        /* Languages */
+        .language-level {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .language-name {
+            font-weight: 500;
+        }
+        
+        .level-bar {
+            width: 100px;
+            height: 6px;
+            background: #e0e0e0;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .level-fill {
+            height: 100%;
+            background: #667eea;
+            border-radius: 3px;
+        }
+        
+        /* Experience */
+        .experience-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+        
+        .job-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .company-info {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .company-info i {
+            font-size: 14px;
+        }
+        
+        .responsibilities {
+            list-style: none;
+        }
+        
+        .responsibilities li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .responsibilities li:before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        /* About Me */
+        .about-text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+        
+        /* Hobbies */
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        
+        .hobby-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .hobby-card:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .hobby-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+        
+        .hobby-card:hover .hobby-icon {
+            color: white;
+        }
+        
+        /* Tech Stack */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .tech-tag {
+            background: #eef2ff;
+            color: #667eea;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid #d0d7ff;
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-top: 1px solid #eee;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            border: none;
+        }
+        
+        .btn-print {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-download {
+            background: #fff;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .cv-modern {
+                box-shadow: none;
+                border-radius: 0;
+                width: 100%;
+                min-height: 100vh;
+            }
+            
+            .action-buttons {
+                display: none;
+            }
+            
+            .contact-bar {
+                background: #f0f0f0;
+                color: #333;
+            }
+            
+            .btn {
+                display: none;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 900px) {
+            body {
+                padding: 10px;
+            }
+            
+            .cv-modern {
+                width: 100%;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-image {
+                margin-top: 20px;
+            }
+            
+            .cv-content {
+                flex-direction: column;
+            }
+            
+            .left-panel {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 20px;
+            }
+            
+            .hobbies-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-modern">
+        <!-- Header Section -->
+        <div class="cv-header">
+            <div class="header-content">
+                <div class="profile-main">
+                    <h1 class="name">ABESIN ISIAKA ENIOLA</h1>
+                    <div class="title">Full Stack Website Developer</div>
+                    <div class="tagline">Building modern, responsive, and scalable web solutions</div>
+                    
+                    <!-- Tech Stack -->
+                    <div class="tech-stack">
+                        <div class="tech-tag">HTML5</div>
+                        <div class="tech-tag">CSS3</div>
+                        <div class="tech-tag">JavaScript</div>
+                        <div class="tech-tag">Python</div>
+                        <div class="tech-tag">Django</div>
+                        <div class="tech-tag">React</div>
+                        <div class="tech-tag">SEO</div>
+                        <div class="tech-tag">UI/UX</div>
+                    </div>
+                </div>
+                
+                <div class="profile-image" id="profileImage">
+                    <i class="fas fa-code"><<img src='202590003275fa.jpg'></i>
+                </div>
+            </div>
+            
+            <!-- Contact Bar -->
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>+234 805 709 1133</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>efkeniola8505@gmail.com</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>Ogun State, Nigeria</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="cv-content">
+            <!-- Left Panel -->
+            <div class="left-panel">
+                <!-- Skills -->
+                <div class="section">
+                    <h2 class="section-title">TECHNICAL SKILLS</h2>
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <div class="skill-name">Frontend Development</div>
+                            <div class="skill-desc">HTML5, CSS3, JavaScript, React, Responsive Design</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Backend Development</div>
+                            <div class="skill-desc">Python, Django, REST APIs, Database Design</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Web Performance</div>
+                            <div class="skill-desc">SEO Optimization, Page Speed, Core Web Vitals</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Digital Marketing</div>
+                            <div class="skill-desc">SEO, Analytics, Conversion Optimization</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">UI/UX Design</div>
+                            <div class="skill-desc">Figma, User Research, Wireframing, Prototyping</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Tools & Platforms</div>
+                            <div class="skill-desc">Git, Docker, AWS, WordPress, Shopify</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education -->
+                <div class="section">
+                    <h2 class="section-title">EDUCATION</h2>
+                    
+                    <div class="education-item">
+                        <div class="education-degree">Diploma in Software Engineering</div>
+                        <div class="education-institution">Tech Institute Nigeria</div>
+                        <div class="education-year">2022 - 2023 | Specialization: Web Development</div>
+                    </div>
+                </div>
+                
+                <!-- Languages -->
+                <div class="section">
+                    <h2 class="section-title">LANGUAGES</h2>
+                    <div class="language-level">
+                        <div class="language-name">English</div>
+                        <div class="level-bar">
+                            <div class="level-fill" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="language-level">
+                        <div class="language-name">Yoruba</div>
+                        <div class="level-bar">
+                            <div class="level-fill" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Panel -->
+            <div class="right-panel">
+                <!-- About Me -->
+                <div class="section">
+                    <h2 class="section-title">PROFESSIONAL PROFILE</h2>
+                    <p class="about-text">
+                        Passionate Full Stack Developer with 5+ years of experience building modern, responsive websites and web applications. 
+                        Specialized in creating seamless user experiences with clean code and optimized performance. 
+                        Proven track record of delivering projects that improve business metrics through technical excellence and innovative solutions. 
+                        Strong advocate for best practices in web development, performance optimization, and accessibility standards.
+                    </p>
+                </div>
+                
+                <!-- Experience -->
+                <div class="section">
+                    <h2 class="section-title">WORK EXPERIENCE</h2>
+                    
+                    <div class="experience-item">
+                        <div class="job-title">Full Stack Web Developer</div>
+                        <div class="company-info">
+                            <i class="fas fa-building"></i>
+                            SmartJamb Company |  2023 - Present
+                        </div>
+                        <ul class="responsibilities">
+                            <li>Developed and maintained 10+ responsive web applications using Django and React</li>
+                            <li>Improved website performance by 40% through code optimization and caching strategies</li>
+                            <li>Implemented SEO best practices increasing organic traffic by 65%</li>
+                            <li>Led migration from legacy systems to modern microservices architecture</li>
+                            <li>Collaborated with design team to implement pixel-perfect UI components</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="job-title">Web Development Trainer</div>
+                        <div class="company-info">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            Tech Institute Nigeria | 2023
+                        </div>
+                        <ul class="responsibilities">
+                            <li>Trained 50+ students in modern web development technologies and best practices</li>
+                            <li>Developed comprehensive curriculum covering HTML5, CSS3, JavaScript, and Python/Django</li>
+                            <li>Mentored students in building portfolio projects and preparing for tech careers</li>
+                            <li>Conducted workshops on responsive design, web performance, and accessibility</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="job-title">Freelance Web Developer & Consultant</div>
+                        <div class="company-info">
+                            <i class="fas fa-laptop-code"></i>
+                            Self-Employed | 2022 - Present
+                        </div>
+                        <ul class="responsibilities">
+                            <li>Built 20+ custom websites for clients across various industries</li>
+                            <li>Increased client conversion rates by 35% through optimized user experiences</li>
+                            <li>Provided ongoing maintenance, security updates, and technical support</li>
+                            <li>Consulted on digital strategy, SEO, and online presence optimization</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Hobbies -->
+                <div class="section">
+                    <h2 class="section-title">INTERESTS & HOBBIES</h2>
+                    <div class="hobbies-grid">
+                        <div class="hobby-card">
+                            <div class="hobby-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div>Open Source Projects</div>
+                        </div>
+                        <div class="hobby-card">
+                            <div class="hobby-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <div>UI/UX Design</div>
+                        </div>
+                        <div class="hobby-card">
+                            <div class="hobby-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div>Tech Analytics</div>
+                        </div>
+                        <div class="hobby-card">
+                            <div class="hobby-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div>Tech Reading</div>
+                        </div>
+                        <div class="hobby-card">
+                            <div class="hobby-icon">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <div>Music Production</div>
+                        </div>
+                        <div class="hobby-card">
+                            <div class="hobby-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>AI Research</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+      
+    </div>
+    
+    <script>
+        
+       
+            
+           
+    </script>
+</body>
+
+</html>
