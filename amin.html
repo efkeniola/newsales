@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>Aminsultan Global — Real Estate & Oil & Gas</title>
   <meta name="description" content="Aminsultan Global provides premium real estate developments and integrated oil & gas solutions across West Africa. Explore properties, projects and get a tailored quote." />
   <meta property="og:title" content="Aminsultan Global — Real Estate & Oil & Gas" />
@@ -11,56 +11,66 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --accent:#046c6e; /* brand teal */
+      --accent:#046c6e;
       --accent-2:#0ea5a3;
       --muted:#6b7280;
       --bg:#f4f7fb;
       --card:#ffffff;
-      --glass: rgba(255,255,255,0.6);
-      --radius:14px;
-      --shadow: 0 10px 40px rgba(2,6,23,0.08);
+      --radius:12px;
+      --shadow:0 10px 40px rgba(2,6,23,0.08);
       --max:1200px;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      --gap:16px;
+      --header-h:68px; /* default header height */
+      font-family:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
     }
+
+    /* Reset & base */
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#ffffff);color:#071123;-webkit-font-smoothing:antialiased}
     a{color:inherit;text-decoration:none}
 
-    .wrap{max-width:var(--max);margin:0 auto;padding:36px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{display:flex;gap:14px;align-items:center}
-    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:white;font-weight:800;font-size:18px;box-shadow:var(--shadow)}
-    nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
+    /* Layout wrapper accounts for safe area and sticky header */
+    .wrap{max-width:var(--max);margin:0 auto;padding:16px;padding-top:calc(var(--header-h) + env(safe-area-inset-top));}
+
+    /* Header: sticky with translucent background to avoid overlap on mobile */
+    header{position:sticky;top:0;z-index:120;display:flex;align-items:center;justify-content:space-between;gap:12px;height:var(--header-h);background:rgba(255,255,255,0.9);backdrop-filter:blur(6px);padding:10px 16px;border-bottom:1px solid rgba(6,45,45,0.04)}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:white;font-weight:800;font-size:18px;box-shadow:var(--shadow)}
+
+    /* Desktop nav */
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
     nav a{font-weight:600;color:#08333b}
 
-    /* Sticky CTA */
+    /* Mobile menu button */
+    .menu-btn{display:none;background:transparent;border:0;font-size:22px;padding:10px;border-radius:8px}
+
     .contact-cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:10px 16px;border-radius:10px;font-weight:700;border:0;cursor:pointer}
 
     /* HERO */
-    .hero{display:grid;grid-template-columns:1fr 480px;gap:28px;align-items:center;margin-top:28px}
-    .hero-left{background:linear-gradient(180deg,rgba(255,255,255,0.8),rgba(255,255,255,0.6));padding:28px;border-radius:18px;box-shadow:var(--shadow)}
-    h1{margin:0;font-size:clamp(28px,4vw,48px);line-height:1.02}
-    p.lead{color:var(--muted);margin:12px 0 20px;font-size:15px}
-    .hero-stats{display:flex;gap:12px;margin-top:20px}
-    .stat{background:linear-gradient(180deg,#fff,rgba(255,255,255,0.95));padding:12px;border-radius:12px;min-width:120px;text-align:center;box-shadow:0 6px 20px rgba(2,6,23,0.04)}
-    .stat .num{font-weight:800;font-size:18px}
+    .hero{display:grid;grid-template-columns:1fr 480px;gap:20px;align-items:center;margin-top:6px}
+    .hero-left{background:linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,255,255,0.98));padding:18px;border-radius:14px;box-shadow:var(--shadow)}
+    h1{margin:0;font-size:clamp(22px,4vw,36px);line-height:1.02}
+    p.lead{color:var(--muted);margin:10px 0 16px;font-size:15px}
+    .hero-stats{display:flex;gap:12px;margin-top:12px}
+    .stat{background:linear-gradient(180deg,#fff,rgba(255,255,255,0.98));padding:10px;border-radius:10px;min-width:90px;text-align:center;box-shadow:0 6px 20px rgba(2,6,23,0.04)}
+    .stat .num{font-weight:800;font-size:15px}
 
     /* Showcase slider */
-    .showcase{position:relative;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);height:420px}
-    .slides{display:flex;height:100%;transition:transform .6s cubic-bezier(.2,.9,.2,1)}
-    .slide{min-width:100%;height:100%;background-size:cover;background-position:center;display:grid;align-items:end;padding:30px;color:white}
-    .slide .overlay{backdrop-filter:blur(3px);background:linear-gradient(180deg,transparent,rgba(0,0,0,0.45));padding:20px;border-radius:12px}
-    .slider-nav{position:absolute;top:14px;right:14px;display:flex;gap:10px}
-    .arrow{background:rgba(255,255,255,0.85);padding:8px;border-radius:999px;box-shadow:0 6px 18px rgba(2,6,23,0.08);cursor:pointer}
-    .dots{position:absolute;left:50%;transform:translateX(-50%);bottom:14px;display:flex;gap:8px}
-    .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.7)}
+    .showcase{position:relative;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);height:420px}
+    .slides{display:flex;height:100%;transition:transform .55s cubic-bezier(.2,.9,.2,1)}
+    .slide{min-width:100%;height:100%;background-size:cover;background-position:center;display:grid;align-items:end;padding:18px;color:white}
+    .slide .overlay{backdrop-filter:blur(3px);background:linear-gradient(180deg,transparent,rgba(0,0,0,0.45));padding:12px;border-radius:10px}
+    .slider-nav{position:absolute;top:12px;right:12px;display:flex;gap:8px}
+    .arrow{background:rgba(255,255,255,0.95);padding:8px;border-radius:999px;box-shadow:0 6px 18px rgba(2,6,23,0.08);cursor:pointer}
+    .dots{position:absolute;left:50%;transform:translateX(-50%);bottom:12px;display:flex;gap:8px}
+    .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.75)}
     .dot.active{background:var(--accent)}
 
     /* Sections */
-    section{margin:36px 0}
-    .grid{display:grid;gap:18px}
+    section{margin:24px 0;scroll-margin-top:calc(var(--header-h) + 12px)}
+    .grid{display:grid;gap:16px}
     .columns-3{grid-template-columns:repeat(3,1fr)}
-    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 26px rgba(2,6,23,0.05)}
+    .card{background:var(--card);padding:12px;border-radius:12px;box-shadow:0 6px 26px rgba(2,6,23,0.05)}
 
     /* Property cards */
     .property{overflow:hidden;border-radius:12px;transition:transform .25s ease,box-shadow .25s ease}
@@ -75,36 +85,70 @@
 
     /* Projects */
     .project-list{display:flex;flex-direction:column;gap:12px}
-    .project{display:flex;gap:12px;align-items:center;padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff, #fbfcff)}
+    .project{display:flex;gap:12px;align-items:center;padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfcff)}
     .project .meta{flex:1}
     .status{min-width:110px;text-align:right;font-weight:700}
 
     /* Testimonials */
     .testimonials{display:flex;gap:12px;align-items:center}
-    .testimonial{flex:1;padding:16px;border-radius:12px;background:linear-gradient(180deg,#fff, #fbfdff);box-shadow:0 8px 30px rgba(2,6,23,0.04)}
+    .testimonial{flex:1;padding:14px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfdff);box-shadow:0 8px 30px rgba(2,6,23,0.04)}
 
     /* Contact */
     .contact-grid{grid-template-columns:1fr 420px}
     input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #e6eef2}
 
-    footer{display:flex;justify-content:space-between;align-items:center;padding:28px 0;color:var(--muted);font-size:14px}
+    footer{display:flex;justify-content:space-between;align-items:center;padding:16px 0;color:var(--muted);font-size:14px}
 
+    /* Mobile specific adjustments */
     @media (max-width:980px){
+      :root{--header-h:64px}
       .hero{grid-template-columns:1fr}
       .columns-3{grid-template-columns:repeat(2,1fr)}
       .contact-grid{grid-template-columns:1fr}
-      .showcase{height:320px}
+      .showcase{height:340px}
     }
     @media (max-width:640px){
+      :root{--header-h:56px}
+      .menu-btn{display:inline-flex}
       nav ul{display:none}
+      .contact-cta{display:none}
+
+      /* Mobile menu overlay */
+      .mobile-menu{position:fixed;inset:0;background:rgba(2,6,23,0.6);display:none;z-index:140}
+      .mobile-menu.open{display:block}
+      .mobile-menu .menu-panel{background:white;width:92%;max-width:360px;height:100%;padding:20px}
+
+      .wrap{padding:12px;padding-top:calc(var(--header-h) + env(safe-area-inset-top));}
+      .logo{width:44px;height:44px}
+      .showcase{height:240px}
+      .slide .overlay{padding:10px}
+
       .columns-3{grid-template-columns:1fr}
-      .hero{gap:12px}
-      .showcase{height:260px}
+      .property img{height:160px}
+      .prop-actions{flex-direction:column}
+      .btn-primary,.btn-outline{width:100%;padding:14px;font-size:16px}
+
+      .hero-left{padding:14px}
+      h1{font-size:18px}
+      .stat{min-width:72px;padding:8px}
+
+      /* Modal full-screen on mobile */
+      #modal{align-items:flex-end}
+      #modal .modal-box{width:100%;border-radius:12px 12px 0 0;margin:0}
+
+      /* Touch targets */
+      input,textarea{padding:12px;font-size:15px}
     }
+
+    /* Accessibility focus */
+    a:focus, button:focus, input:focus{outline:3px solid rgba(6,108,110,0.12);outline-offset:2px}
+
+    /* Prevent large images pushing content off top in low-height screens */
+    img{max-width:100%;height:auto}
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="wrap" id="siteWrap">
     <header>
       <div class="brand">
         <div class="logo">AG</div>
@@ -113,6 +157,7 @@
           <div style="font-size:13px;color:var(--muted)">Real Estate • Oil & Gas</div>
         </div>
       </div>
+
       <nav>
         <ul>
           <li><a href="#about">About</a></li>
@@ -121,16 +166,41 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <button class="contact-cta" onclick="document.querySelector('#contact input')?.focus()">Request a Quote</button>
+
+      <div style="display:flex;align-items:center;gap:8px">
+        <button class="contact-cta" id="ctaHeader">Request a Quote</button>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      </div>
     </header>
 
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="menu-panel">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
+          <div style="display:flex;gap:12px;align-items:center"><div class="logo" style="width:44px;height:44px">AG</div><div><strong>Aminsultan Global</strong><div style="font-size:12px;color:var(--muted)">Real Estate • Oil & Gas</div></div></div>
+          <button onclick="toggleMenu()" style="border:0;background:#f3f4f6;padding:8px;border-radius:8px">✕</button>
+        </div>
+        <nav>
+          <ul style="display:flex;flex-direction:column;gap:12px;padding:0;margin:0;list-style:none">
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#properties" onclick="toggleMenu()">Properties</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          </ul>
+        </nav>
+        <div style="margin-top:20px">
+          <button class="contact-cta" style="width:100%" onclick="document.querySelector('#contact input')?.focus();toggleMenu()">Request a Quote</button>
+        </div>
+      </div>
+    </div>
+
     <main>
-      <section class="hero">
+      <section id="about">
         <div class="hero-left">
           <h1>Developing prestigious real estate. Delivering reliable oil & gas operations.</h1>
           <p class="lead">Aminsultan Global combines local expertise and international best-practices to deliver high-value developments and midstream services. From site acquisition to operations — we build for long-term performance.</p>
 
-          <div style="display:flex;gap:12px;align-items:center">
+          <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
             <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Speak to Sales</button>
             <button class="btn-outline" onclick="openBrochure()">Download Brochure</button>
           </div>
@@ -139,12 +209,6 @@
             <div class="stat"><div style="font-size:12px;color:var(--muted)">Properties</div><div class="num">24</div></div>
             <div class="stat"><div style="font-size:12px;color:var(--muted)">Projects</div><div class="num">12</div></div>
             <div class="stat"><div style="font-size:12px;color:var(--muted)">Years</div><div class="num">8</div></div>
-          </div>
-
-          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
-            <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=600&q=60" alt="trust" style="height:48px;border-radius:10px;object-fit:cover">
-            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=60" alt="partner" style="height:48px;border-radius:10px;object-fit:cover">
-            <div style="margin-left:auto;color:var(--muted);font-size:13px;display:flex;align-items:center;gap:8px">Trusted by investors & developers</div>
           </div>
         </div>
 
@@ -174,16 +238,16 @@
         <div class="card">
           <h2>About Aminsultan Global</h2>
           <p class="muted">We bring technical depth and commercial discipline to every project. Our services span real estate development, project management, engineering, procurement, and operation support for the energy sector. We prioritize ESG, safety and community partnerships.</p>
-          <div style="display:flex;gap:12px;margin-top:12px">
-            <div class="card" style="flex:1;padding:14px">
+          <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+            <div class="card" style="flex:1;min-width:220px;padding:12px">
               <strong>End-to-end Delivery</strong>
               <div class="muted" style="font-size:13px">Land acquisition → Design → Build → Operate</div>
             </div>
-            <div class="card" style="flex:1;padding:14px">
+            <div class="card" style="flex:1;min-width:220px;padding:12px">
               <strong>Local knowledge</strong>
               <div class="muted" style="font-size:13px">In-country teams with regional partnerships.</div>
             </div>
-            <div class="card" style="flex:1;padding:14px">
+            <div class="card" style="flex:1;min-width:220px;padding:12px">
               <strong>Safety & Compliance</strong>
               <div class="muted" style="font-size:13px">Rigorous standards across all projects.</div>
             </div>
@@ -199,8 +263,8 @@
             <div class="badge">For Sale</div>
             <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1200&q=60" alt="Modern Apartment Block">
             <div class="property-body">
-              <div style="display:flex;justify-content:space-between;align-items:center">
-                <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+                <div style="min-width:0">
                   <div style="font-weight:800">Riverside Residences</div>
                   <div class="muted" style="font-size:13px">Lekki, Lagos — 3BR Apartments</div>
                 </div>
@@ -219,8 +283,8 @@
             <div class="badge">New</div>
             <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=60" alt="Luxury Villa">
             <div class="property-body">
-              <div style="display:flex;justify-content:space-between;align-items:center">
-                <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+                <div style="min-width:0">
                   <div style="font-weight:800">Hillcrest Villas</div>
                   <div class="muted" style="font-size:13px">Ibadan — 5BR Villa</div>
                 </div>
@@ -239,8 +303,8 @@
             <div class="badge">Lease</div>
             <img src="https://images.unsplash.com/photo-1475855581690-80accde3ae2a?auto=format&fit=crop&w=1200&q=60" alt="Commercial Building">
             <div class="property-body">
-              <div style="display:flex;justify-content:space-between;align-items:center">
-                <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+                <div style="min-width:0">
                   <div style="font-weight:800">Commerce Plaza</div>
                   <div class="muted" style="font-size:13px">Victoria Island — Office Suites</div>
                 </div>
@@ -292,7 +356,7 @@
 
       <section id="testimonials">
         <h3>What partners say</h3>
-        <div class="testimonials" style="margin-top:12px">
+        <div class="testimonials" style="margin-top:12px;flex-direction:column">
           <div class="testimonial">
             <div style="font-weight:800">"Aminsultan delivered on schedule and exceeded expectations."</div>
             <div class="muted" style="margin-top:8px">— Strategic Investor</div>
@@ -306,7 +370,7 @@
 
       <section id="contact">
         <h3>Contact & Enquiry</h3>
-        <div class="grid contact-grid" style="margin-top:12px;display:grid;gap:18px">
+        <div class="grid contact-grid" style="margin-top:12px;display:grid;gap:16px">
           <div class="card">
             <h4>Quick Enquiry</h4>
             <form id="contactForm">
@@ -315,7 +379,7 @@
                 <input type="email" id="email" placeholder="Email" required />
                 <input type="text" id="subject" placeholder="Subject" />
                 <textarea id="message" placeholder="Message" rows="5"></textarea>
-                <div style="display:flex;gap:8px">
+                <div style="display:flex;gap:8px;flex-wrap:wrap">
                   <button class="btn-primary" type="submit">Send Message</button>
                   <button class="btn-outline" type="button" onclick="window.location.href='mailto:info@aminsultan-global.com'">Email</button>
                 </div>
@@ -326,10 +390,12 @@
 
           <div class="card">
             <h4>Office</h4>
-            <p class="muted"> Nigeria</p>
-            <p style="margin:8px 0"><strong>Phone:</strong> +234 8038240369</p>
+            <p class="muted">Nigeria</p>
+            <p style="margin:8px 0"><strong>Phone:</strong>+234 8038240369</p>
             <p style="margin:8px 0"><strong>Email:</strong> <a href="mailto:info@aminsultan-global.com">info@aminsultan-global.com</a></p>
-           
+            <div style="margin-top:12px">
+              <div style="background:#eef6f6;border-radius:10px;padding:12px;color:var(--muted)">Map placeholder — embed your Google Maps iframe here.</div>
+            </div>
           </div>
         </div>
       </section>
@@ -346,9 +412,9 @@
     </footer>
   </div>
 
-  <!-- Modal / Property viewer (same as before, improved controls) -->
-  <div id="modal" style="display:none;position:fixed;inset:0;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:80">
-    <div style="width:92%;max-width:980px;background:white;padding:18px;border-radius:12px">
+  <!-- Modal / Property viewer (improved behaviour) -->
+  <div id="modal" style="display:none;position:fixed;inset:0;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:160">
+    <div class="modal-box" style="width:92%;max-width:980px;background:white;padding:18px;border-radius:12px">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
         <div style="font-weight:800" id="modalTitle">Property</div>
         <button onclick="closeModal()" style="padding:8px 12px;border-radius:10px;border:0;background:#f3f4f6;cursor:pointer">Close</button>
@@ -359,6 +425,27 @@
   </div>
 
   <script>
+    // Mobile menu toggle
+    function toggleMenu(){ const m = document.getElementById('mobileMenu'); m.classList.toggle('open'); m.setAttribute('aria-hidden', !m.classList.contains('open')); }
+    document.getElementById('menuBtn').addEventListener('click', toggleMenu);
+
+    // Smooth anchor scroll fix: offset by header height when clicking nav links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const href = this.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          const el = document.querySelector(href);
+          if(!el) return;
+          const headerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 64;
+          const top = el.getBoundingClientRect().top + window.pageYOffset - headerH - 12;
+          window.scrollTo({top,behavior:'smooth'});
+          // close mobile menu if open
+          const mm = document.getElementById('mobileMenu'); if(mm.classList.contains('open')) toggleMenu();
+        }
+      });
+    });
+
     // Hero slider with arrows & dots
     (function(){
       const slidesEl = document.getElementById('slides');
@@ -402,6 +489,9 @@
 
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Close mobile menu by tapping outside
+    document.getElementById('mobileMenu').addEventListener('click', function(e){ if(e.target === this) toggleMenu(); });
   </script>
 
   <!-- Structured data for SEO -->
