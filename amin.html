@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aminsultan Global — Real Estate & Oil & Gas</title>
+  <meta name="description" content="Aminsultan Global provides premium real estate developments and integrated oil & gas solutions across West Africa. Explore properties, projects and get a tailored quote." />
+  <meta property="og:title" content="Aminsultan Global — Real Estate & Oil & Gas" />
+  <meta property="og:description" content="Premium real estate and commercial oil & gas services — development, EPC, operations." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1505691723518-36a58b6eac6b?auto=format&fit=crop&w=1200&q=60" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#046c6e; /* brand teal */
+      --accent-2:#0ea5a3;
+      --muted:#6b7280;
+      --bg:#f4f7fb;
+      --card:#ffffff;
+      --glass: rgba(255,255,255,0.6);
+      --radius:14px;
+      --shadow: 0 10px 40px rgba(2,6,23,0.08);
+      --max:1200px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#ffffff);color:#071123;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+
+    .wrap{max-width:var(--max);margin:0 auto;padding:36px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:white;font-weight:800;font-size:18px;box-shadow:var(--shadow)}
+    nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
+    nav a{font-weight:600;color:#08333b}
+
+    /* Sticky CTA */
+    .contact-cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:10px 16px;border-radius:10px;font-weight:700;border:0;cursor:pointer}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 480px;gap:28px;align-items:center;margin-top:28px}
+    .hero-left{background:linear-gradient(180deg,rgba(255,255,255,0.8),rgba(255,255,255,0.6));padding:28px;border-radius:18px;box-shadow:var(--shadow)}
+    h1{margin:0;font-size:clamp(28px,4vw,48px);line-height:1.02}
+    p.lead{color:var(--muted);margin:12px 0 20px;font-size:15px}
+    .hero-stats{display:flex;gap:12px;margin-top:20px}
+    .stat{background:linear-gradient(180deg,#fff,rgba(255,255,255,0.95));padding:12px;border-radius:12px;min-width:120px;text-align:center;box-shadow:0 6px 20px rgba(2,6,23,0.04)}
+    .stat .num{font-weight:800;font-size:18px}
+
+    /* Showcase slider */
+    .showcase{position:relative;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);height:420px}
+    .slides{display:flex;height:100%;transition:transform .6s cubic-bezier(.2,.9,.2,1)}
+    .slide{min-width:100%;height:100%;background-size:cover;background-position:center;display:grid;align-items:end;padding:30px;color:white}
+    .slide .overlay{backdrop-filter:blur(3px);background:linear-gradient(180deg,transparent,rgba(0,0,0,0.45));padding:20px;border-radius:12px}
+    .slider-nav{position:absolute;top:14px;right:14px;display:flex;gap:10px}
+    .arrow{background:rgba(255,255,255,0.85);padding:8px;border-radius:999px;box-shadow:0 6px 18px rgba(2,6,23,0.08);cursor:pointer}
+    .dots{position:absolute;left:50%;transform:translateX(-50%);bottom:14px;display:flex;gap:8px}
+    .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.7)}
+    .dot.active{background:var(--accent)}
+
+    /* Sections */
+    section{margin:36px 0}
+    .grid{display:grid;gap:18px}
+    .columns-3{grid-template-columns:repeat(3,1fr)}
+    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 26px rgba(2,6,23,0.05)}
+
+    /* Property cards */
+    .property{overflow:hidden;border-radius:12px;transition:transform .25s ease,box-shadow .25s ease}
+    .property:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.09)}
+    .property img{width:100%;height:200px;object-fit:cover;display:block}
+    .badge{position:absolute;top:12px;left:12px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:8px 10px;border-radius:8px;font-weight:700;font-size:13px}
+    .property-body{padding:12px}
+    .price{font-weight:800;color:var(--accent)}
+    .prop-actions{display:flex;gap:8px;margin-top:12px}
+    .btn-primary{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn-outline{padding:10px 14px;border-radius:10px;border:1px solid rgba(6,45,45,0.08);background:transparent;cursor:pointer}
+
+    /* Projects */
+    .project-list{display:flex;flex-direction:column;gap:12px}
+    .project{display:flex;gap:12px;align-items:center;padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff, #fbfcff)}
+    .project .meta{flex:1}
+    .status{min-width:110px;text-align:right;font-weight:700}
+
+    /* Testimonials */
+    .testimonials{display:flex;gap:12px;align-items:center}
+    .testimonial{flex:1;padding:16px;border-radius:12px;background:linear-gradient(180deg,#fff, #fbfdff);box-shadow:0 8px 30px rgba(2,6,23,0.04)}
+
+    /* Contact */
+    .contact-grid{grid-template-columns:1fr 420px}
+    input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #e6eef2}
+
+    footer{display:flex;justify-content:space-between;align-items:center;padding:28px 0;color:var(--muted);font-size:14px}
+
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .columns-3{grid-template-columns:repeat(2,1fr)}
+      .contact-grid{grid-template-columns:1fr}
+      .showcase{height:320px}
+    }
+    @media (max-width:640px){
+      nav ul{display:none}
+      .columns-3{grid-template-columns:1fr}
+      .hero{gap:12px}
+      .showcase{height:260px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">AG</div>
+        <div>
+          <div style="font-weight:800">Aminsultan Global</div>
+          <div style="font-size:13px;color:var(--muted)">Real Estate • Oil & Gas</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#properties">Properties</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="contact-cta" onclick="document.querySelector('#contact input')?.focus()">Request a Quote</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <h1>Developing prestigious real estate. Delivering reliable oil & gas operations.</h1>
+          <p class="lead">Aminsultan Global combines local expertise and international best-practices to deliver high-value developments and midstream services. From site acquisition to operations — we build for long-term performance.</p>
+
+          <div style="display:flex;gap:12px;align-items:center">
+            <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Speak to Sales</button>
+            <button class="btn-outline" onclick="openBrochure()">Download Brochure</button>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat"><div style="font-size:12px;color:var(--muted)">Properties</div><div class="num">24</div></div>
+            <div class="stat"><div style="font-size:12px;color:var(--muted)">Projects</div><div class="num">12</div></div>
+            <div class="stat"><div style="font-size:12px;color:var(--muted)">Years</div><div class="num">8</div></div>
+          </div>
+
+          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+            <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=600&q=60" alt="trust" style="height:48px;border-radius:10px;object-fit:cover">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=60" alt="partner" style="height:48px;border-radius:10px;object-fit:cover">
+            <div style="margin-left:auto;color:var(--muted);font-size:13px;display:flex;align-items:center;gap:8px">Trusted by investors & developers</div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="showcase" id="heroSlider">
+            <div class="slides" id="slides">
+              <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1505691723518-36a58b6eac6b?auto=format&fit=crop&w=1400&q=70')">
+                <div class="overlay"><strong style="font-size:18px">Riverside Residences</strong><div style="font-size:13px;margin-top:6px">3BR luxury apartments — Lekki, Lagos</div></div>
+              </div>
+              <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1560185127-5c5b4c6e6d31?auto=format&fit=crop&w=1400&q=70')">
+                <div class="overlay"><strong style="font-size:18px">Field Services — Offshore</strong><div style="font-size:13px;margin-top:6px">Maintenance & supply chain solutions</div></div>
+              </div>
+              <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1475855581690-80accde3ae2a?auto=format&fit=crop&w=1400&q=70')">
+                <div class="overlay"><strong style="font-size:18px">Commerce Plaza</strong><div style="font-size:13px;margin-top:6px">Grade A commercial building — Victoria Island</div></div>
+              </div>
+            </div>
+            <div class="slider-nav">
+              <div class="arrow" id="prev">◀</div>
+              <div class="arrow" id="next">▶</div>
+            </div>
+            <div class="dots" id="dots"></div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about">
+        <div class="card">
+          <h2>About Aminsultan Global</h2>
+          <p class="muted">We bring technical depth and commercial discipline to every project. Our services span real estate development, project management, engineering, procurement, and operation support for the energy sector. We prioritize ESG, safety and community partnerships.</p>
+          <div style="display:flex;gap:12px;margin-top:12px">
+            <div class="card" style="flex:1;padding:14px">
+              <strong>End-to-end Delivery</strong>
+              <div class="muted" style="font-size:13px">Land acquisition → Design → Build → Operate</div>
+            </div>
+            <div class="card" style="flex:1;padding:14px">
+              <strong>Local knowledge</strong>
+              <div class="muted" style="font-size:13px">In-country teams with regional partnerships.</div>
+            </div>
+            <div class="card" style="flex:1;padding:14px">
+              <strong>Safety & Compliance</strong>
+              <div class="muted" style="font-size:13px">Rigorous standards across all projects.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="properties">
+        <h3>Featured Properties</h3>
+        <div class="grid columns-3" style="margin-top:12px">
+
+          <article class="card property" style="position:relative">
+            <div class="badge">For Sale</div>
+            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1200&q=60" alt="Modern Apartment Block">
+            <div class="property-body">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div>
+                  <div style="font-weight:800">Riverside Residences</div>
+                  <div class="muted" style="font-size:13px">Lekki, Lagos — 3BR Apartments</div>
+                </div>
+                <div class="price">₦45M</div>
+              </div>
+              <p class="muted" style="margin:8px 0;font-size:14px">Gated riverfront development with clubhouse, gym and 24/7 security.</p>
+              <div class="prop-actions">
+                <button class="btn-primary" onclick="openProperty(0)">View</button>
+                <button class="btn-outline" onclick="window.location.href='#contact'">Enquire</button>
+                <button class="btn-outline" onclick="saveListing(0)">Save</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card property" style="position:relative">
+            <div class="badge">New</div>
+            <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=60" alt="Luxury Villa">
+            <div class="property-body">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div>
+                  <div style="font-weight:800">Hillcrest Villas</div>
+                  <div class="muted" style="font-size:13px">Ibadan — 5BR Villa</div>
+                </div>
+                <div class="price">₦125M</div>
+              </div>
+              <p class="muted" style="margin:8px 0;font-size:14px">Private gated community with landscaped gardens and smart-home automation.</p>
+              <div class="prop-actions">
+                <button class="btn-primary" onclick="openProperty(1)">View</button>
+                <button class="btn-outline" onclick="window.location.href='#contact'">Enquire</button>
+                <button class="btn-outline" onclick="saveListing(1)">Save</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card property" style="position:relative">
+            <div class="badge">Lease</div>
+            <img src="https://images.unsplash.com/photo-1475855581690-80accde3ae2a?auto=format&fit=crop&w=1200&q=60" alt="Commercial Building">
+            <div class="property-body">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div>
+                  <div style="font-weight:800">Commerce Plaza</div>
+                  <div class="muted" style="font-size:13px">Victoria Island — Office Suites</div>
+                </div>
+                <div class="price">From ₦18M</div>
+              </div>
+              <p class="muted" style="margin:8px 0;font-size:14px">Grade A office building with retail frontage and corporate amenities.</p>
+              <div class="prop-actions">
+                <button class="btn-primary" onclick="openProperty(2)">View</button>
+                <button class="btn-outline" onclick="window.location.href='#contact'">Enquire</button>
+                <button class="btn-outline" onclick="saveListing(2)">Save</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="projects">
+        <h3>Selected Oil & Gas Projects</h3>
+        <div class="card" style="margin-top:12px">
+          <div class="project-list">
+            <div class="project">
+              <div class="meta">
+                <div style="font-weight:800">Onshore Logistics & Storage — Delta</div>
+                <div class="muted">Pipeline support & temporary storage facility. Completed 2024.</div>
+              </div>
+              <div class="status">Operational</div>
+            </div>
+
+            <div class="project">
+              <div class="meta">
+                <div style="font-weight:800">Field Services — Offshore Platform</div>
+                <div class="muted">Maintenance & supply chain solutions for production platforms.</div>
+              </div>
+              <div class="status">Ongoing</div>
+            </div>
+
+            <div class="project">
+              <div class="meta">
+                <div style="font-weight:800">Engineering & Procurement — Midstream</div>
+                <div class="muted">Turnkey EPC solutions for pipelines and storage terminals.</div>
+              </div>
+              <div class="status">Pre-bid</div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials">
+        <h3>What partners say</h3>
+        <div class="testimonials" style="margin-top:12px">
+          <div class="testimonial">
+            <div style="font-weight:800">"Aminsultan delivered on schedule and exceeded expectations."</div>
+            <div class="muted" style="margin-top:8px">— Strategic Investor</div>
+          </div>
+          <div class="testimonial">
+            <div style="font-weight:800">"Professional team and strong local knowledge."</div>
+            <div class="muted" style="margin-top:8px">— Energy Partner</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h3>Contact & Enquiry</h3>
+        <div class="grid contact-grid" style="margin-top:12px;display:grid;gap:18px">
+          <div class="card">
+            <h4>Quick Enquiry</h4>
+            <form id="contactForm">
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <input type="text" id="name" placeholder="Full name" required />
+                <input type="email" id="email" placeholder="Email" required />
+                <input type="text" id="subject" placeholder="Subject" />
+                <textarea id="message" placeholder="Message" rows="5"></textarea>
+                <div style="display:flex;gap:8px">
+                  <button class="btn-primary" type="submit">Send Message</button>
+                  <button class="btn-outline" type="button" onclick="window.location.href='mailto:info@aminsultan-global.com'">Email</button>
+                </div>
+              </div>
+            </form>
+            <div id="contactResult" style="margin-top:10px;color:var(--muted)"></div>
+          </div>
+
+          <div class="card">
+            <h4>Office</h4>
+            <p class="muted"> Nigeria</p>
+            <p style="margin:8px 0"><strong>Phone:</strong> +234 8038240369</p>
+            <p style="margin:8px 0"><strong>Email:</strong> <a href="mailto:info@aminsultan-global.com">info@aminsultan-global.com</a></p>
+           
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Aminsultan Global Develop By EFK</div>
+      <div style="display:flex;gap:12px;align-items:center;color:var(--muted)">
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="Twitter">Twitter</a>
+        <a href="#" aria-label="Instagram">Instagram</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Modal / Property viewer (same as before, improved controls) -->
+  <div id="modal" style="display:none;position:fixed;inset:0;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:80">
+    <div style="width:92%;max-width:980px;background:white;padding:18px;border-radius:12px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <div style="font-weight:800" id="modalTitle">Property</div>
+        <button onclick="closeModal()" style="padding:8px 12px;border-radius:10px;border:0;background:#f3f4f6;cursor:pointer">Close</button>
+      </div>
+      <div id="modalSlides" style="overflow:hidden;border-radius:8px"></div>
+      <div style="margin-top:10px" id="modalDesc"></div>
+    </div>
+  </div>
+
+  <script>
+    // Hero slider with arrows & dots
+    (function(){
+      const slidesEl = document.getElementById('slides');
+      const slides = slidesEl.children;
+      const dotsWrap = document.getElementById('dots');
+      const prev = document.getElementById('prev');
+      const next = document.getElementById('next');
+      let idx = 0; let timer;
+      for(let i=0;i<slides.length;i++){ const d = document.createElement('div'); d.className='dot'; d.onclick = ()=>goTo(i); dotsWrap.appendChild(d); }
+      const dots = dotsWrap.children;
+      function update(){ slidesEl.style.transform = `translateX(-${idx*100}%)`; for(let i=0;i<dots.length;i++){dots[i].classList.toggle('active', i===idx)} }
+      function goTo(i){ idx=i; update(); }
+      prev.onclick = ()=>{ idx = (idx-1+slides.length)%slides.length; update(); reset(); }
+      next.onclick = ()=>{ idx = (idx+1)%slides.length; update(); reset(); }
+      function auto(){ timer = setInterval(()=>{ idx = (idx+1)%slides.length; update(); },4500); }
+      function reset(){ clearInterval(timer); auto(); }
+      update(); auto();
+    })();
+
+    // Property modal data
+    const properties = [
+      { title:'Riverside Residences', desc:'Gated riverfront development with clubhouse, gym and 24/7 security.', images:['https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1200&q=60','https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=60'] },
+      { title:'Hillcrest Villas', desc:'Private gated community with landscaped gardens and smart-home features.', images:['https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=60','https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=60'] },
+      { title:'Commerce Plaza', desc:'Grade A commercial building ideal for professional firms and retail on ground floor.', images:['https://images.unsplash.com/photo-1475855581690-80accde3ae2a?auto=format&fit=crop&w=1200&q=60','https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=60'] }
+    ];
+
+    const modal = document.getElementById('modal');
+    const modalSlides = document.getElementById('modalSlides');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    let modalIdx = 0; let modalTimer;
+    function openProperty(i){ const prop = properties[i]; modalTitle.textContent = prop.title; modalDesc.textContent = prop.desc; modalSlides.innerHTML=''; prop.images.forEach((src,j)=>{ const img = document.createElement('img'); img.src=src; img.style.width='100%'; img.style.display = j===0?'block':'none'; img.style.borderRadius='8px'; modalSlides.appendChild(img); }); modalIdx=0; modal.style.display='flex'; modalTimer = setInterval(()=>{ modalIdx = (modalIdx+1)%prop.images.length; updateModal(prop.images.length); },3500); }
+    function closeModal(){ modal.style.display='none'; clearInterval(modalTimer); }
+    function updateModal(len){ const imgs = modalSlides.querySelectorAll('img'); imgs.forEach((img,k)=> img.style.display = k===modalIdx ? 'block' : 'none'); }
+
+    function saveListing(i){ alert('Listing saved to your shortlist.'); }
+    function openBrochure(){ alert('Brochure download placeholder — attach PDF for production.'); }
+
+    // Contact form mock
+    document.getElementById('contactForm').addEventListener('submit', function(e){ e.preventDefault(); const name = document.getElementById('name').value; const email = document.getElementById('email').value; document.getElementById('contactResult').textContent = `Thanks ${name || ''}! We'll contact you at ${email}.`; this.reset(); });
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Structured data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Aminsultan Global",
+    "url": "https://aminsultan-global.com",
+    "logo": "https://example.com/logo.png",
+    "sameAs": ["https://www.linkedin.com/"],
+    "contactPoint": [{"@type":"ContactPoint","telephone":"+2348000000000","contactType":"customer service"}]
+  }
+  </script>
+</body>
+</html>
