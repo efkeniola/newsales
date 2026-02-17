@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Chimaco Global Concept — Tiles, Granite & Real Estate</title>
+  <meta name="description" content="Chimaco Global Concept supplies tiles, wall tiles, granite and real estate solutions. Contact: 08122380433" />
+  <meta property="og:title" content="Chimaco Global Concept — Tiles, Granite & Real Estate" />
+  <meta property="og:description" content="Quality tiles, wall tiles, granite and property services. Wholesale & retail supply across Nigeria." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=60" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#b45309; /* warm terracotta for building materials */
+      --accent-2:#f97316;
+      --muted:#6b7280;
+      --bg:#fbfbfb;
+      --card:#ffffff;
+      --radius:12px;
+      --shadow:0 10px 30px rgba(2,6,23,0.06);
+      --max:1100px;
+      --header-h:64px;
+      font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);color:#071123;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+
+    /* Wrapper & header */
+    .wrap{max-width:var(--max);margin:0 auto;padding:16px;padding-top:calc(var(--header-h) + env(safe-area-inset-top));}
+    header{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(6px);z-index:120;display:flex;align-items:center;justify-content:space-between;gap:12px;height:var(--header-h);padding:8px 16px;border-bottom:1px solid rgba(2,6,23,0.04)}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:white;font-weight:800}
+    nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+    nav a{font-weight:600;color:#0b2a2a}
+    .menu-btn{display:none;border:0;background:transparent;font-size:20px;padding:8px}
+    .cta-tel{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:10px 14px;border-radius:10px;font-weight:700;border:0}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:18px;align-items:start;margin-top:10px}
+    .hero-left{background:linear-gradient(180deg,#fff,rgba(255,255,255,0.98));padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+    .hero-left h1{font-size:clamp(20px,4.5vw,34px);margin:0 0 8px;line-height:1.12;overflow-wrap:break-word}
+    .hero-left p.lead{color:var(--muted);margin:0 0 12px;line-height:1.5}
+    .hero-quick{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .btn-primary{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+    .btn-outline{padding:10px 14px;border-radius:10px;border:1px solid rgba(2,6,23,0.06);background:transparent;cursor:pointer}
+
+    /* Showcase */
+    .showcase{border-radius:12px;overflow:hidden;box-shadow:var(--shadow);height:420px}
+    .slides{display:flex;height:100%;transition:transform .5s ease}
+    .slide{min-width:100%;height:100%;background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:18px;color:white}
+    .slide .overlay{background:linear-gradient(180deg,transparent,rgba(0,0,0,0.4));padding:10px;border-radius:8px}
+    .dots{position:absolute;left:50%;transform:translateX(-50%);bottom:10px;display:flex;gap:8px}
+    .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.75)}.dot.active{background:var(--accent)}
+
+    /* Products */
+    .grid{display:grid;gap:16px}
+    .columns-3{grid-template-columns:repeat(3,1fr)}
+    .product{background:var(--card);padding:12px;border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.04);display:flex;flex-direction:column;gap:10px}
+    .product img{height:160px;object-fit:cover;border-radius:8px}
+    .product h4{margin:0}
+    .product p{margin:0;color:var(--muted)}
+
+    /* Portfolio / Properties */
+    .portfolio{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .port-card{background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(2,6,23,0.04)}
+    .port-card img{height:180px;object-fit:cover}
+    .port-card .body{padding:10px}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:16px}
+    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef2}
+
+    footer{margin-top:18px;padding:18px 0;color:var(--muted);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .columns-3{grid-template-columns:repeat(2,1fr)}
+      .portfolio{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+      .showcase{height:320px}
+    }
+    @media (max-width:640px){
+      .menu-btn{display:inline-flex}
+      nav ul{display:none}
+      .cta-tel{display:none}
+      .wrap{padding:12px;padding-top:calc(var(--header-h) + env(safe-area-inset-top));}
+      .showcase{height:220px}
+      .product img{height:140px}
+      .hero-left{padding:12px}
+      .hero-left h1{font-size:clamp(18px,6vw,20px)}
+      .hero-left p.lead{font-size:14px}
+      .columns-3{grid-template-columns:1fr}
+    }
+
+    /* accessibility
+    */
+    a:focus,button:focus,input:focus,textarea:focus{outline:3px solid rgba(184,83,19,0.12);outline-offset:2px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">CG</div>
+        <div>
+          <div style="font-weight:800">Chimaco Global Concept</div>
+          <div class="small">Tiles • Wall tiles • Granite • Real Estate</div>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div style="display:flex;gap:8px;align-items:center">
+        <a class="cta-tel" href="tel:08122380433">Call: 08122380433</a>
+        <button class="menu-btn" id="menuBtn">☰</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <h1>Premium tiles, granite and property solutions — built for durability and style.</h1>
+          <p class="lead">Chimaco Global Concept supplies high-quality floor & wall tiles, natural and engineered granite, and trusted real estate listings. Wholesale and retail to contractors, designers and homeowners.</p>
+
+          <div class="hero-quick">
+            <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+            <button class="btn-outline" onclick="openCatalogue()">Download Catalogue</button>
+            <a href="tel:08122380433" class="btn-outline">Call: 08122380433</a>
+          </div>
+
+          <div style="display:flex;gap:12px;margin-top:12px;align-items:center">
+            <div class="small">Trusted supplier — fast delivery & bulk pricing</div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="showcase" id="heroSlider">
+            <div class="slides" id="slides">
+              <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1400&q=70')"><div class="overlay"><strong>Tiles collection</strong></div></div>
+              <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1505691723518-36a58b6eac6b?auto=format&fit=crop&w=1400&q=70')"><div class="overlay"><strong>Granite & Surfaces</strong></div></div>
+              <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=70')"><div class="overlay"><strong>Completed Projects</strong></div></div>
+            </div>
+            <div class="dots" id="dots"></div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="products">
+        <h3>Our Products</h3>
+        <div class="grid columns-3" style="margin-top:12px">
+          <article class="product">
+            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=60" alt="Floor Tiles">
+            <h4>Floor Tiles</h4>
+            <p>Durable porcelain & ceramic tiles in multiple finishes and sizes. Ideal for homes and commercial spaces.</p>
+            <div style="margin-top:auto;display:flex;gap:8px"><button class="btn-primary" onclick="enquire('Floor Tiles')">Enquire</button><button class="btn-outline" onclick="save('Floor Tiles')">Save</button></div>
+          </article>
+
+          <article class="product">
+            <img src="https://images.unsplash.com/photo-1586201375761-83865001e8a2?auto=format&fit=crop&w=1200&q=60" alt="Wall Tiles">
+            <h4>Wall Tiles</h4>
+            <p>Stylish wall tiles for bathrooms, kitchens and feature walls — glossy, matte and textured options.</p>
+            <div style="margin-top:auto;display:flex;gap:8px"><button class="btn-primary" onclick="enquire('Wall Tiles')">Enquire</button><button class="btn-outline" onclick="save('Wall Tiles')">Save</button></div>
+          </article>
+
+          <article class="product">
+            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=60" alt="Granite">
+            <h4>Granite & Countertops</h4>
+            <p>Natural and engineered granite for worktops, flooring and cladding — precision cut and polished.</p>
+            <div style="margin-top:auto;display:flex;gap:8px"><button class="btn-primary" onclick="enquire('Granite')">Enquire</button><button class="btn-outline" onclick="save('Granite')">Save</button></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="portfolio">
+        <h3>Real Estate & Projects</h3>
+        <div class="portfolio" style="margin-top:12px">
+          <div class="port-card">
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=60" alt="Property 1">
+            <div class="body"><strong>Oluyole Estate</strong><div class="small">Residential plots & semi-detached homes — showrooms available</div></div>
+          </div>
+          <div class="port-card">
+            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=60" alt="Project 2">
+            <div class="body"><strong>Showroom — Victoria Island</strong><div class="small">Material showroom & sample display</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h3>Contact Us</h3>
+        <div class="contact-grid" style="margin-top:12px">
+          <div class="card">
+            <h4>Quick Enquiry</h4>
+            <form id="contactForm">
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <input type="text" id="name" placeholder="Full name" required />
+                <input type="email" id="email" placeholder="Email" required />
+                <input type="text" id="subject" placeholder="Subject (e.g. Tiles enquiry)" />
+                <textarea id="message" placeholder="Message" rows="5"></textarea>
+                <div style="display:flex;gap:8px;flex-wrap:wrap">
+                  <button class="btn-primary" type="submit">Send Message</button>
+                  <a class="btn-outline" href="tel:08122380433">Call: 08122380433</a>
+                </div>
+              </div>
+            </form>
+            <div id="contactResult" style="margin-top:10px;color:var(--muted)"></div>
+          </div>
+
+          <div class="card">
+            <h4>Visit Us</h4>
+            <p class="small">Showroom & Office — contact for address and opening hours</p>
+            <p style="margin:8px 0"><strong>Phone:</strong> <a href="tel:08122380433">08122380433</a></p>
+            <p style="margin:8px 0"><strong>Email:</strong> <a href="mailto:info@chimacoglobal.com">info@chimacoglobal.com</a></p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="small">© <span id="year"></span> Chimaco Global Concept</div>
+      <div class="small">Develop by EFK</div>
+    </footer>
+  </div>
+
+  <script>
+    // Simple hero slider
+    (function(){
+      const slidesEl = document.getElementById('slides');
+      const slides = slidesEl.children;
+      const dotsWrap = document.getElementById('dots');
+      let idx = 0; let timer;
+      for(let i=0;i<slides.length;i++){ const d=document.createElement('div'); d.className='dot'; d.onclick=()=>goTo(i); dotsWrap.appendChild(d); }
+      const dots = dotsWrap.children;
+      function update(){ slidesEl.style.transform = `translateX(-${idx*100}%)`; for(let i=0;i<dots.length;i++) dots[i].classList.toggle('active', i===idx); }
+      function goTo(i){ idx=i; update(); }
+      function auto(){ timer = setInterval(()=>{ idx = (idx+1)%slides.length; update(); },4200); }
+      function reset(){ clearInterval(timer); auto(); }
+      update(); auto();
+    })();
+
+    // Contact form mock
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault(); const name=document.getElementById('name').value; const email=document.getElementById('email').value; document.getElementById('contactResult').textContent = `Thanks ${name || ''}! We will reach you at ${email} or call 08122380433.`; this.reset();
+    });
+
+    function enquire(item){ alert('Thanks — we received your interest in: ' + item + '. Call 08122380433 for immediate assistance.'); }
+    function save(item){ alert(item + ' saved to shortlist.'); }
+    function openCatalogue(){ alert('Catalogue download placeholder — attach a PDF to enable downloads.'); }
+
+    // Mobile menu: simple show/hide
+    document.getElementById('menuBtn').addEventListener('click', function(){ const nav=document.querySelector('nav ul'); if(getComputedStyle(nav).display==='none'){ nav.style.display='flex'; nav.style.flexDirection='column'; nav.style.position='absolute'; nav.style.top='64px'; nav.style.right='16px'; nav.style.background='white'; nav.style.padding='12px'; nav.style.boxShadow='0 8px 30px rgba(2,6,23,0.08)'; } else { nav.style.display='none'; } });
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
