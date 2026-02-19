@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Glowitsab Properties & Consults — Real Estate & Consultancy</title>
+  <meta name="description" content="Glowitsab provides professional real estate services and expert consultancy: property sourcing, development, investment advisory and project management." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#0b1720;
+      --muted:#6b7280;
+      --accent:#0ea5a3;
+      --accent-2:#047857;
+      --container:1200px;
+      --header-h:72px;
+      --radius:14px;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+
+    /* layout container */
+    .site-max{max-width:var(--container);margin:0 auto;padding:0 20px}
+
+    /* header */
+    header{position:sticky;top:0;background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);z-index:120;height:var(--header-h);display:flex;align-items:center;box-shadow:0 6px 18px rgba(2,6,23,0.04)}
+    .header-inner{width:100%;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:white;font-weight:800}
+    nav{display:flex;gap:22px;align-items:center}
+    nav a{font-weight:600;color:var(--text);opacity:0.9}
+    .cta{padding:10px 14px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;border-radius:10px;font-weight:700}
+    .menu-btn{display:none;border:0;background:transparent;font-size:22px}
+
+    /* hero full-bleed */
+    .hero-wrap{width:100%;background:linear-gradient(180deg, rgba(4,120,87,0.08), rgba(14,165,163,0.04));}
+    .hero{display:grid;grid-template-columns:1fr 460px;gap:28px;align-items:center;padding:48px 20px 64px}
+    .hero-left{max-width:720px}
+    h1{font-family:'Playfair Display',serif;font-size:clamp(26px,4.5vw,44px);margin:0 0 12px;line-height:1.02;overflow-wrap:break-word}
+    p.lead{color:var(--muted);margin:0 0 18px;font-size:16px}
+    .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:12px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white}
+    .btn-secondary{background:transparent;border:1px solid rgba(2,6,23,0.06);color:var(--text)}
+
+    /* hero media card */
+    .hero-media{border-radius:12px;overflow:hidden;box-shadow:0 18px 40px rgba(2,6,23,0.06);background:#fff}
+    .media-img{height:360px;background-size:cover;background-position:center}
+    .media-meta{padding:16px}
+
+    /* sections */
+    section{padding:44px 20px}
+    .container{max-width:var(--container);margin:0 auto}
+    .section-title{display:flex;justify-content:space-between;align-items:end;gap:12px}
+    .section-title h2{font-family:'Playfair Display',serif;margin:0;font-size:22px}
+    .section-sub{color:var(--muted)}
+
+    /* properties grid */
+    .properties{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:18px}
+    .prop{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 12px 30px rgba(2,6,23,0.06);display:flex;flex-direction:column}
+    .prop img{width:100%;height:200px;object-fit:cover}
+    .prop-body{padding:14px;flex:1;display:flex;flex-direction:column}
+    .prop h3{margin:0 0 8px;font-size:18px}
+    .prop p{color:var(--muted);margin:0 0 12px;flex:1}
+    .prop .meta{display:flex;justify-content:space-between;align-items:center}
+    .price{font-weight:800;color:var(--accent-2)}
+
+    /* services */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+    .service{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 10px 26px rgba(2,6,23,0.04)}
+    .service h4{margin:0 0 8px}
+    .service p{color:var(--muted);margin:0}
+
+    /* consulting detail */
+    .consult-grid{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:start}
+    .consult-card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 12px 30px rgba(2,6,23,0.05)}
+
+    /* testimonials */
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .testimonial{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 10px 26px rgba(2,6,23,0.04)}
+
+    /* contact */
+    .contact{background:linear-gradient(90deg,#042f2c, #08393a);color:white;padding:36px 20px;border-radius:12px;margin-top:18px}
+    .contact a{display:inline-block;margin-top:12px}
+
+    footer{padding:28px 20px;text-align:center;color:var(--muted);font-size:14px}
+
+    /* responsive */
+    @media (max-width:1100px){
+      .properties{grid-template-columns:repeat(2,1fr)}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .hero{grid-template-columns:1fr 360px}
+      .media-img{height:320px}
+    }
+    @media (max-width:760px){
+      .menu-btn{display:inline-flex}
+      nav{display:none}
+      .hero{grid-template-columns:1fr}
+      .hero-media{display:none}
+      .properties{grid-template-columns:1fr}
+      .services{grid-template-columns:1fr}
+      .consult-grid{grid-template-columns:1fr}
+      section{padding:28px 16px}
+      :root{--header-h:64px}
+    }
+
+    /* Accessibility focus */
+    a:focus,button:focus,input:focus{outline:3px solid rgba(4,167,132,0.12);outline-offset:2px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="site-max header-inner">
+      <div class="brand">
+        <div class="logo">G</div>
+        <div>
+          <div style="font-weight:800">Glowitsab Properties</div>
+          <div style="font-size:13px;color:var(--muted)">Properties & Consults</div>
+        </div>
+      </div>
+
+      <nav id="mainNav">
+        <a href="#about">About</a>
+        <a href="#properties">Properties</a>
+        <a href="#services">Services</a>
+        <a href="#consulting">Consultancy</a>
+        <a href="#contact" class="cta">Contact</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <section class="hero site-max">
+      <div class="hero-left">
+        <h1>Real estate expertise + strategic consultancy — built to grow your capital</h1>
+        <p class="lead">Glowitsab helps investors, developers and homeowners find, develop and manage property assets with a focus on measurable returns, compliance, and sustainable growth. We combine market research, design oversight and hands-on project delivery.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#properties">Explore Listings</a>
+          <a class="btn btn-secondary" href="#consulting">Request Consultancy</a>
+        </div>
+      </div>
+
+      <aside class="hero-media">
+        <div class="media-img" style="background-image:url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1400&q=80')"></div>
+        <div class="media-meta">
+          <div style="font-weight:800">Market insight</div>
+          <div style="color:var(--muted);margin-top:8px">Weekly market briefs, investment heatmaps and property valuation snapshots for serious investors.</div>
+        </div>
+      </aside>
+    </section>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container site-max">
+      <div class="section-title">
+        <h2>About Glowitsab</h2>
+        <div class="section-sub">Experienced, transparent and results-driven</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start;margin-top:18px">
+        <div>
+          <h3>Who we are</h3>
+          <p style="color:var(--muted)">Glowitsab Properties & Consults is a full-service real estate and advisory firm. We provide property sourcing, development management, investment advisory, valuation and feasibility studies, and regulatory support across residential, commercial and mixed-use sectors.</p>
+
+          <h4 style="margin-top:12px">Why clients choose us</h4>
+          <ul style="color:var(--muted);line-height:1.6">
+            <li>Proven track record in project delivery and asset management</li>
+            <li>Data-driven market analysis and transparent reporting</li>
+            <li>Local presence with international standards of compliance</li>
+          </ul>
+        </div>
+        <div style="background:var(--card);padding:18px;border-radius:12px;box-shadow:0 12px 30px rgba(2,6,23,0.05)">
+          <h3 style="margin-top:0">Quick facts</h3>
+          <p style="color:var(--muted);margin:6px 0">Projects delivered: <strong>25+</strong></p>
+          <p style="color:var(--muted);margin:6px 0">Active listings: <strong>18</strong></p>
+          <p style="color:var(--muted);margin:6px 0">Years experience: <strong>9</strong></p>
+          <a href="#contact" class="btn btn-primary" style="display:inline-block;margin-top:12px">Get a Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPERTIES -->
+  <section id="properties">
+    <div class="container site-max">
+      <div class="section-title">
+        <h2>Featured Properties</h2>
+        <div class="section-sub">Selected listings — ready for inspection</div>
+      </div>
+
+      <div class="properties">
+        <article class="prop">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Villa">
+          <div class="prop-body">
+            <h3>Riverside Luxury Villa</h3>
+            <p>5-bed designer villa in gated community with private garden and pool. Turnkey delivery options available.</p>
+            <div class="meta"><div class="muted">Lekki</div><div class="price">₦150,000,000</div></div>
+          </div>
+        </article>
+
+        <article class="prop">
+          <img src="https://images.unsplash.com/photo-1598228723793-52759bba239c?auto=format&fit=crop&w=1200&q=80" alt="Apartment">
+          <div class="prop-body">
+            <h3>Skyline Apartments</h3>
+            <p>Modern 3-bedroom apartment with smart home features and panoramic city views. Great rental yield.</p>
+            <div class="meta"><div class="muted">Victoria Island</div><div class="price">₦85,000,000</div></div>
+          </div>
+        </article>
+
+        <article class="prop">
+          <img src="https://images.unsplash.com/photo-1560184897-67f4a3f9a7fa?auto=format&fit=crop&w=1200&q=80" alt="Office">
+          <div class="prop-body">
+            <h3>Central Business Offices</h3>
+            <p>Multi-floor office building suitable for corporate headquarters with secure parking and retail podium.</p>
+            <div class="meta"><div class="muted">Ikeja</div><div class="price">₦300,000,000</div></div>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container site-max">
+      <div class="section-title">
+        <h2>Our Services</h2>
+        <div class="section-sub">Comprehensive services across the property lifecycle</div>
+      </div>
+      <div class="services">
+        <div class="service"><h4>Property Sourcing</h4><p>Market-led sourcing with due diligence, title checks and negotiation support.</p></div>
+        <div class="service"><h4>Development Management</h4><p>From concept and planning to delivery — managing contractors, budgets and quality.</p></div>
+        <div class="service"><h4>Asset Management</h4><p>Operational optimisation, tenant relations and facilities management for long-term returns.</p></div>
+        <div class="service"><h4>Valuation & Advisory</h4><p>Independent valuations and feasibility studies to inform investment choices.</p></div>
+        <div class="service"><h4>Regulatory Compliance</h4><p>Planning permissions, environmental checks and local approvals handled end-to-end.</p></div>
+        <div class="service"><h4>Investment Structuring</h4><p>Tax-aware structures, JV facilitation and capital raising advisory.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTANCY -->
+  <section id="consulting">
+    <div class="container site-max">
+      <div class="section-title">
+        <h2>Consultancy</h2>
+        <div class="section-sub">Deep expertise to de-risk and accelerate projects</div>
+      </div>
+
+      <div class="consult-grid">
+        <div class="consult-card">
+          <h3>Investment Advisory & Portfolio Strategy</h3>
+          <p style="color:var(--muted)">We build bespoke investment strategies, model returns and identify opportunities aligned to your risk profile. Our advisory covers market entry, repositioning, and exit scenarios.</p>
+
+          <h4 style="margin-top:12px">What we deliver</h4>
+          <ul style="color:var(--muted);line-height:1.6">
+            <li>Investment memos & pro forma financials</li>
+            <li>Market comparables & sensitivity analysis</li>
+            <li>Deal structuring and partner matching</li>
+          </ul>
+        </div>
+
+        <aside>
+          <div style="background:var(--card);padding:14px;border-radius:12px;box-shadow:0 12px 30px rgba(2,6,23,0.04)">
+            <h4 style="margin-top:0">Recent Consulting Outcomes</h4>
+            <ul style="color:var(--muted);line-height:1.6">
+              <li>Optimised development budget — saved 12% on construction costs</li>
+              <li>Advised on JV that delivered 28% IRR for investors</li>
+              <li>Completed feasibility study enabling a successful land rezoning</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS & CONTACT -->
+  <section class="site-max">
+    <div class="container">
+      <div class="section-title">
+        <h2>What Clients Say</h2>
+        <div class="section-sub">Trusted by investors and developers</div>
+      </div>
+      <div class="testimonials" style="margin-top:18px">
+        <div class="testimonial"><strong>"Professional and timely"</strong><p style="color:var(--muted);margin-top:8px">Glowitsab managed our mixed-use development from design to handover with exceptional professionalism.</p></div>
+        <div class="testimonial"><strong>"Market expertise"</strong><p style="color:var(--muted);margin-top:8px">Their market reports helped us choose the right locations — strong rental yields followed.</p></div>
+        <div class="testimonial"><strong>"Outcome driven"</strong><p style="color:var(--muted);margin-top:8px">Advisory work led to a successful funding round and on-time delivery.</p></div>
+      </div>
+
+      <div style="margin-top:28px" class="contact">
+        <div class="container site-max" style="display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap">
+          <div>
+            <h3 style="margin:0;color:white">Start your project with Glowitsab</h3>
+            <p style="color:rgba(255,255,255,0.85);margin:8px 0">Book a consultation or request a property list tailored to your needs.</p>
+            <a href="tel:+2348123456789" class="btn btn-primary">Call +234 812 345 6789</a>
+          </div>
+          <div style="min-width:260px">
+            <form id="contactForm" style="display:flex;gap:8px;flex-direction:column">
+              <input type="text" name="name" placeholder="Full name" style="padding:10px;border-radius:8px;border:1px solid #e6eef2" required>
+              <input type="email" name="email" placeholder="Email" style="padding:10px;border-radius:8px;border:1px solid #e6eef2">
+              <textarea name="message" rows="3" placeholder="Brief message or project details" style="padding:10px;border-radius:8px;border:1px solid #e6eef2"></textarea>
+              <button class="btn btn-primary" type="submit">Request Callback</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="site-max">© <span id="year"></span> Glowitsab Properties & Consults — Designed by EFK</div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mainNav = document.getElementById('mainNav');
+    menuBtn && menuBtn.addEventListener('click', ()=>{
+      if(getComputedStyle(mainNav).display === 'none'){
+        mainNav.style.display = 'flex';
+        mainNav.style.flexDirection = 'column';
+        mainNav.style.position = 'absolute';
+        mainNav.style.top = 'var(--header-h)';
+        mainNav.style.right = '20px';
+        mainNav.style.background = 'white';
+        mainNav.style.padding = '12px';
+        mainNav.style.boxShadow = '0 8px 30px rgba(2,6,23,0.08)';
+      } else {
+        mainNav.style.display = '';
+      }
+    });
+
+    // Smooth scroll with header offset
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const href = this.getAttribute('href');
+        if(href.length > 1){
+          e.preventDefault();
+          const el = document.querySelector(href);
+          if(!el) return;
+          const headerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 72;
+          const top = el.getBoundingClientRect().top + window.pageYOffset - headerH - 12;
+          window.scrollTo({top,behavior:'smooth'});
+          // close mobile menu
+          if(getComputedStyle(mainNav).flexDirection === 'column') mainNav.style.display = '';
+        }
+      });
+    });
+
+    // Contact form mock
+    document.getElementById('contactForm')?.addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Thanks! We received your request. Glowitsab will contact you shortly.');
+      this.reset();
+    });
+
+    // footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
