@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mr Erasmus | Real Estate & Consultancy</title>
+<meta name="description" content="Mr Erasmus offers premium real estate solutions and consultancy services, helping clients buy, sell, and invest with confidence." />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#0b1d33;
+  --accent:#ff6b35;
+  --bg:#f4f4f9;
+  --light:#ffffff;
+  --muted:#555;
+  --radius:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Roboto',sans-serif;background:var(--bg);color:var(--primary);line-height:1.6}
+a{text-decoration:none;color:inherit}
+header{display:flex;justify-content:space-between;align-items:center;padding:25px 6%;background:var(--light);box-shadow:0 8px 25px rgba(0,0,0,0.08);position:sticky;top:0;z-index:1000}
+header h1{font-family:'Playfair Display',serif;font-size:30px;color:var(--primary)}
+nav a{margin-left:30px;font-weight:500;transition:.3s;color:var(--primary)}
+nav a:hover{color:var(--accent)}
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(rgba(11,29,51,0.5), rgba(11,29,51,0.5)), url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;color:white}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(38px,6vw,72px);margin-bottom:20px}
+.hero p{font-size:clamp(16px,2vw,22px);margin-bottom:30px}
+.btn{padding:16px 35px;border-radius:50px;font-weight:700;margin:5px;display:inline-block;transition:.3s}
+.btn-primary{background:var(--accent);color:white;box-shadow:0 6px 20px rgba(0,0,0,0.25)}
+.btn-primary:hover{background:#ff5333;transform:translateY(-3px)}
+section{padding:90px 6%}
+.section-title{text-align:center;margin-bottom:60px}
+.section-title h2{font-family:'Playfair Display',serif;font-size:36px;margin-bottom:12px}
+.section-title p{color:var(--muted)}
+.projects{display:flex;flex-wrap:wrap;gap:30px;justify-content:center}
+.card{background:var(--light);border-radius:var(--radius);overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,0.12);flex:1 1 300px;max-width:350px;transition:.4s}
+.card:hover{transform:translateY(-10px)}
+.card img{width:100%;height:230px;object-fit:cover}
+.card-body{padding:20px}
+.card-body h3{margin-bottom:10px;color:var(--primary)}
+.card-body p{color:var(--muted);font-size:15px}
+.about,.services{display:flex;flex-wrap:wrap;gap:50px;align-items:center}
+.about img,.services img{border-radius:var(--radius);flex:1;min-width:300px;max-width:500px;transition:.3s}
+.about img:hover,.services img:hover{transform:scale(1.04)}
+.about div,.services div{flex:1;min-width:300px}
+.contact{background:var(--primary);color:white;text-align:center;padding:100px 20px}
+.contact h2{font-family:'Playfair Display',serif;font-size:34px;margin-bottom:25px}
+.contact p{font-size:18px;margin-bottom:25px}
+footer{background:#0b1d33;color:#aaa;text-align:center;padding:30px 10px;font-size:14px}
+@media(max-width:768px){.about,.services{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+<header>
+<h1>Mr Erasmus</h1>
+<nav>
+<a href="#about">About</a>
+<a href="#projects">Properties</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+<section class="hero">
+<div>
+<h1>Premium Real Estate & Consultancy</h1>
+<p>We help you buy, sell, and invest in real estate with confidence and strategic guidance.</p>
+<a href="#projects" class="btn btn-primary">Explore Properties</a>
+<a href="#contact" class="btn btn-primary">Get Consultation</a>
+</div>
+</section>
+<section id="about">
+<div class="section-title">
+<h2>About Us</h2>
+<p>Your trusted partner in real estate and consultancy.</p>
+</div>
+<div class="about">
+<img src="https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=1200&q=80" alt="About Image">
+<div>
+<h3>Our Mission</h3>
+<p>At Mr Erasmus, we combine local market knowledge with professional consultancy to deliver high-value real estate solutions tailored to each client.</p>
+<p>Whether residential, commercial, or investment properties, we ensure seamless transactions and strategic advisory services.</p>
+</div>
+</div>
+</section>
+<section id="projects">
+<div class="section-title">
+<h2>Our Properties</h2>
+<p>Explore our premium listings.</p>
+</div>
+<div class="projects">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80" alt="Property 1">
+<div class="card-body">
+<h3>Luxury Apartment</h3>
+<p>Modern apartment with high-end finishes in prime location.</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1200&q=80" alt="Property 2">
+<div class="card-body">
+<h3>Commercial Office</h3>
+<p>Spacious office spaces designed for productivity and prestige.</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Property 3">
+<div class="card-body">
+<h3>Luxury Villa</h3>
+<p>Elegant villa combining modern architecture and comfort.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="services">
+<div class="section-title">
+<h2>Our Services</h2>
+<p>Expert consultancy and real estate solutions.</p>
+</div>
+<div class="services">
+<div>
+<h3>Property Brokerage</h3>
+<p>Buy, sell, or rent properties with professional guidance and secure transactions.</p>
+</div>
+<div>
+<h3>Investment Advisory</h3>
+<p>Strategic consultancy to maximize ROI and make informed real estate decisions.</p>
+</div>
+<div>
+<h3>Consultancy Services</h3>
+<p>Personalized advice on property management, development, and market trends.</p>
+</div>
+</div>
+</section>
+<section id="contact" class="contact">
+<h2>Contact Us</h2>
+<p>Call or message us to start your property journey today.</p>
+<a href="tel:+2349165069549" class="btn btn-primary">Call Now</a>
+<a href="mailto:info@mrepublic.com" class="btn btn-primary">Email Us</a>
+</section>
+<footer>
+© <script>document.write(new Date().getFullYear())</script> Mr Erasmus. Designed by EFK
+</footer>
+</body>
+</html>
