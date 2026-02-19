@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Castlequeen Architects | Modern Architecture & Design</title>
+<meta name="description" content="Castlequeen Architects delivers cutting-edge, sustainable, and elegant architectural and interior design services." />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary:#0d1b2a;
+  --accent:#ff6b35;
+  --bg:#f4f4f9;
+  --light:#ffffff;
+  --muted:#555;
+  --radius:20px;
+}
+* {margin:0; padding:0; box-sizing:border-box}
+body {font-family:'Roboto',sans-serif; background:var(--bg); color:var(--primary); line-height:1.6}
+a{text-decoration:none;color:inherit}
+header {display:flex; justify-content:space-between; align-items:center; padding:25px 6%; background:var(--light); box-shadow:0 8px 25px rgba(0,0,0,0.08); position:sticky; top:0; z-index:1000}
+header h1{font-family:'Playfair Display',serif; font-size:30px; color:var(--primary)}
+nav a{margin-left:30px; font-weight:500; transition:.3s; color:var(--primary)}
+nav a:hover{color:var(--accent)}
+.hero{height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; position:relative; color:white}
+.hero h1{font-family:'Playfair Display',serif; font-size:clamp(38px,6vw,72px); margin-bottom:20px}
+.hero p{font-size:clamp(16px,2vw,22px); margin-bottom:30px}
+.btn{padding:16px 35px; border-radius:50px; font-weight:700; margin:5px; display:inline-block; transition:.3s;}
+.btn-primary{background:var(--accent); color:white; box-shadow:0 6px 20px rgba(0,0,0,0.25)}
+.btn-primary:hover{background:#ff5333; transform:translateY(-3px)}
+section{padding:90px 6%}
+.section-title{text-align:center; margin-bottom:60px}
+.section-title h2{font-family:'Playfair Display',serif; font-size:36px; margin-bottom:12px}
+.section-title p{color:var(--muted)}
+.projects{display:flex; flex-wrap:wrap; gap:30px; justify-content:center}
+.card{background:var(--light); border-radius:var(--radius); overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,0.12); flex:1 1 300px; max-width:350px; transition:.4s}
+.card:hover{transform:translateY(-10px)}
+.card img{width:100%; height:230px; object-fit:cover}
+.card-body{padding:20px}
+.card-body h3{margin-bottom:10px; color:var(--primary)}
+.card-body p{color:var(--muted); font-size:15px}
+.about, .services{display:flex; flex-wrap:wrap; gap:50px; align-items:center}
+.about img, .services img{border-radius:var(--radius); flex:1; min-width:300px; max-width:500px; transition:.3s}
+.about img:hover, .services img:hover{transform:scale(1.04)}
+.about div, .services div{flex:1; min-width:300px}
+.contact{background:var(--primary); color:white; text-align:center; padding:100px 20px}
+.contact h2{font-family:'Playfair Display',serif; font-size:34px; margin-bottom:25px}
+.contact p{font-size:18px; margin-bottom:25px}
+footer{background:#0d1b2a; color:#aaa; text-align:center; padding:30px 10px; font-size:14px}
+@media(max-width:768px){.about, .services{flex-direction:column; text-align:center}}
+</style>
+</head>
+<body>
+<header>
+<h1>Castlequeen Architects</h1>
+<nav>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+<section class="hero">
+<div>
+<h1>Designing Modern Spaces with Elegance</h1>
+<p>Castlequeen Architects creates contemporary, sustainable, and luxurious architecture and interiors.</p>
+<a href="#projects" class="btn btn-primary">Explore Projects</a>
+<a href="#contact" class="btn btn-primary">Consultation</a>
+</div>
+</section>
+<section id="about">
+<div class="section-title">
+<h2>About Us</h2>
+<p>Where creativity meets precision in architecture.</p>
+</div>
+<div class="about">
+<img src="https://images.unsplash.com/photo-1505842465776-3c9a765e38f4?auto=format&fit=crop&w=1200&q=80" alt="About Image">
+<div>
+<h3>Our Philosophy</h3>
+<p>We believe architecture should inspire and function seamlessly. Our projects merge innovation, design excellence, and sustainability for every client.</p>
+<p>From luxury homes to commercial spaces, our portfolio showcases creativity and precision at every scale.</p>
+</div>
+</div>
+</section>
+<section id="projects">
+<div class="section-title">
+<h2>Our Projects</h2>
+<p>Showcasing innovative designs and completed works.</p>
+</div>
+<div class="projects">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80" alt="Project 1">
+<div class="card-body">
+<h3>Modern Villa</h3>
+<p>Luxury villa with sleek design, natural light, and premium materials.</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80" alt="Project 2">
+<div class="card-body">
+<h3>Office Space</h3>
+<p>Efficient commercial design focused on aesthetics and functionality.</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1556911073-52527ac437e5?auto=format&fit=crop&w=1200&q=80" alt="Project 3">
+<div class="card-body">
+<h3>Interior Design</h3>
+<p>Contemporary interiors blending style and practical living solutions.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="services">
+<div class="section-title">
+<h2>Our Services</h2>
+<p>End-to-end architectural and design solutions.</p>
+</div>
+<div class="services">
+<div>
+<h3>Architectural Design</h3>
+<p>Innovative and tailored architectural designs for modern living and working spaces.</p>
+</div>
+<div>
+<h3>Interior Design</h3>
+<p>Beautiful, functional, and personalized interiors for homes and offices.</p>
+</div>
+<div>
+<h3>Project Management</h3>
+<p>Professional oversight ensuring projects meet deadlines, budgets, and quality standards.</p>
+</div>
+</div>
+</section>
+<section id="contact" class="contact">
+<h2>Get In Touch</h2>
+<p>Let’s collaborate to create extraordinary spaces.</p>
+<a href="tel:+2348123456789" class="btn btn-primary">Call Us</a>
+<a href="mailto:info@castlequeen.com" class="btn btn-primary">Email Us</a>
+</section>
+<footer>
+© <script>document.write(new Date().getFullYear())</script> Castlequeen Architects. Designed by EFK
+</footer>
+</body>
+</html>
