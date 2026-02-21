@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Aurora Real Estate Solutions — Premium Property Sales</title>
+  <meta name="description" content="Aurora Real Estate Solutions specializes in high-end residential and commercial property sales. Secure your dream home with expert guidance." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --soft:#f8f9fa;
+      --muted:#6b7280;
+      --text:#0f1f1f;
+      --accent:#0077b6; /* professional blue */
+      --accent-2:#00b4d8; /* light aqua highlight */
+      --card:#ffffff;
+      --radius:14px;
+      --shadow:0 14px 40px rgba(15,31,31,0.06);
+      --max:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--soft),#ffffff);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial}
+    a{color:inherit;text-decoration:none}
+
+    .wrap{max-width:var(--max);margin:0 auto;padding:20px;padding-top:28px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px;border-radius:12px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:white;font-weight:800;font-size:22px}
+    .brand h1{font-family:'Playfair Display',serif;margin:0;font-size:20px}
+    .brand p{margin:0;font-size:13px;color:var(--muted)}
+
+    nav{display:flex;gap:16px;align-items:center}
+    nav a{font-weight:600;color:var(--text);padding:8px;border-radius:10px;transition:0.2s}
+    nav a:hover{background:var(--accent-2);color:white}
+    nav a.cta{background:var(--accent);color:white}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:18px}
+    .hero-left{background:linear-gradient(180deg,#fff,rgba(255,255,255,0.98));padding:24px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .kicker{color:var(--muted);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.5px}
+    h2{margin:6px 0 10px;font-family:'Playfair Display',serif;font-size:30px;line-height:1.2}
+    p.lead{color:var(--muted);margin:0 0 18px;font-size:15px}
+    .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:12px 16px;border-radius:12px;border:0;cursor:pointer;font-weight:700;font-size:14px}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white}
+    .btn-ghost{background:transparent;border:1px solid rgba(15,31,31,0.12)}
+
+    .hero-media{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+    .media-img{height:360px;background-size:cover;background-position:center}
+    .media-info{padding:14px;font-size:14px;color:var(--muted)}
+
+    .stats{display:flex;gap:12px;margin-top:16px}
+    .stat{background:linear-gradient(180deg,#fff,#f5f5f5);padding:12px;border-radius:12px;text-align:center;box-shadow:0 8px 26px rgba(2,6,23,0.04)}
+    .stat .n{font-weight:800;font-size:18px;color:var(--accent-2)}
+
+    section{margin:40px 0}
+    .section-title{display:flex;justify-content:space-between;align-items:end;gap:12px}
+    .section-title h3{margin:0;font-size:22px}
+    .grid{display:grid;gap:16px}
+
+    .properties{grid-template-columns:repeat(3,1fr)}
+    .lot{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 12px 34px rgba(2,6,23,0.05);display:flex;flex-direction:column;transition:0.3s}
+    .lot:hover{transform:translateY(-6px);box-shadow:0 18px 48px rgba(2,6,23,0.1)}
+    .lot .photo{height:200px;background-size:cover;background-position:center}
+    .lot .body{padding:14px;flex:1;display:flex;flex-direction:column}
+    .lot h4{margin:0 0 6px;font-size:16px}
+    .muted{color:var(--muted);font-size:14px}
+    .lot .meta{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+    .price{font-weight:800;color:var(--accent)}
+
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+    .step{background:#fff;padding:16px;border-radius:12px;text-align:center;box-shadow:0 8px 26px rgba(2,6,23,0.04)}
+
+    .testimonials{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .test{background:linear-gradient(180deg,#fff,#f0f8ff);padding:14px;border-radius:12px;transition:0.3s}
+    .test:hover{transform:scale(1.02)}
+
+    .contact{background:linear-gradient(90deg,#0077b6,#00b4d8);color:white;padding:20px;border-radius:12px}
+    .contact h3{margin:0}
+    .form{display:grid;gap:10px;margin-top:12px}
+    input,textarea{padding:12px;border-radius:10px;border:1px solid #e6eef2;font-size:14px}
+
+    footer{margin-top:36px;text-align:center;color:var(--muted);font-size:14px}
+
+    @media (max-width:980px){.hero{grid-template-columns:1fr}.properties{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.testimonials{grid-template-columns:1fr}}
+    @media (max-width:640px){.properties{grid-template-columns:1fr}.hero-media{display:none}.section-title{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">A</div>
+        <div>
+          <h1>Aurora Real Estate</h1>
+          <p>Premium property sales — Nigeria</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#properties">Properties</a>
+        <a href="#process">Process</a>
+        <a class="cta" href="#contact">Book Viewing</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <div class="kicker">Trusted property sales</div>
+          <h2>Find your dream home or commercial property with Aurora</h2>
+          <p class="lead">We specialize in premium real estate sales, guiding you through every step of purchasing homes and commercial properties safely and efficiently.</p>
+          <div class="hero-ctas">
+            <button class="btn btn-primary" onclick="openContact()">Request Viewing</button>
+            <button class="btn btn-ghost" onclick="document.getElementById('properties').scrollIntoView({behavior:'smooth'})">View Properties</button>
+          </div>
+
+          <div class="stats">
+            <div class="stat"><div class="n">50+</div><div class="muted">Properties available</div></div>
+            <div class="stat"><div class="n">15</div><div class="muted">Years experience</div></div>
+            <div class="stat"><div class="n">100%</div><div class="muted">Verified titles</div></div>
+          </div>
+        </div>
+
+        <aside class="hero-media">
+          <div class="media-img" style="background-image:url('https://images.unsplash.com/photo-1560184897-0a4aa35f2bb6?auto=format&fit=crop&w=1400&q=80')"></div>
+          <div class="media-info"><strong>Professional & personal guidance</strong><div class="muted" style="margin-top:6px">Aurora Real Estate ensures a smooth, transparent buying experience with every client.</div></div>
+        </aside>
+      </section>
+
+      <section id="about">
+        <div class="section-title">
+          <h3>About Aurora Real Estate</h3>
+          <div class="muted">Expert property consultancy & sales across Nigeria</div>
+        </div>
+        <div style="margin-top:16px;display:grid;grid-template-columns:1fr 400px;gap:16px;align-items:start">
+          <div>
+            <p class="muted">Aurora Real Estate Solutions focuses on selling high-quality residential and commercial properties. We provide guidance on property selection, title verification, negotiation, and seamless transaction management.</p>
+            <h4 style="margin-top:14px">Why clients trust us</h4>
+            <ul style="color:var(--muted);line-height:1.7">
+              <li>Verified property titles & documentation</li>
+              <li>Personalized property tours & private viewings</li>
+              <li>Guidance through secure payment and transfer</li>
+            </ul>
+          </div>
+
+          <div style="background:var(--card);padding:16px;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.04)">
+            <strong>Contact</strong>
+            <div class="muted" style="margin-top:8px">Phone/WhatsApp: <em>+2348134017735</em></div>
+            <div style="margin-top:10px"><strong>Service area:</strong> Nationwide</div>
+            <div style="margin-top:10px"><strong>Properties:</strong> Residential & Commercial</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="properties">
+        <div class="section-title">
+          <h3>Featured Properties</h3>
+          <div class="muted">Selected properties with high appreciation potential</div>
+        </div>
+        <div class="grid properties">
+          <article class="lot">
+            <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80')"></div>
+            <div class="body">
+              <h4>Lagos Island Luxury Apartment</h4>
+              <div class="muted">3 Bedroom — Prime Location</div>
+              <div class="meta"><div class="muted">Title verified</div><div class="price">Price on request</div></div>
+            </div>
+          </article>
+          <article class="lot">
+            <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80')"></div>
+            <div class="body">
+              <h4>Victoria Island Commercial Building</h4>
+              <div class="muted">Office/Business — 500 sqm</div>
+              <div class="meta"><div class="muted">Title verified</div><div class="price">Price on request</div></div>
+            </div>
+          </article>
+          <article class="lot">
+            <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1600585153830-6b2212e5b1a6?auto=format&fit=crop&w=1200&q=80')"></div>
+            <div class="body">
+              <h4>Ikoyi Family Home</h4>
+              <div class="muted">4 Bedroom — Gated Community</div>
+              <div class="meta"><div class="muted">Title verified</div><div class="price">Price on request</div></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="process">
+        <div class="section-title"><h3>Our Process</h3><div class="muted">Step-by-step guidance for a smooth purchase</div></div>
+        <div class="steps">
+          <div class="step"><strong>1</strong><div class="muted" style="margin-top:8px">Tell us your property needs</div></div>
+          <div class="step"><strong>2</strong><div class="muted" style="margin-top:8px">We shortlist verified properties</div></div>
+          <div class="step"><strong>3</strong><div class="muted" style="margin-top:8px">Private viewing & consultation</div></div>
+          <div class="step"><strong>4</strong><div class="muted" style="margin-top:8px">Secure purchase & ownership transfer</div></div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-title"><h3>Contact Aurora Real Estate</h3><div class="muted">Schedule a private viewing or inquiry</div></div>
+        <div style="display:grid;grid-template-columns:1fr 360px;gap:16px;align-items:start">
+          <div>
+            <div class="contact">
+              <h3>Book a Viewing</h3>
+              <p class="muted">Private, respectful, and professional consultation.</p>
+              <div style="margin-top:12px">
+                <button class="btn btn-primary" onclick="openContact()">Request Viewing</button>
+              </div>
+            </div>
+          </div>
+
+          <aside style="background:var(--card);padding:14px;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.04)">
+            <h4 style="margin-top:0">Get in touch</h4>
+            <p class="muted">Phone/WhatsApp: +2348134017735</p>
+            <p class="muted">Email: <em>info@aurorarealestate.com</em></p>
+            <p class="muted">Service area: Nationwide</p>
+          </aside>
+        </div>
+
+        <div style="margin-top:14px;background:#fff;padding:14px;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.04)">
+          <form id="contactForm" class="form">
+            <input type="text" id="name" placeholder="Full name (required)" required />
+            <input type="email" id="email" placeholder="Email (required)" required />
+            <input type="tel" id="phone" placeholder="Phone or WhatsApp" />
+            <textarea id="message" rows="3" placeholder="Tell us what you're looking for" ></textarea>
+            <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:6px">
+              <button type="submit" class="btn btn-primary">Send Request</button>
+              <button type="button" class="btn btn-ghost" onclick="document.getElementById('contactForm').reset()">Reset</button>
+            </div>
+            <div id="formResult" style="margin-top:8px;color:var(--muted)"></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="muted">© <span id="yr"></span> Aurora Real Estate Solutions — Premium property sales. Designed by EFK</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('formResult').textContent = 'Thanks — we will contact you within 24 hours.';
+      this.reset();
+    });
+
+    function openContact(){ alert('Request submitted. Aurora Real Estate will contact you shortly.'); }
+  </script>
+</body>
+</html>
