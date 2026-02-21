@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Just Interiors | Premium Furniture Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --yellow:#ffb703;
+  --orange:#fb8500;
+  --black:#111111;
+  --light:#f9f9f9;
+  --radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:var(--light);color:var(--black);line-height:1.6}
+a{text-decoration:none;color:inherit}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 6%;background:var(--black);color:white;position:sticky;top:0;z-index:1000}
+header h1{color:var(--yellow);font-size:28px}
+nav a{margin-left:25px;color:white;font-weight:500;transition:.3s}
+nav a:hover{color:var(--orange)}
+.hero{height:90vh;background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:20px}
+.hero h2{font-size:clamp(36px,6vw,64px);margin-bottom:20px;color:var(--yellow)}
+.hero p{font-size:18px;margin-bottom:30px}
+.btn{padding:14px 30px;border-radius:40px;font-weight:600;margin:5px;display:inline-block;transition:.3s}
+.btn-primary{background:var(--orange);color:white}
+.btn-primary:hover{background:var(--yellow);color:var(--black)}
+section{padding:80px 6%}
+.section-title{text-align:center;margin-bottom:50px}
+.section-title h2{font-size:34px;color:var(--black)}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px}
+.card{background:white;border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,0.1);transition:.3s}
+.card:hover{transform:translateY(-8px)}
+.card img{width:100%;height:220px;object-fit:cover}
+.card-body{padding:20px}
+.card-body h3{margin-bottom:10px;color:var(--orange)}
+.card-body p{font-size:14px;margin-bottom:15px}
+.contact{background:var(--black);color:white;text-align:center;padding:70px 20px}
+.contact h2{color:var(--yellow);margin-bottom:15px}
+footer{background:#000;color:#aaa;text-align:center;padding:20px;font-size:14px}
+@media(max-width:768px){nav{display:none}}
+</style>
+</head>
+<body>
+<header>
+<h1>Just Interiors</h1>
+<nav>
+<a href="#products">Products</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+<section class="hero">
+<div>
+<h2>Luxury & Modern Furniture Collections</h2>
+<p>Upgrade your home and office with premium furniture crafted for comfort and elegance.</p>
+<a href="#products" class="btn btn-primary">Shop Now</a>
+<a href="tel:08144433433" class="btn btn-primary">Call 08144433433</a>
+</div>
+</section>
+<section id="products">
+<div class="section-title">
+<h2>Our Furniture Categories</h2>
+</div>
+<div class="products">
+<div class="card"><img src="https://images.unsplash.com/photo-1582582494700-5f0f6b0b1e60?auto=format&fit=crop&w=800&q=80"><div class="card-body"><h3>Office Tables</h3><p>Modern executive office tables designed for productivity and style.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1616627455140-9cbbf63e99e6?auto=format&fit=crop&w=800&q=80"><div class="card-body"><h3>Royal Sofas</h3><p>Luxury sofas crafted for comfort and timeless elegance.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80"><div class="card-body"><h3>Bed Frames</h3><p>Durable and stylish bed frames for modern bedrooms.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1585559605152-7f9e94e8f3c7?auto=format&fit=crop&w=800&q=80"><div class="card-body"><h3>Mattresses</h3><p>Premium quality mattresses ensuring perfect sleep comfort.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1588854337116-4d3f39e9c6a8?auto=format&fit=crop&w=800&q=80"><div class="card-body"><h3>Swing Chairs</h3><p>Stylish indoor and outdoor swing chairs for relaxation.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"><div class="card-body"><h3>Dining Sets</h3><p>Elegant dining tables and chairs for family gatherings.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1578898887932-dce23a595ad4?auto=format&fit=crop&w=800&q=80"><div class="card-body"><h3>Wardrobes</h3><p>Spacious wardrobes designed with modern finishing.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1600566752227-8f47e7c4f1c1?auto=format&fit=crop&w=800&q=80"><div class="card-body"><h3>TV Stands</h3><p>Contemporary TV consoles with sleek storage design.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=800&q=80"><div class="card-body"><h3>Recliner Chairs</h3><p>Comfortable recliners for ultimate relaxation.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1598300055734-5d8a0c4c6e97?auto=format&fit=crop&w=800&q=80"><div class="card-body"><h3>Outdoor Furniture</h3><p>Durable and stylish outdoor seating collections.</p></div></div>
+</div>
+</section>
+<section id="contact" class="contact">
+<h2>Contact Just Interiors</h2>
+<p>Call us today to order premium furniture for your home or office.</p>
+<a href="tel:08144433433" class="btn btn-primary">Call 08144433433</a>
+</section>
+<footer>
+© <script>document.write(new Date().getFullYear())</script> Just Interiors. Designed by EFK
+</footer>
+</body>
+</html>
