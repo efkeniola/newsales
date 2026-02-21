@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Gospel Crest Enterprises — Land Sales & Real Estate Consultancy</title>
+  <meta name="description" content="Gospel Crestt Enterprises offers premium land parcels and personalised real estate consultancy in Lagos. Private viewings and trusted transactions." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --soft:#f7fbfa;
+      --muted:#64748b;
+      --text:#062f2f;
+      --accent:#e6b55a; /* warm gold */
+      --accent-2:#c77aa6; /* soft mauve to feel gentle */
+      --card:#ffffff;
+      --radius:14px;
+      --shadow:0 14px 40px rgba(4,15,15,0.06);
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--soft),#ffffff);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial}
+    a{color:inherit}
+
+    /* Page container */
+    .wrap{max-width:var(--max);margin:0 auto;padding:20px;padding-top:28px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px;border-radius:12px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:white;font-weight:800;font-size:20px}
+    .brand h1{font-family:'Playfair Display',serif;margin:0;font-size:18px}
+    .brand p{margin:0;font-size:13px;color:var(--muted)}
+
+    nav{display:flex;gap:16px;align-items:center}
+    nav a{font-weight:600;color:var(--text);padding:8px;border-radius:10px}
+    nav a.cta{background:var(--accent);color:white}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:18px}
+    .hero-left{background:linear-gradient(180deg,#fff,rgba(255,255,255,0.98));padding:22px;border-radius:14px;box-shadow:var(--shadow)}
+    .kicker{color:var(--muted);font-weight:700;font-size:13px}
+    h2{margin:6px 0 8px;font-family:'Playfair Display',serif;font-size:28px}
+    p.lead{color:var(--muted);margin:0 0 14px}
+    .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white}
+    .btn-ghost{background:transparent;border:1px solid rgba(6,47,47,0.06)}
+
+    /* Media card with gentle photos */
+    .hero-media{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+    .media-img{height:320px;background-size:cover;background-position:center}
+    .media-info{padding:12px}
+
+    /* Quick stats */
+    .stats{display:flex;gap:12px;margin-top:12px}
+    .stat{background:linear-gradient(180deg,#fff,#fbfbfb);padding:12px;border-radius:10px;text-align:center;box-shadow:0 8px 26px rgba(2,6,23,0.04)}
+    .stat .n{font-weight:800}
+
+    /* Properties */
+    section{margin:34px 0}
+    .section-title{display:flex;justify-content:space-between;align-items:end;gap:12px}
+    .section-title h3{margin:0}
+    .grid{display:grid;gap:16px}
+    .properties{grid-template-columns:repeat(3,1fr)}
+    .lot{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 12px 34px rgba(2,6,23,0.05);display:flex;flex-direction:column}
+    .lot .photo{height:170px;background-size:cover;background-position:center}
+    .lot .body{padding:12px;flex:1;display:flex;flex-direction:column}
+    .lot h4{margin:0 0 6px}
+    .muted{color:var(--muted);font-size:14px}
+    .lot .meta{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+    .price{font-weight:800;color:var(--accent-2)}
+
+    /* How it works */
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+    .step{background:#fff;padding:14px;border-radius:10px;text-align:center;box-shadow:0 8px 26px rgba(2,6,23,0.04)}
+
+    /* Testimonials */
+    .testimonials{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .test{background:linear-gradient(180deg,#fff,#fbfbff);padding:12px;border-radius:12px}
+
+    /* Contact */
+    .contact{background:linear-gradient(90deg,#092a2a,#0b3838);color:white;padding:18px;border-radius:12px}
+    .contact h3{margin:0}
+    .form{display:grid;gap:8px;margin-top:10px}
+    input,textarea{padding:10px;border-radius:8px;border:1px solid #e6eef2}
+
+    footer{margin-top:26px;text-align:center;color:var(--muted);font-size:14px}
+
+    /* Responsive */
+    @media (max-width:980px){.hero{grid-template-columns:1fr}.properties{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.testimonials{grid-template-columns:1fr}}
+    @media (max-width:640px){.properties{grid-template-columns:1fr}.hero-media{display:none}.section-title{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">GC</div>
+        <div>
+          <h1>Gospel Crest Enterprises</h1>
+          <p>Trusted land specialists — Lagos</p>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#properties">Plots</a>
+        <a href="#process">How it works</a>
+        <a class="cta" href="#contact">Private Viewing</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <div class="kicker">Private land sales — Lagos</div>
+          <h2>Secure your ideal land with personalised guidance</h2>
+          <p class="lead">We specialise in discreet, secure land sales and professional consultancy for first-time buyers and seasoned investors. Personalised service for clients who value privacy and clarity.</p>
+          <div class="hero-ctas">
+            <button class="btn btn-primary" onclick="openContact()">Request Private Viewing</button>
+            <button class="btn btn-ghost" onclick="document.getElementById('properties').scrollIntoView({behavior:'smooth'})">View Available Plots</button>
+          </div>
+
+          <div class="stats">
+            <div class="stat"><div class="n">18</div><div class="muted">Active plots</div></div>
+            <div class="stat"><div class="n">9+</div><div class="muted">Years experience</div></div>
+            <div class="stat"><div class="n">100%</div><div class="muted">Title checks</div></div>
+          </div>
+        </div>
+
+        <aside class="hero-media">
+          <div class="media-img" style="background-image:url('https://images.unsplash.com/photo-1502784444185-7bd3e8b7f3b8?auto=format&fit=crop&w=1400&q=80')"></div>
+          <div class="media-info"><strong>Private, respectful service</strong><div class="muted" style="margin-top:6px">We understand some clients prefer quiet, one-to-one appointments. Book a time and we’ll meet at a safe, agreed location.</div></div>
+        </aside>
+      </section>
+
+      <section id="about">
+        <div class="section-title">
+          <h3>About Gospel Crestt</h3>
+          <div class="muted">Local land experts in Lagos offering careful, trustworthy transactions</div>
+        </div>
+        <div style="margin-top:12px;display:grid;grid-template-columns:1fr 380px;gap:16px;align-items:start">
+          <div>
+            <p class="muted">Gospel Crestt Enterprises provides secure land parcels in prime Lagos suburbs with full documentation support and advisory. Our approach is personal: we listen closely to your needs, verify titles, negotiate on your behalf, and support you through transfer and development planning.</p>
+
+            <h4 style="margin-top:14px">Why clients (especially private, cautious buyers) choose us</h4>
+            <ul style="color:var(--muted);line-height:1.7">
+              <li>Discreet appointments and private viewings</li>
+              <li>Full title verification & due diligence</li>
+              <li>Flexible payment plans and secure escrow guidance</li>
+            </ul>
+          </div>
+
+          <div style="background:var(--card);padding:12px;border-radius:10px;box-shadow:0 10px 30px rgba(2,6,23,0.04)}">
+            <strong>Owner:</strong>
+            <div class="muted" style="margin-top:8px">Female-led—personal, respectful service tailored to your comfort.</div>
+            <div style="margin-top:10px"><strong>Service area:</strong> Lagos and outskirts</div>
+            <div style="margin-top:10px"><strong>Docs:</strong> Title checks, survey, transfer support</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="properties">
+        <div class="section-title">
+          <h3>Available Plots</h3>
+          <div class="muted">Select plots chosen for strong appreciation potential</div>
+        </div>
+
+        <div class="grid properties" style="grid-template-columns:repeat(3,1fr)">
+
+          <article class="lot">
+            <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=80')"></div>
+            <div class="body">
+              <h4>Ogun State Outskirt Plot</h4>
+              <div class="muted">1,000 sqm — near new highway</div>
+              <div class="meta"><div class="muted">Surveyed & Registered</div><div class="price">Price on request</div></div>
+            </div>
+          </article>
+
+          <article class="lot">
+            <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=1200&q=80')"></div>
+            <div class="body">
+              <h4>Lekki Peninsula Plot</h4>
+              <div class="muted">500 sqm — fenced community</div>
+              <div class="meta"><div class="muted">C of O in progress</div><div class="price">Price on request</div></div>
+            </div>
+          </article>
+
+          <article class="lot">
+            <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=1200&q=80')"></div>
+            <div class="body">
+              <h4>Victoria Island Development Land</h4>
+              <div class="muted">300 sqm — commercial/residential mix</div>
+              <div class="meta"><div class="muted">Title verified</div><div class="price">Price on request</div></div>
+            </div>
+          </article>
+
+        </div>
+
+      </section>
+
+      <section id="process">
+        <div class="section-title"><h3>How it works</h3><div class="muted">A calm, guided process for peace of mind</div></div>
+        <div class="steps">
+          <div class="step"><strong>1</strong><div class="muted" style="margin-top:8px">Tell us what you need — we listen</div></div>
+          <div class="step"><strong>2</strong><div class="muted" style="margin-top:8px">We shortlist plots and do checks</div></div>
+          <div class="step"><strong>3</strong><div class="muted" style="margin-top:8px">Private viewing at your comfort</div></div>
+          <div class="step"><strong>4</strong><div class="muted" style="margin-top:8px">Secure transfer & development support</div></div>
+        </div>
+      </section>
+
+      <section id="testimonials">
+        <div class="section-title"><h3>Client stories</h3><div class="muted">Real buyers sharing their calm experience</div></div>
+        <div class="testimonials">
+          <div class="test"><strong>"I valued the private support — no pressure."</strong><p class="muted" style="margin-top:8px">— A. Okoro</p></div>
+          <div class="test"><strong>"Thorough, professional, and discreet."</strong><p class="muted" style="margin-top:8px">— E. Musa</p></div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-title"><h3>Contact & Private Viewing</h3><div class="muted">Book a confidential appointment or request a property pack</div></div>
+        <div style="display:grid;grid-template-columns:1fr 360px;gap:16px;align-items:start">
+          <div>
+            <div class="contact">
+              <h3>Let's schedule a private viewing</h3>
+              <p class="muted">No pressure — just a respectful, private consultation on your schedule.</p>
+              <div style="margin-top:12px">
+                <button class="btn btn-primary" onclick="openContact()">Request Viewing</button>
+              </div>
+            </div>
+          </div>
+
+          <aside style="background:var(--card);padding:12px;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.04)">
+            <h4 style="margin-top:0">Get in touch</h4>
+            <p class="muted">Email: <em>private@gospelcrestt.com</em> (for privacy) </p>
+            <p class="muted">Service area: Lagos</p>
+            <p style="margin-top:8px">Prefer messages? Use the form below — we reply within one working day.</p>
+          </aside>
+        </div>
+
+        <div style="margin-top:12px;background:#fff;padding:12px;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.04)">
+          <form id="contactForm" class="form">
+            <input type="text" id="name" placeholder="Full name (required)" required />
+            <input type="email" id="email" placeholder="Email (required)" required />
+            <input type="tel" id="phone" placeholder="Phone or WhatsApp" />
+            <textarea id="message" rows="3" placeholder="Tell us what you're looking for (location, size)" ></textarea>
+            <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:6px">
+              <button type="submit" class="btn btn-primary">Send Request</button>
+              <button type="button" class="btn btn-ghost" onclick="document.getElementById('contactForm').reset()">Reset</button>
+            </div>
+            <div id="formResult" style="margin-top:8px;color:var(--muted)"></div>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="muted">© <span id="yr"></span> Gospel Crestt Enterprises — Female-led, private-first service. Designed by EFK</div>
+    </footer>
+  </div>
+
+  <!-- Modal (simple) -->
+  <div id="modal" style="display:none;position:fixed;inset:0;background:rgba(2,6,23,0.6);z-index:300;align-items:center;justify-content:center">
+    <div style="background:white;padding:18px;border-radius:12px;max-width:480px;width:92%">
+      <h3 style="margin-top:0">Request a private viewing</h3>
+      <p style="color:var(--muted)">Share a preferred time and we'll confirm a discreet appointment.</p>
+      <form id="modalForm" style="display:grid;gap:8px">
+        <input placeholder="Full name" required />
+        <input placeholder="Phone or WhatsApp" />
+        <input type="datetime-local" />
+        <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:6px">
+          <button type="submit" class="btn btn-primary">Send request</button>
+          <button type="button" class="btn btn-ghost" onclick="closeModal()">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // footer year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // contact form mock
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('formResult').textContent = 'Thanks — your request has been received. We will reply within one working day.';
+      this.reset();
+    });
+
+    function openContact(){ document.getElementById('modal').style.display = 'flex'; }
+    function closeModal(){ document.getElementById('modal').style.display = 'none'; }
+    document.getElementById('modalForm').addEventListener('submit', function(e){ e.preventDefault(); alert('Private viewing request sent — we will contact you to confirm.'); closeModal(); });
+  </script>
+</body>
+</html>
