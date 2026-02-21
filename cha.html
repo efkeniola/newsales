@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Capital Home & Apartment — Sale | Rent Per Day</title>
+  <meta name="description" content="Capital Home & Apartment — premium property sales and daily rentals in Lagos. Natural photography with a black & white brand logo for a warm, trustworthy experience." />
+  <meta name="keywords" content="Lagos real estate, rent per day, apartments for sale, short stay Lagos, Capital Home" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --black:#0b0b0b;
+      --white:#ffffff;
+      --muted:#6f6f6f;
+      --accent:#0a84ff; /* subtle action color */
+      --max:1200px;
+      --radius:12px;
+      --header-h:72px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;background:var(--white);color:var(--black);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:20px}
+
+    /* Header */
+    header{position:sticky;top:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(6px);z-index:120;box-shadow:0 6px 20px rgba(0,0,0,0.04)}
+    .header-inner{max-width:var(--max);margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(180deg,var(--black),#222);display:grid;place-items:center;color:var(--white);font-weight:800;font-size:18px}
+    .brand h1{font-family:'Playfair Display',serif;margin:0;font-size:20px}
+    nav{display:flex;gap:16px;align-items:center}
+    nav a{padding:8px 12px;border-radius:8px;font-weight:600;color:var(--black);opacity:0.95}
+    .cta{background:var(--black);color:var(--white);padding:10px 14px;border-radius:10px}
+    .menu-btn{display:none;background:transparent;border:0;font-size:22px}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 440px;gap:28px;align-items:center;margin:18px 0}
+    .hero-left{padding:28px}
+    .kicker{color:var(--muted);font-weight:600;font-size:13px}
+    h2{font-family:'Playfair Display',serif;font-size:32px;margin:8px 0;color:var(--black)}
+    p.lead{color:var(--muted);margin:0 0 16px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:12px 16px;border-radius:10px;border:1px solid #e9e9e9;font-weight:700;cursor:pointer}
+    .btn-dark{background:var(--black);color:var(--white);border:0}
+    .btn-ghost{background:transparent}
+
+    /* Media */
+    .img-overlay{position:relative;border-radius:12px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,0.06)}
+    .site-img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* Controls and filters */
+    .controls{display:flex;gap:12px;align-items:center;margin-top:12px}
+    select,input[type=search]{padding:10px;border-radius:10px;border:1px solid #eee}
+
+    /* Listings */
+    section{margin:40px 0}
+    .section-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px}
+    .properties{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:16px}
+    .card{background:var(--white);padding:14px;border-radius:12px;box-shadow:0 10px 30px rgba(11,11,11,0.04);display:flex;flex-direction:column;gap:10px}
+    .meta{display:flex;justify-content:space-between;align-items:center}
+    .price{font-weight:800}
+    .tags{display:flex;gap:8px}
+    .tag{font-size:12px;padding:6px 8px;border-radius:8px;border:1px solid #eee}
+
+    /* Categories grid */
+    .categories{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:18px}
+    .cat{background:var(--white);border-radius:12px;padding:12px;text-align:center;box-shadow:0 8px 25px rgba(11,11,11,0.03)}
+    .cat img{height:90px;object-fit:cover;width:100%;border-radius:8px}
+    .cat h4{margin:10px 0 0;font-size:14px}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:16px}
+    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:10px;box-shadow:0 8px 25px rgba(0,0,0,0.08)}
+
+    /* Map and details */
+    .map{border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.05)}
+    iframe{width:100%;height:320px;border:0}
+
+    /* CTA float */
+    .whatsapp{position:fixed;right:18px;bottom:18px;background:#25D366;color:white;border-radius:50%;width:56px;height:56px;display:grid;place-items:center;font-size:22px;box-shadow:0 10px 30px rgba(0,0,0,0.15);z-index:200}
+
+    /* Footer */
+    footer{margin-top:36px;padding:30px 20px;border-top:1px solid #efefef;color:var(--muted);font-size:14px;text-align:center}
+
+    /* Modal */
+    .modal{display:none;position:fixed;inset:0;background:rgba(2,6,23,0.6);z-index:400;align-items:center;justify-content:center}
+    .modal .card{max-width:720px;width:92%}
+
+    /* Responsive */
+    @media(max-width:1100px){.properties{grid-template-columns:repeat(2,1fr)}.categories{grid-template-columns:repeat(3,1fr)}.hero{grid-template-columns:1fr 340px}.menu-btn{display:inline-flex}} 
+    @media(max-width:760px){.properties{grid-template-columns:1fr}.categories{grid-template-columns:repeat(2,1fr)}nav{display:none}.hero{grid-template-columns:1fr}.header-inner{padding:12px}}
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"RealEstateAgent","name":"Capital Home & Apartment","telephone":"","areaServed":"Lagos, Nigeria","description":"Property sales and short stay rentals."}
+  </script>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo">CH</div>
+        <div>
+          <h1>Capital Home & Apartment</h1>
+          <div style="color:var(--muted);font-size:13px">Sale • Short-stay Rentals • Houses & Apartments (Lagos)</div>
+        </div>
+      </div>
+
+      <nav id="mainNav">
+        <a href="#properties">Listings</a>
+        <a href="#daily">Rent Per Day</a>
+        <a href="#categories">Categories</a>
+        <a class="cta" href="#contact">Contact</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="kicker">Premium | Natural photography</div>
+        <h2>Capital Home & Apartment — Refined living, naturally presented</h2>
+        <p class="lead">We sell properties and offer short-stay rentals across Lagos. Only the logo stays black & white — imagery is shown in natural colour to build warmth and trust.</p>
+
+        <div class="buttons">
+          <button class="btn btn-dark" onclick="document.getElementById('properties').scrollIntoView({behavior:'smooth'})">View Listings</button>
+          <button class="btn btn-ghost" onclick="document.getElementById('daily').scrollIntoView({behavior:'smooth'})">Rent Per Day</button>
+        </div>
+
+        <div class="controls">
+          <label><select id="filterType"><option value="all">All types</option><option>Apartment</option><option>House</option><option>Studio</option></select></label>
+          <label><select id="filterLocation"><option value="all">All locations</option><option>Lekki</option><option>VI</option><option>Ikoyi</option></select></label>
+          <label><input type="search" id="search" placeholder="Search keyword..." /></label>
+        </div>
+
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+          <div class="daily"><div class="label">Short-stay from</div><div style="margin-left:8px">₦15,000/day</div></div>
+          <div class="daily"><div class="label">Sales starting</div><div style="margin-left:8px">₦5M</div></div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="img-overlay" style="height:420px">
+          <img class="site-img" src="https://images.unsplash.com/photo-1549187774-b4ee3e4f4d14?auto=format&fit=crop&w=1400&q=80" alt="Living room">
+        </div>
+      </aside>
+    </section>
+
+    <!-- Categories -->
+    <section id="categories">
+      <div class="section-head">
+        <h3>Property Categories</h3>
+        <div style="color:var(--muted)">Natural photos — brand played via logo only</div>
+      </div>
+
+      <div class="categories" style="margin-top:12px">
+        <div class="cat"><img class="site-img" src="https://images.unsplash.com/photo-1572120360610-d971b9b0f7f4?auto=format&fit=crop&w=800&q=80" alt="apart"><h4>Apartments</h4></div>
+        <div class="cat"><img class="site-img" src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="villa"><h4>Luxury Houses</h4></div>
+        <div class="cat"><img class="site-img" src="https://images.unsplash.com/photo-1560185127-5c5b4c6e6d31?auto=format&fit=crop&w=800&q=80" alt="studio"><h4>Studio Flats</h4></div>
+        <div class="cat"><img class="site-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="serviced"><h4>Serviced Apartments</h4></div>
+        <div class="cat"><img class="site-img" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80" alt="guest"><h4>Guest Houses</h4></div>
+      </div>
+    </section>
+
+    <!-- Gallery (10 images added) -->
+    <section id="gallery">
+      <div class="section-head">
+        <h3>Property Gallery</h3>
+        <div style="color:var(--muted)">High-quality photos — click to view larger</div>
+      </div>
+      <div class="gallery" id="galleryGrid">
+        <img src="https://images.unsplash.com/photo-1505691723518-36a58b6eac6b?auto=format&fit=crop&w=1200&q=80" alt="living 1" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1200&q=80" alt="living 2" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1544525172-23b6fa9ef8b1?auto=format&fit=crop&w=1200&q=80" alt="house 1" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1549187774-b4ee3e4f4d14?auto=format&fit=crop&w=1200&q=80" alt="living 3" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=1200&q=80" alt="kitchen" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=1200&q=80" alt="bedroom" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?auto=format&fit=crop&w=1200&q=80" alt="bathroom" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1200&q=80" alt="dining" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1505691723511-5d0b6f6b9f20?auto=format&fit=crop&w=1200&q=80" alt="outdoor" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1549187773-6e1a0e6b9c6f?auto=format&fit=crop&w=1200&q=80" alt="lounge" onclick="openLightbox(this)">
+      </div>
+    </section>
+
+    <!-- Listings -->
+    <section id="properties">
+      <div class="section-head">
+        <h3>Featured Listings</h3>
+        <div style="color:var(--muted)">Curated listings — natural photography</div>
+      </div>
+
+      <div class="properties" id="listings">
+        <!-- Listing cards are populated server-side or by JS. Example items below -->
+        <div class="card" data-type="Apartment" data-location="Lekki" data-title="3-Bed Apartment — Lekki">
+          <div class="img-overlay"><img class="site-img" src="https://images.unsplash.com/photo-1505691723518-36a58b6eac6b?auto=format&fit=crop&w=1200&q=80" alt="Listing 1"></div>
+          <div>
+            <h4 style="margin:8px 0">3-Bed Apartment — Lekki</h4>
+            <p class="muted">Furnished, close to amenities. Available for sale or short stays.</p>
+            <div class="meta"><div class="tags"><div class="tag">Furnished</div><div class="tag">3BR</div></div><div class="price">₦45M</div></div>
+            <div style="display:flex;gap:8px;margin-top:10px"><button class="btn" onclick="openDetail(this)">View</button><button class="btn" onclick="bookNow()">Book</button></div>
+          </div>
+        </div>
+
+        <div class="card" data-type="Studio" data-location="Victoria Island" data-title="Studio Flat — Victoria Island">
+          <div class="img-overlay"><img class="site-img" src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1200&q=80" alt="Listing 2"></div>
+          <div>
+            <h4 style="margin:8px 0">Studio Flat — Victoria Island</h4>
+            <p class="muted">Perfect for short-stay rentals. Daily rates available.</p>
+            <div class="meta"><div class="tags"><div class="tag">Studio</div><div class="tag">Daily Rent</div></div><div class="price">From ₦18,000/day</div></div>
+            <div style="display:flex;gap:8px;margin-top:10px"><button class="btn" onclick="openDetail(this)">View</button><button class="btn" onclick="bookNow()">Book</button></div>
+          </div>
+        </div>
+
+        <div class="card" data-type="House" data-location="Ikoyi" data-title="4-Bed House — Ikoyi">
+          <div class="img-overlay"><img class="site-img" src="https://images.unsplash.com/photo-1544525172-23b6fa9ef8b1?auto=format&fit=crop&w=1200&q=80" alt="Listing 3"></div>
+          <div>
+            <h4 style="margin:8px 0">4-Bed House — Ikoyi</h4>
+            <p class="muted">Spacious compound, modern finishes — ideal for family living.</p>
+            <div class="meta"><div class="tags"><div class="tag">4BR</div><div class="tag">Garden</div></div><div class="price">₦120M</div></div>
+            <div style="display:flex;gap:8px;margin-top:10px"><button class="btn" onclick="openDetail(this)">View</button><button class="btn" onclick="bookNow()">Book</button></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Rent Per Day -->
+    <section id="daily">
+      <div class="section-head"><h3>Rent Per Day</h3><div style="color:var(--muted)">Short-term stays — clean, secure and professionally managed</div></div>
+      <div style="margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+        <div class="card"><img class="site-img" src="https://images.unsplash.com/photo-1545156521-2c7f9b3c6e34?auto=format&fit=crop&w=1200&q=80" alt="daily1"><div style="padding:12px"><h4>Executive Studio</h4><p class="muted">Daily from ₦20,000 — includes cleaning & WIFI</p></div></div>
+        <div class="card"><img class="site-img" src="https://images.unsplash.com/photo-1493815793585-5a68e78f8e5b?auto=format&fit=crop&w=1200&q=80" alt="daily2"><div style="padding:12px"><h4>Comfort Apartment</h4><p class="muted">Daily from ₦25,000 — family friendly</p></div></div>
+        <div class="card"><img class="site-img" src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=1200&q=80" alt="daily3"><div style="padding:12px"><h4>Luxury House</h4><p class="muted">Daily from ₦60,000 — ideal for corporate short stays</p></div></div>
+      </div>
+    </section>
+
+    <!-- Map & Contact -->
+    <section id="contact">
+      <div class="section-head"><h3>Contact & Booking</h3><div style="color:var(--muted)">Reach us to schedule a viewing or secure a short-stay booking</div></div>
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:16px;margin-top:16px">
+        <div>
+          <form id="booking" style="display:grid;gap:8px;background:#fff;padding:14px;border-radius:12px;box-shadow:0 10px 30px rgba(11,11,11,0.04)">
+            <input id="fullname" placeholder="Full name" required style="padding:10px;border-radius:8px;border:1px solid #eee" />
+            <input id="email" placeholder="Email" style="padding:10px;border-radius:8px;border:1px solid #eee" />
+            <input id="phone" placeholder="Phone" style="padding:10px;border-radius:8px;border:1px solid #eee" />
+            <select id="interest" style="padding:10px;border-radius:8px;border:1px solid #eee"><option>I'm interested in: Sale</option><option>Rent per day</option><option>Both</option></select>
+            <textarea id="message" placeholder="Message (optional)" rows="3" style="padding:10px;border-radius:8px;border:1px solid #eee"></textarea>
+            <div style="display:flex;justify-content:flex-end;gap:8px">
+              <button class="btn btn-ghost" type="reset">Reset</button>
+              <button class="btn btn-dark" type="submit">Send</button>
+            </div>
+            <div id="bookResult" style="color:var(--muted);margin-top:8px"></div>
+          </form>
+
+          <div style="margin-top:18px">
+            <h4 style="margin-bottom:8px">Our Office</h4>
+            <div class="map"><iframe src="https://www.google.com/maps?q=Lagos+Nigeria&output=embed" loading="lazy"></iframe></div>
+          </div>
+        </div>
+
+        <aside style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 10px 30px rgba(11,11,11,0.04)">
+          <h4 style="margin-top:0">Quick contacts</h4>
+          <p style="margin:6px 0;color:var(--muted)"><strong>Office:</strong> Lagos, Nigeria</p>
+          <p style="margin:6px 0;color:var(--muted)"><strong>Phone:</strong> <a id="phoneLink" href="tel:+234">+234 (add phone)</a></p>
+          <p style="margin:6px 0;color:var(--muted)"><strong>Email:</strong> info@capitalhome.ng</p>
+          <div style="margin-top:10px;color:var(--muted)">All images are natural colour; brand presence is expressed through the black & white logo and refined layout.</div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div style="text-align:center;color:var(--muted)">© <span id="yr"></span> Capital Home & Apartment — Natural photography with brand-led logo. Designed by EFK</div>
+    </footer>
+
+  </main>
+
+  <!-- floating WhatsApp (change number below) -->
+  <a id="waBtn" class="whatsapp" href="https://wa.me/2340000000000" target="_blank" title="Chat on WhatsApp">💬</a>
+
+  <!-- Modal for property detail -->
+  <div id="modal" class="modal" role="dialog" aria-hidden="true">
+    <div class="card" style="padding:18px">
+      <button style="float:right;border:0;background:transparent;font-size:20px" onclick="closeModal()">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+<script>
+  // Accessibility: close modal on ESC
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+
+  // inline SVG placeholder (used only when an image actually fails to load)
+  const placeholder = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800"><rect width="100%" height="100%" fill="%23f4f4f4"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%23999" font-family="Arial" font-size="36">Image unavailable</text></svg>';
+
+  // Run after DOM is ready
+  document.addEventListener('DOMContentLoaded', function(){
+
+    // Add lazy loading & decoding attributes and set onerror handler (do NOT overwrite src preemptively)
+    document.querySelectorAll('img').forEach(img => {
+      // don't override if user already set these attributes
+      if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+      img.setAttribute('decoding', 'async');
+
+      // only set placeholder if the image actually fails to load
+      img.onerror = function(){
+        if (this.src !== placeholder) this.src = placeholder;
+      };
+
+      // small safety: if an <img> has an empty or missing src attribute, replace with placeholder
+      if (!img.getAttribute('src') || img.getAttribute('src').trim() === '') {
+        img.src = placeholder;
+      }
+    });
+
+    // Menu toggle for mobile
+    const menuBtn = document.getElementById('menuBtn'), mainNav = document.getElementById('mainNav');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', ()=>{
+        if (getComputedStyle(mainNav).display === 'none' || mainNav.style.display === '') {
+          mainNav.style.display = 'flex';
+          mainNav.style.flexDirection = 'column';
+          mainNav.style.position = 'absolute';
+          mainNav.style.top = '72px';
+          mainNav.style.right = '20px';
+          mainNav.style.background = 'white';
+          mainNav.style.padding = '12px';
+          mainNav.style.boxShadow = '0 8px 30px rgba(0,0,0,0.08)';
+        } else {
+          mainNav.style.display = '';
+        }
+      });
+    }
+
+    // Search & filters (simple client-side filter)
+    const listings = Array.from(document.querySelectorAll('#listings .card'));
+    const filterTypeEl = document.getElementById('filterType');
+    const filterLocationEl = document.getElementById('filterLocation');
+    const searchEl = document.getElementById('search');
+    if (filterTypeEl) filterTypeEl.addEventListener('change', applyFilters);
+    if (filterLocationEl) filterLocationEl.addEventListener('change', applyFilters);
+    if (searchEl) searchEl.addEventListener('input', applyFilters);
+
+    function applyFilters(){
+      const t = (filterTypeEl?.value || 'all').toLowerCase();
+      const l = (filterLocationEl?.value || 'all').toLowerCase();
+      const q = (searchEl?.value || '').toLowerCase().trim();
+      listings.forEach(card=>{
+        const type = (card.dataset.type||'').toLowerCase();
+        const loc = (card.dataset.location||'').toLowerCase();
+        const title = (card.dataset.title||card.querySelector('h4')?.innerText||'').toLowerCase();
+        const match = (t==='all' || type.includes(t)) &&
+                      (l==='all' || loc.includes(l)) &&
+                      (q === '' || title.includes(q) || type.includes(q) || loc.includes(q));
+        card.style.display = match ? '' : 'none';
+      });
+    }
+
+    // Modal detail
+    window.openDetail = function(btn){
+      const card = btn.closest('.card');
+      const title = card.dataset.title || card.querySelector('h4')?.innerText || '';
+      const img = card.querySelector('img')?.src || placeholder;
+      const price = card.querySelector('.price')?.innerText || '';
+      const desc = card.querySelector('p.muted')?.innerText || '';
+      document.getElementById('modalContent').innerHTML = `
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div><img src="${img}" style="width:100%;height:220px;object-fit:cover;border-radius:8px" onerror="this.src='${placeholder}'"/></div>
+          <div>
+            <h3 style="margin-top:0">${title}</h3>
+            <p style="color:var(--muted)">${desc}</p>
+            <p style="font-weight:800;margin-top:12px">${price}</p>
+            <div style="margin-top:12px">
+              <a href="tel:+234" class="btn btn-dark">Call to inquire</a>
+              <button class="btn" onclick="bookNow()">Book</button>
+            </div>
+          </div>
+        </div>
+      `;
+      document.getElementById('modal').style.display = 'flex';
+      document.getElementById('modal').setAttribute('aria-hidden','false');
+    };
+
+    window.closeModal = function(){ 
+      const modal = document.getElementById('modal');
+      if(modal){ modal.style.display = 'none'; modal.setAttribute('aria-hidden','true'); }
+    };
+
+    // Lightbox for gallery images (used by onclick="openLightbox(this)")
+    window.openLightbox = function(imgEl){
+      const src = imgEl?.src || placeholder;
+      document.getElementById('modalContent').innerHTML = `
+        <div style="max-width:920px;width:92vw"><img src="${src}" style="width:100%;height:auto;border-radius:8px" onerror="this.src='${placeholder}'"/></div>
+      `;
+      document.getElementById('modal').style.display = 'flex';
+      document.getElementById('modal').setAttribute('aria-hidden','false');
+    };
+
+    // Book Now (mock)
+    window.bookNow = function(){ alert('Thanks — please complete the booking form and we will contact you shortly.'); };
+
+    // booking form mock submit
+    const bookingForm = document.getElementById('booking');
+    if (bookingForm) {
+      bookingForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        const result = document.getElementById('bookResult');
+        if (result) result.textContent = 'Thanks — your message has been sent. We will contact you shortly.';
+        this.reset();
+      });
+    }
+
+    // set year
+    const yrEl = document.getElementById('yr');
+    if (yrEl) yrEl.textContent = new Date().getFullYear();
+
+    // (Optional) If you want to update the WhatsApp href dynamically:
+    // document.getElementById('waBtn').href = 'https://wa.me/2348161234567';
+  }); // end DOMContentLoaded
+</script>
+</body>
+</html>
