@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Arrayhan Properties NG — Premium Real Estate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#0f172a; /* deep navy */
+      --accent:#c6a75e; /* luxury gold */
+      --light:#f8fafc;
+      --muted:#64748b;
+      --white:#ffffff;
+      --shadow:0 20px 60px rgba(2,6,23,0.08);
+      --radius:16px;
+      --max:1200px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter, sans-serif;background:var(--light);color:var(--primary);line-height:1.6}
+    h1,h2,h3{font-family:'Playfair Display',serif}
+    a{text-decoration:none;color:inherit}
+
+    .container{max-width:var(--max);margin:auto;padding:0 20px}
+
+    /* HEADER */
+    header{
+      position:fixed;
+      top:0;left:0;width:100%;
+      background:rgba(255,255,255,0.95);
+      backdrop-filter:blur(8px);
+      box-shadow:0 4px 20px rgba(0,0,0,0.05);
+      z-index:1000;
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:18px 0;
+    }
+    .logo{
+      font-weight:700;
+      font-size:20px;
+      letter-spacing:1px;
+    }
+    .logo span{color:var(--accent)}
+    nav a{margin-left:30px;font-weight:500;color:var(--primary)}
+    nav a:hover{color:var(--accent)}
+
+    /* HERO */
+    .hero{
+      height:100vh;
+      background:linear-gradient(rgba(15,23,42,0.65),rgba(15,23,42,0.65)),
+      url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      display:flex;align-items:center;justify-content:center;
+      text-align:center;color:white;
+      padding:0 20px;
+    }
+    .hero h1{font-size:56px;max-width:900px}
+    .hero p{margin:20px 0;font-size:18px;color:#e2e8f0}
+    .btn{
+      display:inline-block;
+      padding:14px 32px;
+      background:var(--accent);
+      color:var(--primary);
+      font-weight:600;
+      border-radius:50px;
+      margin-top:20px;
+      transition:0.3s;
+    }
+    .btn:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+
+    /* SECTION */
+    section{padding:100px 0}
+    .section-title{text-align:center;margin-bottom:60px}
+    .section-title h2{font-size:36px}
+    .section-title p{color:var(--muted)}
+
+    /* PROPERTIES */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+    .card{
+      background:var(--white);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:0.3s;
+    }
+    .card:hover{transform:translateY(-10px)}
+    .card img{width:100%;height:220px;object-fit:cover}
+    .card-body{padding:20px}
+    .price{color:var(--accent);font-weight:700;margin-top:10px}
+
+    /* ABOUT */
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+    .about img{width:100%;border-radius:var(--radius);box-shadow:var(--shadow)}
+
+    /* CONTACT */
+    .contact-box{
+      background:var(--primary);
+      color:white;
+      padding:60px;
+      border-radius:var(--radius);
+      text-align:center;
+    }
+
+    footer{
+      background:var(--primary);
+      color:white;
+      text-align:center;
+      padding:20px 0;
+      margin-top:80px;
+    }
+
+    @media(max-width:900px){
+      .about{grid-template-columns:1fr}
+      .hero h1{font-size:38px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">Arrayhan <span>Properties</span> NG</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#properties">Properties</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Luxury Homes & Premium Real Estate Investments</h1>
+    <p>Discover exceptional residential and commercial properties carefully selected for value, elegance, and long‑term growth.</p>
+    <a href="#properties" class="btn">Explore Properties</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about">
+    <div>
+      <h2>Professional Real Estate Expertise</h2>
+      <p style="margin-top:20px;color:var(--muted)">
+        Arrayhan Properties NG is committed to delivering trusted property sales services with transparency and excellence. We guide clients through secure transactions, verified documentation, and professional negotiations.
+      </p>
+      <p style="margin-top:20px;color:var(--muted)">
+        Our mission is simple — connect you with properties that match your lifestyle and investment goals.
+      </p>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="Modern house">
+    </div>
+  </div>
+</section>
+
+<section id="properties">
+  <div class="container">
+    <div class="section-title">
+      <h2>Featured Properties</h2>
+      <p>Hand‑picked premium listings</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1200&q=80" alt="Luxury villa">
+        <div class="card-body">
+          <h3>Luxury 4 Bedroom Villa</h3>
+          <p style="color:var(--muted)">Prime location with modern finishes and gated security.</p>
+          <div class="price">Price on request</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?auto=format&fit=crop&w=1200&q=80" alt="Modern apartment">
+        <div class="card-body">
+          <h3>Executive Apartment</h3>
+          <p style="color:var(--muted)">Elegant interior design and city skyline views.</p>
+          <div class="price">Price on request</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=80" alt="Commercial building">
+        <div class="card-body">
+          <h3>Commercial Investment Property</h3>
+          <p style="color:var(--muted)">High ROI potential in a thriving business district.</p>
+          <div class="price">Price on request</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <h2>Ready to Secure Your Dream Property?</h2>
+      <p style="margin:20px 0;color:#e2e8f0">Contact Arrayhan Properties NG today for private viewings and consultations.</p>
+      <a href="#" class="btn">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <script>document.write(new Date().getFullYear())</script> Arrayhan Properties NG. All Rights Reserved.
+</footer>
+
+</body>
+</html>
