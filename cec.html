@@ -1,263 +1,131 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Aurex Capital Consulting Ltd — Real Estate | Consulting | Financial Advisory</title>
-  <meta name="description" content="Aurex Capital Consulting Ltd — premium real estate sales, strategic consulting and financial advisory based in Port Harcourt, Rivers State, Nigeria." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0f1724; /* deep navy */
-      --card:#0b1b2b;
-      --muted:#9aa4b2;
-      --accent:#ffbe2e; /* gold */
-      --accent-2:#00b4d8; /* aqua */
-      --white:#ffffff;
-      --glass:rgba(255,255,255,0.06);
-      --radius:14px;
-      --max:1200px;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,var(--bg),#071222);color:var(--white);-webkit-font-smoothing:antialiased}
-    a{color:inherit}
-    .wrap{max-width:var(--max);margin:0 auto;padding:24px}
-
-    /* Header */
-    header{position:fixed;inset:0 0 auto 0;height:72px;background:linear-gradient(180deg,rgba(0,0,0,0.25),transparent);backdrop-filter:blur(6px);z-index:1000}
-    .nav{max-width:var(--max);margin:0 auto;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:#071222;font-weight:800;font-size:20px}
-    .brand h1{font-family:'Playfair Display',serif;font-size:18px;margin:0}
-    nav a{margin-left:20px;color:var(--white);opacity:0.9;font-weight:600}
-    .cta{background:var(--accent);color:#071222;padding:10px 14px;border-radius:12px;font-weight:700}
-
-    /* Hero */
-    .hero{min-height:86vh;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding-top:72px}
-    .hero-left{padding:32px}
-    .kicker{color:var(--accent);font-weight:700;letter-spacing:1px}
-    h2{font-family:'Playfair Display',serif;font-size:42px;line-height:1.05;margin:12px 0}
-    p.lead{color:var(--muted);font-size:15px;margin-bottom:20px}
-    .buttons{display:flex;gap:12px}
-    .btn{padding:12px 18px;border-radius:12px;font-weight:700;cursor:pointer;border:0}
-    .btn-primary{background:var(--accent);color:#071222}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--white)}
-
-    .hero-right{background:var(--card);border-radius:16px;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
-    .hero-media{height:420px;border-radius:12px;background-image:url('https://images.unsplash.com/photo-1565182999561-6a3b5b6b6a8b?auto=format&fit=crop&w=1400&q=80');background-size:cover;background-position:center}
-    .hero-info{margin-top:14px;color:var(--muted);font-size:14px}
-
-    /* Services */
-    section{padding:68px 0}
-    .section-title{text-align:center;margin-bottom:36px}
-    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-    .service{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.5);transition:transform .25s}
-    .service:hover{transform:translateY(-8px)}
-    .service h4{margin:8px 0;color:var(--accent)}
-    .service p{color:var(--muted);font-size:14px}
-
-    /* Featured Projects / Properties */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,0.6);}
-    .card img{width:100%;height:180px;object-fit:cover;display:block}
-    .card-body{padding:16px}
-    .tag{display:inline-block;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,0.03);font-weight:700;color:var(--accent);}
-    .price{font-weight:800;color:var(--accent-2);margin-top:8px}
-
-    /* Financial Tools (ROI calculator) */
-    .calc{background:var(--card);padding:18px;border-radius:12px;max-width:520px;margin:auto;box-shadow:0 12px 40px rgba(0,0,0,0.55)}
-    .calc label{display:block;color:var(--muted);font-size:13px;margin-top:10px}
-    .calc input{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--white)}
-    .result{margin-top:12px;color:var(--accent-2);font-weight:800}
-
-    /* Testimonials */
-    .testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-    .test{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:16px;border-radius:12px}
-    .test p{color:var(--muted)}
-
-    /* Contact */
-    .contact{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start}
-    .contact-card{background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:22px;border-radius:12px;color:#071222}
-    .form{background:var(--card);padding:16px;border-radius:12px}
-    .form input, .form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--white);margin-top:8px}
-    .form button{margin-top:10px}
-
-    footer{margin-top:40px;padding:30px 0;text-align:center;color:var(--muted)}
-
-    /* WhatsApp float */
-    .wa{position:fixed;right:18px;bottom:18px;background:#25D366;color:#071222;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:22px;box-shadow:0 12px 30px rgba(0,0,0,0.5);z-index:1200}
-
-    @media(max-width:980px){.hero{grid-template-columns:1fr}.hero-right{order:-1}.contact{grid-template-columns:1fr}.hero-media{height:280px}}
-    @media(max-width:640px){nav a{display:none}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chris Edet - Ceereality Ltd</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#0f172a;color:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+header{position:fixed;width:100%;top:0;left:0;background:rgba(15,23,42,0.95);padding:20px 8%;display:flex;justify-content:space-between;align-items:center;z-index:1000}
+.logo{font-size:22px;font-weight:700;color:#38bdf8}
+nav a{margin-left:25px;font-weight:500;transition:.3s}
+nav a:hover{color:#38bdf8}
+.hero{height:100vh;background:linear-gradient(rgba(15,23,42,0.7),rgba(15,23,42,0.8)),url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;display:flex;align-items:center;padding:0 8%}
+.hero-content{max-width:650px}
+.hero h1{font-size:48px;margin-bottom:20px}
+.hero p{margin-bottom:30px;color:#cbd5e1}
+.btn{display:inline-block;padding:14px 30px;border-radius:6px;font-weight:600;transition:.3s}
+.btn-primary{background:#38bdf8;color:#0f172a}
+.btn-primary:hover{background:#0ea5e9}
+.btn-outline{border:2px solid #38bdf8;color:#38bdf8;margin-left:15px}
+.btn-outline:hover{background:#38bdf8;color:#0f172a}
+section{padding:100px 8%}
+.section-title{text-align:center;margin-bottom:60px}
+.section-title h2{font-size:36px;margin-bottom:10px}
+.section-title p{color:#94a3b8}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
+.service-card{background:#1e293b;padding:30px;border-radius:12px;transition:.3s}
+.service-card:hover{transform:translateY(-10px);background:#334155}
+.service-card h3{margin-bottom:15px;color:#38bdf8}
+.properties{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px}
+.property-card{background:#1e293b;border-radius:12px;overflow:hidden;transition:.3s}
+.property-card img{width:100%;height:220px;object-fit:cover}
+.property-card:hover{transform:scale(1.03)}
+.property-info{padding:20px}
+.property-info h4{margin-bottom:10px;color:#38bdf8}
+.cta{background:#38bdf8;color:#0f172a;text-align:center;padding:80px 8%}
+.cta h2{font-size:36px;margin-bottom:20px}
+footer{background:#020617;padding:40px 8%;text-align:center;color:#94a3b8}
+@media(max-width:768px){
+.hero h1{font-size:32px}
+header{padding:15px 5%}
+section{padding:80px 5%}
+}
+</style>
 </head>
 <body>
-  <header>
-    <div class="nav">
-      <div class="brand">
-        <div class="logo">AC</div>
-        <div>
-          <h1>Aurex Capital</h1>
-          <div style="font-size:12px;color:var(--muted)">Consulting Ltd — Port Harcourt</div>
-        </div>
-      </div>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#properties">Properties</a>
-        <a href="#tools">Tools</a>
-        <a class="cta" href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header>
+<div class="logo">Ceereality Ltd</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#properties">Properties</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
 
-  <main class="wrap">
-    <section class="hero">
-      <div class="hero-left">
-        <div class="kicker">Real Estate • Consulting • Financial Advisory</div>
-        <h2>Strategic property sales & expert financial advice for confident investments</h2>
-        <p class="lead">Aurex Capital Consulting Ltd helps clients make high-value property decisions with confidence — from market analysis to title verification and financing strategies.</p>
-        <div class="buttons">
-          <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request Consultation</button>
-          <button class="btn btn-ghost" onclick="document.getElementById('properties').scrollIntoView({behavior:'smooth'})">Explore Properties</button>
-        </div>
-      </div>
+<section class="hero" id="home">
+<div class="hero-content">
+<h1>Premium Real Estate Solutions by Chris Edet</h1>
+<p>Ceereality Ltd delivers exceptional real estate investments, property development, and strategic advisory services tailored to high-value clients and long-term growth.</p>
+<a href="#properties" class="btn btn-primary">View Properties</a>
+<a href="#contact" class="btn btn-outline">Get Consultation</a>
+</div>
+</section>
 
-      <aside class="hero-right">
-        <div class="hero-media" role="img" aria-label="Premium property"></div>
-        <div class="hero-info">Trusted by investors — <strong>Port Harcourt, Rivers State</strong>. Contact: <a href="tel:+2349036157776" style="color:var(--accent);">+234 903 615 7776</a></div>
-      </aside>
-    </section>
+<section id="services">
+<div class="section-title">
+<h2>Our Services</h2>
+<p>Professional real estate solutions designed for investors and homeowners.</p>
+</div>
+<div class="services">
+<div class="service-card">
+<h3>Property Sales</h3>
+<p>Luxury homes, commercial spaces, and high-value investment properties.</p>
+</div>
+<div class="service-card">
+<h3>Property Development</h3>
+<p>From land acquisition to turnkey delivery with premium standards.</p>
+</div>
+<div class="service-card">
+<h3>Investment Advisory</h3>
+<p>Strategic guidance to maximize ROI and secure profitable real estate assets.</p>
+</div>
+</div>
+</section>
 
-    <section id="services">
-      <div class="section-title">
-        <h2>What We Do</h2>
-        <p class="muted">Integrated services to cover property, business, and financial needs</p>
-      </div>
-      <div class="services">
-        <div class="service">
-          <h4>Premium Property Sales</h4>
-          <p>Curated residential & commercial listings, private showings, negotiation and closing support.</p>
-        </div>
-        <div class="service">
-          <h4>Strategic Consulting</h4>
-          <p>Market research, feasibility studies, and project advisory for developers and investors.</p>
-        </div>
-        <div class="service">
-          <h4>Financial Advisory</h4>
-          <p>Investment appraisal, debt structuring, ROI modelling and tax-aware property planning.</p>
-        </div>
-        <div class="service">
-          <h4>Title & Due Diligence</h4>
-          <p>Thorough title verification, surveys and secure escrow recommendations to protect buyers.</p>
-        </div>
-      </div>
-    </section>
+<section id="properties">
+<div class="section-title">
+<h2>Featured Properties</h2>
+<p>Explore some of our premium listings.</p>
+</div>
+<div class="properties">
+<div class="property-card">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Luxury Home">
+<div class="property-info">
+<h4>Luxury Duplex</h4>
+<p>5 Bedroom Detached Duplex with modern amenities.</p>
+</div>
+</div>
+<div class="property-card">
+<img src="https://images.unsplash.com/photo-1507089947367-19c1da9775ae?auto=format&fit=crop&w=800&q=80" alt="Modern Apartment">
+<div class="property-info">
+<h4>Modern Apartment</h4>
+<p>High-rise 3 Bedroom apartment in prime location.</p>
+</div>
+</div>
+<div class="property-card">
+<img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80" alt="Commercial Property">
+<div class="property-info">
+<h4>Commercial Space</h4>
+<p>Premium office space ideal for corporate organizations.</p>
+</div>
+</div>
+</div>
+</section>
 
-    <section id="properties">
-      <div class="section-title">
-        <h2>Featured Properties</h2>
-        <p class="muted">Hand-picked opportunities with strong upside</p>
-      </div>
-      <div class="grid">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80" alt="Lagos luxury apartment">
-          <div class="card-body">
-            <span class="tag">Apartment</span>
-            <h3 style="margin-top:8px">Lagos Luxury Apartment</h3>
-            <p class="muted">3BR — Prime waterfront location, furnished.</p>
-            <div class="price">Price on request</div>
-          </div>
-        </div>
+<section class="cta" id="contact">
+<h2>Ready to Invest in Premium Real Estate?</h2>
+<p>Contact Ceereality Ltd today for expert consultation.</p>
+<br>
+<a href="tel:+234000000000" class="btn btn-primary">Call Now</a>
+</section>
 
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="Family home">
-          <div class="card-body">
-            <span class="tag">House</span>
-            <h3 style="margin-top:8px">Ikoyi Family Home</h3>
-            <p class="muted">4BR — Gated community with garden.</p>
-            <div class="price">Price on request</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=80" alt="Commercial building">
-          <div class="card-body">
-            <span class="tag">Commercial</span>
-            <h3 style="margin-top:8px">Victoria Island Office Block</h3>
-            <p class="muted">Multi-tenant building in central business district.</p>
-            <div class="price">Price on request</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="tools">
-      <div class="section-title"><h2>Investment Tools</h2><p class="muted">Quick ROI estimator — change inputs to see potential returns</p></div>
-      <div class="calc">
-        <label>Purchase Price (₦)</label>
-        <input id="price" type="number" value="50000000" />
-        <label>Annual Rental Income (₦)</label>
-        <input id="rent" type="number" value="3600000" />
-        <label>Annual Costs (tax, maintenance) (₦)</label>
-        <input id="costs" type="number" value="500000" />
-        <button class="btn btn-primary" onclick="calcROI()">Calculate ROI</button>
-        <div class="result" id="roi">Estimated ROI: —</div>
-      </div>
-    </section>
-
-    <section id="testimonials">
-      <div class="section-title"><h2>What Clients Say</h2><p class="muted">Real investors, real outcomes</p></div>
-      <div class="testimonials">
-        <div class="test"><strong>"Aurex helped me find a commercial building that doubled rental income in 2 years."</strong><p class="muted">— K. Nwachukwu, Investor</p></div>
-        <div class="test"><strong>"Professional, clear and fast — title checks saved us months of worry."</strong><p class="muted">— I. Obi, Home Buyer</p></div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="section-title"><h2>Contact & Office</h2><p class="muted">Port Harcourt — Rivers State</p></div>
-      <div class="contact">
-        <div class="contact-card">
-          <h3>Speak with a specialist</h3>
-          <p style="margin-top:10px;color:#071722">Book a private consultation or request property listings tailored to your goals.</p>
-          <p style="margin-top:12px;font-weight:800">Phone/WhatsApp: <a href="tel:+2349036157776" style="color:var(--card)">+234 903 615 7776</a></p>
-          <p style="margin-top:8px;color:var(--muted)">Location: Port Harcourt, Rivers State</p>
-        </div>
-
-        <form class="form" id="contactForm">
-          <input id="fullname" placeholder="Full name" required />
-          <input id="email" placeholder="Email" type="email" required />
-          <input id="phone" placeholder="Phone or WhatsApp" />
-          <textarea id="message" rows="4" placeholder="Tell us what you're looking for"></textarea>
-          <button class="btn btn-primary" type="submit">Send Request</button>
-          <div id="formResult" style="margin-top:10px;color:var(--muted)"></div>
-        </form>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="year"></span> Aurex Capital Consulting Ltd — Port Harcourt. Designed by EFK
-    </footer>
-  </main>
-
-  <a class="wa" href="https://wa.me/2349036157776" target="_blank" aria-label="Chat on WhatsApp">💬</a>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    function calcROI(){
-      const price = Number(document.getElementById('price').value) || 0;
-      const rent = Number(document.getElementById('rent').value) || 0;
-      const costs = Number(document.getElementById('costs')?.value || 0);
-      const net = rent - costs;
-      const roi = price>0? (net/price)*100 : 0;
-      document.getElementById('roi').textContent = 'Estimated ROI: ' + roi.toFixed(2) + '% per year';
-    }
-
-    document.getElementById('contactForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      document.getElementById('formResult').textContent = 'Thanks — your request has been received. We will contact you shortly.';
-      this.reset();
-    });
-  </script>
+<footer>
+<p>© 2026 Chris Edet - Ceereality Ltd. All Rights Reserved.</p>
+</footer>
 </body>
 </html>
