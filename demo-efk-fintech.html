@@ -919,5 +919,553 @@
           </div>
         </div>
 
-        <div class="security-banner">
-          <div c
+                <div class="security-banner">
+          <div class="shield">🛡️</div>
+          <div>
+            <strong>Protected demo mode</strong>
+            <p>This prototype does not process real money, passwords, PINs, or live account details. All actions shown below are sample interactions only.</p>
+          </div>
+        </div>
+
+        <section class="balance-card" aria-label="Account summary">
+          <div class="balance-row">
+            <div>
+              <div class="label">Available Balance</div>
+              <div class="balance" id="balanceText">₦ 1,245,800.00</div>
+            </div>
+            <button class="toggle-balance" id="toggleBalance">Hide Balance</button>
+          </div>
+          <div class="acc-meta">
+            <span>Demo Account • 0123456789</span>
+            <span>Tier 3 • Verified</span>
+          </div>
+          <div class="chips">
+            <div class="chip">Instant transfer</div>
+            <div class="chip">Bills & utilities</div>
+            <div class="chip">Cardless cashout</div>
+          </div>
+        </section>
+
+        <div class="section-head">
+          <h2>Quick Actions</h2>
+          <button type="button">Customize</button>
+        </div>
+
+        <section class="quick-grid">
+          <button class="quick-action" data-open="transfer">
+            <div class="qa-icon">⇄</div>
+            <span>Transfer</span>
+          </button>
+          <button class="quick-action" data-open="withdraw">
+            <div class="qa-icon">💸</div>
+            <span>Withdraw</span>
+          </button>
+          <button class="quick-action" data-open="airtime">
+            <div class="qa-icon">📱</div>
+            <span>Airtime</span>
+          </button>
+          <button class="quick-action" data-open="data">
+            <div class="qa-icon">📶</div>
+            <span>Data</span>
+          </button>
+        </section>
+
+        <div class="shortcut-row">
+          <button class="shortcut" data-open="electricity">
+            <strong>Electricity</strong>
+            <small>Pay bills in demo mode</small>
+          </button>
+          <button class="shortcut" data-open="token">
+            <strong>Token</strong>
+            <small>Generate sample token</small>
+          </button>
+          <button class="shortcut" data-open="cards">
+            <strong>Cards</strong>
+            <small>Manage demo cards</small>
+          </button>
+        </div>
+
+        <div class="section-head">
+          <h2>Services</h2>
+          <button type="button">See all</button>
+        </div>
+
+        <section class="service-list">
+          <article class="service-card" data-open="savings">
+            <div class="pill">⭐ Smart Save</div>
+            <h3>Savings Vault</h3>
+            <p>Set aside money automatically with simulated round-ups and savings goals.</p>
+          </article>
+
+          <article class="service-card" data-open="loans">
+            <div class="pill">⚡ Fast Access</div>
+            <h3>Quick Loans</h3>
+            <p>Preview a sample loan offer screen for short-term emergency support.</p>
+          </article>
+
+          <article class="service-card" data-open="support">
+            <div class="pill">💬 Help Center</div>
+            <h3>Live Support</h3>
+            <p>Get demo help topics, fraud alerts, and account protection guidance.</p>
+          </article>
+
+          <article class="service-card" data-open="rewards">
+            <div class="pill">🎁 Bonus</div>
+            <h3>Rewards Hub</h3>
+            <p>Track cashback, referrals, loyalty points, and promo missions.</p>
+          </article>
+        </section>
+
+        <div class="section-head">
+          <h2>Recent Activity</h2>
+          <button type="button">Today</button>
+        </div>
+
+        <section class="transactions" aria-label="Recent transactions">
+          <div class="txn">
+            <div class="txn-left">
+              <div class="txn-icon">⚡</div>
+              <div class="txn-meta">
+                <strong>Electricity Bill</strong>
+                <small>Today • IKEDC demo payment</small>
+              </div>
+            </div>
+            <div class="txn-amount">
+              <strong>- ₦ 18,500</strong>
+              <small class="debit">DEBIT</small>
+            </div>
+          </div>
+
+          <div class="txn">
+            <div class="txn-left">
+              <div class="txn-icon">⇄</div>
+              <div class="txn-meta">
+                <strong>Transfer to Ada K.</strong>
+                <small>Today • Successful</small>
+              </div>
+            </div>
+            <div class="txn-amount">
+              <strong>- ₦ 25,000</strong>
+              <small class="debit">DEBIT</small>
+            </div>
+          </div>
+
+          <div class="txn">
+            <div class="txn-left">
+              <div class="txn-icon">⬇</div>
+              <div class="txn-meta">
+                <strong>Salary Credit</strong>
+                <small>Yesterday • Test payroll</small>
+              </div>
+            </div>
+            <div class="txn-amount">
+              <strong>+ ₦ 350,000</strong>
+              <small>CREDIT</small>
+            </div>
+          </div>
+
+          <div class="txn">
+            <div class="txn-left">
+              <div class="txn-icon">📱</div>
+              <div class="txn-meta">
+                <strong>Airtime Recharge</strong>
+                <small>Yesterday • MTN demo top-up</small>
+              </div>
+            </div>
+            <div class="txn-amount">
+              <strong>- ₦ 2,000</strong>
+              <small class="debit">DEBIT</small>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <button class="fab" id="fab" title="Open quick menu">+</button>
+
+      <nav class="bottom-nav" aria-label="Bottom navigation">
+        <button class="nav-item active">
+          <span>🏠</span>
+          <span>Home</span>
+        </button>
+        <button class="nav-item" data-open="analytics">
+          <span>📊</span>
+          <span>Insights</span>
+        </button>
+        <button class="nav-item" data-open="payments">
+          <span>💳</span>
+          <span>Payments</span>
+        </button>
+        <button class="nav-item" data-open="profile">
+          <span>👤</span>
+          <span>Profile</span>
+        </button>
+      </nav>
+
+      <div class="toast" id="toast" role="status" aria-live="polite">
+        <div class="toast-icon">✓</div>
+        <div>
+          <strong id="toastTitle">Demo action opened</strong>
+          <span id="toastText">This prototype interaction is for interface preview only.</span>
+        </div>
+      </div>
+
+      <div class="modal" id="modal">
+        <div class="sheet">
+          <div class="grabber"></div>
+          <div class="sheet-head">
+            <div>
+              <h3 id="sheetTitle">Feature</h3>
+              <p id="sheetDesc">Preview content</p>
+            </div>
+            <button class="close-btn" id="closeModal" aria-label="Close">×</button>
+          </div>
+
+          <div class="demo-note" id="sheetNote">
+            This is a non-functional sample screen for a fintech-style app concept.
+          </div>
+
+          <div class="form-grid" id="sheetFields"></div>
+
+          <div class="action-row">
+            <button class="secondary-btn" id="secondaryAction">Close</button>
+            <button class="primary-btn" id="primaryAction">Continue</button>
+          </div>
+
+          <div class="tiny" id="sheetTiny">
+            Use this file as a UI starter template and replace the demo placeholders with your own backend logic later.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const splash = document.getElementById('splash');
+    const clock = document.getElementById('clock');
+    const modal = document.getElementById('modal');
+    const closeModal = document.getElementById('closeModal');
+    const sheetTitle = document.getElementById('sheetTitle');
+    const sheetDesc = document.getElementById('sheetDesc');
+    const sheetNote = document.getElementById('sheetNote');
+    const sheetFields = document.getElementById('sheetFields');
+    const sheetTiny = document.getElementById('sheetTiny');
+    const primaryAction = document.getElementById('primaryAction');
+    const secondaryAction = document.getElementById('secondaryAction');
+    const toast = document.getElementById('toast');
+    const toastTitle = document.getElementById('toastTitle');
+    const toastText = document.getElementById('toastText');
+    const balanceText = document.getElementById('balanceText');
+    const toggleBalance = document.getElementById('toggleBalance');
+    const fab = document.getElementById('fab');
+
+    const features = {
+      transfer: {
+        title: 'Transfer Money',
+        desc: 'Send money between demo accounts with a smooth UI preview.',
+        note: 'For safety, this demo does not collect real banking details, passwords, or PINs. Replace the placeholders with your own secure backend later.',
+        fields: [
+          ['Recipient', 'Ada Kingsley'],
+          ['Bank', 'Test by EFK Demo Bank'],
+          ['Account Number', '0123456789'],
+          ['Amount', '₦ 25,000.00'],
+          ['Narration', 'Project support demo'],
+        ],
+        primary: 'Preview Transfer',
+        secondary: 'Cancel',
+        tiny: 'Recommended real implementation: server-side validation, audit logs, device checks, transaction signing, and secure auth.'
+      },
+      withdraw: {
+        title: 'Withdraw Cash',
+        desc: 'Cardless cash-out interface for quick access to funds.',
+        note: 'This is a sample withdrawal flow only. No real cash-out code is created in this demo.',
+        fields: [
+          ['Withdraw Method', 'Agent cash-out'],
+          ['Amount', '₦ 10,000.00'],
+          ['Reference', 'WD-203948'],
+          ['Status', 'Ready for demo'],
+        ],
+        primary: 'Generate Demo Code',
+        secondary: 'Back',
+        tiny: 'Production systems should use one-time tokens, expiry, geo-checks, and withdrawal velocity limits.'
+      },
+      airtime: {
+        title: 'Buy Airtime',
+        desc: 'Top up a number in seconds using preset amounts.',
+        note: 'This is a visual mockup for airtime purchase.',
+        fields: [
+          ['Network', 'MTN'],
+          ['Phone Number', '0803 000 0000'],
+          ['Amount', '₦ 2,000.00'],
+        ],
+        primary: 'Top Up Demo',
+        secondary: 'Close',
+        tiny: 'You can later connect this card to a biller API and validate MSISDN format before payment.'
+      },
+      data: {
+        title: 'Buy Data',
+        desc: 'Activate sample internet bundles with a clean checkout preview.',
+        note: 'All plans shown here are sample values for interface testing.',
+        fields: [
+          ['Network', 'Airtel'],
+          ['Bundle', '15 GB Monthly'],
+          ['Phone Number', '0812 000 0000'],
+          ['Amount', '₦ 5,000.00'],
+        ],
+        primary: 'Buy Demo Bundle',
+        secondary: 'Back',
+        tiny: 'A real version should confirm biller availability, pricing freshness, and transaction rollback handling.'
+      },
+      electricity: {
+        title: 'Pay Electricity',
+        desc: 'Preview a modern utility bill payment screen.',
+        note: 'This does not create a real meter token or send funds.',
+        fields: [
+          ['Disco', 'IKEDC'],
+          ['Meter Type', 'Prepaid'],
+          ['Meter Number', '12345678901'],
+          ['Amount', '₦ 18,500.00'],
+        ],
+        primary: 'Pay Demo Bill',
+        secondary: 'Close',
+        tiny: 'For a live build, always verify meter details before checkout and show a signed payment receipt after completion.'
+      },
+      token: {
+        title: 'Generate Token',
+        desc: 'Display a sample prepaid electricity token result.',
+        note: 'This token is fictional and only shown for product design preview.',
+        fields: [
+          ['Token', '4588 9021 6611 3074'],
+          ['Units', '36.14 kWh'],
+          ['Amount', '₦ 18,500.00'],
+          ['Reference', 'TKN-991274'],
+        ],
+        primary: 'Copy Sample Token',
+        secondary: 'Done',
+        tiny: 'In a real utility product, tokens must come directly from the verified vendor response.'
+      },
+      security: {
+        title: 'Security Center',
+        desc: 'A safe preview of account protection settings.',
+        note: 'No actual password, biometric, or PIN setup is performed in this demo file.',
+        fields: [
+          ['Biometric Login', 'Preview only'],
+          ['Transaction Alerts', 'Enabled'],
+          ['Device Shield', 'Active'],
+          ['Login Activity', 'Last seen today'],
+        ],
+        primary: 'View Safety Tips',
+        secondary: 'Close',
+        tiny: 'Best practice: use strong hashing, hardware-backed keys, rate limits, session rotation, and fraud monitoring.'
+      },
+      savings: {
+        title: 'Savings Vault',
+        desc: 'Set weekly targets and auto-save patterns.',
+        note: 'This is a UI concept for savings goals and round-up rules.',
+        fields: [
+          ['Target Goal', 'Emergency Fund'],
+          ['Goal Amount', '₦ 500,000.00'],
+          ['Auto Save', 'Every Friday'],
+          ['Progress', '41% complete'],
+        ],
+        primary: 'Create Demo Goal',
+        secondary: 'Cancel',
+        tiny: 'A real app can add goal reminders, lock periods, and maturity projections.'
+      },
+      loans: {
+        title: 'Quick Loans',
+        desc: 'Sample instant loan screen with transparent summary.',
+        note: 'No credit scoring or loan issuance is performed here.',
+        fields: [
+          ['Eligible Amount', '₦ 50,000.00'],
+          ['Repayment Period', '30 days'],
+          ['Fee', '₦ 3,500.00'],
+          ['Disbursement', 'Instant (demo)'],
+        ],
+        primary: 'View Demo Offer',
+        secondary: 'Close',
+        tiny: 'Live lending requires compliance, affordability checks, consent, and transparent disclosures.'
+      },
+      support: {
+        title: 'Help Center',
+        desc: 'Support topics for users who need assistance.',
+        note: 'Use this area to later connect live chat, FAQs, ticketing, and fraud-reporting channels.',
+        fields: [
+          ['Priority Help', '24/7 in-app support'],
+          ['Fraud Hotline', '+234 800 000 0000'],
+          ['Email', 'support@testbyefk.demo'],
+        ],
+        primary: 'Open Demo Support',
+        secondary: 'Dismiss',
+        tiny: 'A strong support center should include issue categories, escalation paths, and dispute management.'
+      },
+      rewards: {
+        title: 'Rewards Hub',
+        desc: 'Track cashback and engagement rewards.',
+        note: 'This is a sample loyalty screen only.',
+        fields: [
+          ['Current Points', '12,480 pts'],
+          ['Cashback This Month', '₦ 6,500.00'],
+          ['Referral Bonus', '3 active invites'],
+        ],
+        primary: 'Claim Demo Reward',
+        secondary: 'Close',
+        tiny: 'You can later add reward tiers, merchant cashback, and referral attribution here.'
+      },
+      cards: {
+        title: 'Cards',
+        desc: 'Preview debit card controls and limits.',
+        note: 'No real card data is exposed in this file.',
+        fields: [
+          ['Card Name', 'Test by EFK Platinum'],
+          ['Card Status', 'Active'],
+          ['ATM Limit', '₦ 100,000/day'],
+          ['Online Payments', 'Enabled'],
+        ],
+        primary: 'Manage Demo Card',
+        secondary: 'Close',
+        tiny: 'A production card section should hide PAN/CVV and support temporary freeze, spending limits, and dispute tools.'
+      },
+      analytics: {
+        title: 'Spending Insights',
+        desc: 'Monthly trends and expense categories in a compact layout.',
+        note: 'These values are sample-only analytics.',
+        fields: [
+          ['Food & Dining', '₦ 84,000'],
+          ['Transport', '₦ 39,500'],
+          ['Utilities', '₦ 24,300'],
+          ['Savings', '₦ 90,000'],
+        ],
+        primary: 'View Full Demo',
+        secondary: 'Close',
+        tiny: 'You can later add charts, merchant labels, recurring spend detection, and budgeting alerts.'
+      },
+      payments: {
+        title: 'Payments',
+        desc: 'Central payment collection and checkout screen preview.',
+        note: 'This page is intended as a product concept for bills, QR, and merchant pay.',
+        fields: [
+          ['QR Pay', 'Available'],
+          ['Merchant Pay', 'Available'],
+          ['Scheduled Bills', '3 upcoming'],
+          ['Saved Beneficiaries', '12 contacts'],
+        ],
+        primary: 'Open Demo Pay',
+        secondary: 'Back',
+        tiny: 'For live checkout flows, add idempotency keys, callback verification, and receipt generation.'
+      },
+      profile: {
+        title: 'Profile & Settings',
+        desc: 'A simple account overview page.',
+        note: 'This page shows sample identity and settings values only.',
+        fields: [
+          ['Full Name', 'EFK Demo User'],
+          ['Phone', '+234 800 000 0000'],
+          ['Email', 'efk@testbyefk.demo'],
+          ['KYC Status', 'Verified'],
+        ],
+        primary: 'Edit Demo Profile',
+        secondary: 'Close',
+        tiny: 'Later you can connect notification preferences, linked devices, and KYC document states here.'
+      }
+    };
+
+    function updateClock() {
+      const now = new Date();
+      clock.textContent = now.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+    }
+
+    updateClock();
+    setInterval(updateClock, 30000);
+
+    window.addEventListener('load', () => {
+      setTimeout(() => splash.classList.add('hidden'), 1800);
+    });
+
+    function renderFields(fields) {
+      sheetFields.innerHTML = fields.map(([label, value]) => `
+        <div class="field">
+          <label>${label}</label>
+          <div class="fake-input">${value}</div>
+        </div>
+      `).join('');
+    }
+
+    function openFeature(key) {
+      const data = features[key];
+      if (!data) return;
+      sheetTitle.textContent = data.title;
+      sheetDesc.textContent = data.desc;
+      sheetNote.textContent = data.note;
+      renderFields(data.fields);
+      sheetTiny.textContent = data.tiny;
+      primaryAction.textContent = data.primary;
+      secondaryAction.textContent = data.secondary;
+      primaryAction.dataset.feature = key;
+      secondaryAction.dataset.feature = key;
+      modal.classList.add('open');
+    }
+
+    function closeFeature() {
+      modal.classList.remove('open');
+    }
+
+    document.querySelectorAll('[data-open]').forEach(el => {
+      el.addEventListener('click', () => openFeature(el.dataset.open));
+    });
+
+    closeModal.addEventListener('click', closeFeature);
+    secondaryAction.addEventListener('click', closeFeature);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeFeature();
+    });
+
+    function showToast(title, text) {
+      toastTitle.textContent = title;
+      toastText.textContent = text;
+      toast.classList.add('show');
+      clearTimeout(showToast._timer);
+      showToast._timer = setTimeout(() => toast.classList.remove('show'), 2600);
+    }
+
+    primaryAction.addEventListener('click', () => {
+      const key = primaryAction.dataset.feature || 'feature';
+      closeFeature();
+      const messages = {
+        transfer: ['Transfer preview ready', 'Demo transfer screen loaded. Replace placeholders with a secure backend later.'],
+        withdraw: ['Cash-out preview ready', 'Demo withdrawal code generated for UI testing only.'],
+        airtime: ['Airtime mock purchase', 'Demo top-up preview completed successfully.'],
+        data: ['Data bundle selected', 'Sample bundle checkout displayed.'],
+        electricity: ['Utility bill preview', 'Demo electricity payment screen completed.'],
+        token: ['Sample token copied', 'This is not a real electricity token.'],
+        security: ['Security tips opened', 'Use strong authentication and fraud checks in a real build.'],
+        savings: ['Savings goal created', 'Demo savings vault configured.'],
+        loans: ['Loan offer previewed', 'This is only a sample offer screen.'],
+        support: ['Support center opened', 'Demo help channel is ready.'],
+        rewards: ['Reward preview shown', 'Demo cashback card updated.'],
+        cards: ['Card controls opened', 'Sample card settings loaded.'],
+        analytics: ['Insights ready', 'Demo spending summary displayed.'],
+        payments: ['Payments hub opened', 'Demo payment tools are visible now.'],
+        profile: ['Profile demo opened', 'Sample account settings loaded.']
+      };
+      const [title, text] = messages[key] || ['Demo action completed', 'This interaction is only for UI preview.'];
+      showToast(title, text);
+    });
+
+    let hidden = false;
+    const fullBalance = '₦ 1,245,800.00';
+    toggleBalance.addEventListener('click', () => {
+      hidden = !hidden;
+      balanceText.textContent = hidden ? '₦ ••••••••' : fullBalance;
+      toggleBalance.textContent = hidden ? 'Show Balance' : 'Hide Balance';
+    });
+
+    fab.addEventListener('click', () => {
+      showToast('Quick menu', 'Tap Transfer, Airtime, Data, or Electricity to preview more screens.');
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeFeature();
+    });
+  </script>
+</body>
+</html>
