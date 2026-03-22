@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FURNITURE CITY NEW | Modern Furniture for Every Space</title>
+  <meta name="description" content="Discover stylish sofas, beds, tables, wardrobes, and custom furniture made for modern homes and offices." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #1f1f1f;
+      background: #faf7f2;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; border-radius: 14px; }
+    .container { width: min(1120px, 92%); margin: auto; }
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e7dfd4;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+    .brand {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #5d4037;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 0.95rem;
+    }
+    .hero {
+      padding: 70px 0 50px;
+      background: linear-gradient(135deg, #faf7f2 0%, #f2ebe1 100%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .badge {
+      display: inline-block;
+      background: #fff;
+      color: #7a5c4e;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+      border: 1px solid #e8ddd1;
+    }
+    h1 {
+      font-size: 3rem;
+      line-height: 1.1;
+      margin-bottom: 18px;
+      color: #3b2b24;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: #5b4a42;
+      margin-bottom: 24px;
+      max-width: 560px;
+    }
+    .btn-group { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: 0.25s ease;
+    }
+    .btn-primary {
+      background: #6d4c41;
+      color: #fff;
+    }
+    .btn-primary:hover { background: #56382f; }
+    .btn-secondary {
+      background: #fff;
+      border: 1px solid #d8cabb;
+      color: #4d3b33;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .stat {
+      background: #fff;
+      padding: 18px;
+      border-radius: 14px;
+      border: 1px solid #eadfce;
+    }
+    .stat strong {
+      display: block;
+      font-size: 1.35rem;
+      color: #4e342e;
+      margin-bottom: 6px;
+    }
+    section { padding: 70px 0; }
+    .section-title {
+      text-align: center;
+      margin-bottom: 14px;
+      font-size: 2rem;
+      color: #3b2b24;
+    }
+    .section-subtitle {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 34px;
+      color: #65554f;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #eadfce;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+    .card-content {
+      padding: 20px;
+    }
+    .card h3 {
+      margin-bottom: 10px;
+      color: #4e342e;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .feature {
+      background: #fff;
+      padding: 24px 18px;
+      text-align: center;
+      border-radius: 14px;
+      border: 1px solid #eadfce;
+    }
+    .cta {
+      background: #4e342e;
+      color: #fff;
+      border-radius: 24px;
+      padding: 50px 35px;
+      text-align: center;
+    }
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 24px;
+      color: #e9ddd3;
+    }
+    footer {
+      background: #2f241f;
+      color: #f3ece6;
+      padding: 40px 0;
+      margin-top: 70px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 24px;
+    }
+    .footer-grid h4 {
+      margin-bottom: 12px;
+    }
+    .footer-grid p, .footer-grid li {
+      color: #dbcfc7;
+      font-size: 0.95rem;
+      list-style: none;
+      margin-bottom: 8px;
+    }
+    @media (max-width: 900px) {
+      .hero-grid, .cards, .features, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .stats {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="brand">FURNITURE CITY NEW</div>
+    <nav class="nav-links">
+      <a href="#collections">Collections</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="badge">Stylish Furniture • Home & Office</span>
+      <h1>Beautiful Furniture That Makes Every Space Feel Better</h1>
+      <p>
+        We create and deliver quality sofas, beds, wardrobes, dining sets, TV stands,
+        office furniture, and custom pieces designed for comfort, style, and durability.
+      </p>
+      <div class="btn-group">
+        <a class="btn btn-primary" href="https://wa.me/234057091133">Chat on WhatsApp</a>
+        <a class="btn btn-secondary" href="#collections">View Collections</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <strong>100+</strong>
+          <span>Furniture orders handled</span>
+        </div>
+        <div class="stat">
+          <strong>Custom</strong>
+          <span>Designs for homes & offices</span>
+        </div>
+        <div class="stat">
+          <strong>Fast</strong>
+          <span>Simple order & delivery process</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=80" alt="Modern furniture showroom">
+    </div>
+  </div>
+</section>
+
+<section id="collections">
+  <div class="container">
+    <h2 class="section-title">Featured Collections</h2>
+    <p class="section-subtitle">
+      Explore furniture made to match modern taste, daily comfort, and practical living.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80" alt="Luxury sofa">
+        <div class="card-content">
+          <h3>Sofas & Living Room</h3>
+          <p>Elegant sofas, center tables, TV stands, and statement pieces for your living space.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Bedroom furniture">
+        <div class="card-content">
+          <h3>Bedroom Furniture</h3>
+          <p>Modern beds, wardrobes, side tables, and storage solutions designed for comfort.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Office furniture">
+        <div class="card-content">
+          <h3>Office Setup</h3>
+          <p>Executive desks, office chairs, reception pieces, and work-friendly furniture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why-us">
+  <div class="container">
+    <h2 class="section-title">Why Customers Choose Us</h2>
+    <p class="section-subtitle">
+      We combine style, quality materials, and a simple order process that makes furniture shopping easier.
+    </p>
+
+    <div class="features">
+      <div class="feature">
+        <h3>Custom Sizes</h3>
+        <p>Furniture tailored to your available space and taste.</p>
+      </div>
+      <div class="feature">
+        <h3>Quality Finish</h3>
+        <p>Neat, durable finishing for a premium look.</p>
+      </div>
+      <div class="feature">
+        <h3>Delivery Support</h3>
+        <p>Reliable delivery arrangement within your area.</p>
+      </div>
+      <div class="feature">
+        <h3>Easy Ordering</h3>
+        <p>Quick consultations and simple WhatsApp communication.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About Our Brand</h2>
+    <p class="section-subtitle">
+      FURNITURE BRAND NAME helps families, homeowners, renters, and business owners furnish their spaces with confidence.
+      Whether you need a custom sofa, bedroom set, dining furniture, or office setup, we are here to help bring your idea to life.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta">
+      <h2>Ready to Furnish Your Space?</h2>
+      <p>
+        Message us today to ask about pricing, available designs, custom orders, or delivery.
+      </p>
+      <a class="btn btn-primary" href="https://wa.me/2348057091133">Send a WhatsApp Message</a>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="container footer-grid">
+    <div>
+      <h4>FURNITURE BRAND NAME</h4>
+      <p>Modern furniture for living rooms, bedrooms, offices, and custom interior spaces.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>Phone: 0800 000 0000</li>
+        <li>WhatsApp: 0800 000 0000</li>
+        <li>Email: hello@brand.com</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Location</h4>
+      <ul>
+        <li>Showroom Address Here</li>
+        <li>Open: Mon - Sat</li>
+        <li>9:00 AM - 6:00 PM</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
