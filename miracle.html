@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miracle Edet Okon Studio — Brand Identity, Packaging & Creative Direction</title>
+  <meta name="description" content="Build a brand people notice, trust, and remember through brand identity design, packaging, consultation, and creative training with Miracle Edet Okon Studio." />
+  <style>
+    :root {
+      --bg: #f7f1eb;
+      --surface: #fffaf5;
+      --surface-2: #ffffff;
+      --ink: #181818;
+      --muted: #6c655f;
+      --line: rgba(24, 24, 24, 0.08);
+      --primary: #9f1020;
+      --primary-dark: #770d1a;
+      --gold: #d6a84f;
+      --shadow: 0 20px 60px rgba(18, 18, 18, 0.1);
+      --radius-xl: 34px;
+      --radius-lg: 26px;
+      --radius-md: 20px;
+      --wrap: min(1180px, calc(100% - 32px));
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at top right, rgba(159,16,32,.08), transparent 22rem), radial-gradient(circle at left 15%, rgba(214,168,79,.10), transparent 18rem), linear-gradient(180deg, #fcf8f4 0%, var(--bg) 100%);
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .wrap {
+      width: var(--wrap);
+      margin: 0 auto;
+    }
+    .section {
+      padding: 88px 0;
+      position: relative;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.65rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.74);
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      backdrop-filter: blur(10px);
+    }
+    .eyebrow::before {
+      content: "";
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 6px rgba(159,16,32,.12);
+    }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      margin: 18px 0 14px;
+      font-weight: 900;
+    }
+    .section-lead {
+      max-width: 700px;
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 1.02rem;
+    }
+    .btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .btn {
+      min-height: 54px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      transition: transform .28s ease, box-shadow .35s ease;
+    }
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient( 120deg, transparent 25%, rgba(255,255,255,.28) 50%, transparent 75% );
+      transform: translateX(-140%);
+      transition: transform .7s ease;
+      z-index: -1;
+    }
+    .btn:hover::before {
+      transform: translateX(140%);
+    }
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      box-shadow: 0 14px 30px rgba(159,16,32,.22);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,.76);
+      border-color: var(--line);
+    }
+    .panel {
+      background: rgba(255,255,255,.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 20px 44px rgba(18,18,18,.05);
+      overflow: hidden;
+      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+    }
+    .panel:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 60px rgba(18,18,18,.12);
+    }
+    /* HERO */
+    .hero {
+      padding: 26px 0 78px;
+      position: relative;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: center;
+    }
+    .hero-title {
+      margin: 18px 0 18px;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 0.94;
+      max-width: 10ch;
+      font-weight: 900;
+      letter-spacing: -0.075em;
+    }
+    .hero-title .accent {
+      color: var(--primary);
+    }
+    .hero-text {
+      max-width: 620px;
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 1.05rem;
+    }
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.9rem 1rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,.74);
+      border: 1px solid var(--line);
+      font-size: 0.92rem;
+      font-weight: 700;
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+    .pill:hover {
+      transform: translateY(-4px);
+    }
+    .pill strong {
+      color: var(--primary);
+    }
+    .hero-stage {
+      position: relative;
+      min-height: 650px;
+      border-radius: 40px;
+      overflow: hidden;
+      background: radial-gradient(circle at top, rgba(214,168,79,.16), transparent 28%), linear-gradient(160deg, #171717 0%, #231b1d 50%, #110d0e 100%);
+      box-shadow: var(--shadow);
+    }
+    .hero-stage::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      right: -80px;
+      top: -70px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(214,168,79,.22), transparent 70%);
+      animation: pulseGlow 8s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .hero-gridlines {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,.85), transparent 92%);
+      animation: gridDrift 24s linear infinite;
+    }
+    .portrait-card {
+      position: absolute;
+      left: 9%;
+      top: 8%;
+      width: 56%;
+      height: 75%;
+      border-radius: 32px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 20px 40px rgba(0,0,0,.20);
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(14px);
+      animation: floatSoft 7s ease-in-out infinite;
+      will-change: transform;
+    }
+    .portrait-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .banner-float {
+      position: absolute;
+      right: 7%;
+      bottom: 12%;
+      width: 43%;
+      background: rgba(255,255,255,.94);
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 18px 36px rgba(0,0,0,.22);
+      animation: floatSoft 9s ease-in-out infinite 1.2s;
+      will-change: transform;
+    }
+    .banner-caption {
+      padding: 16px 18px 18px;
+      font-size: 0.92rem;
+      color: #403833;
+      line-height: 1.65;
+    }
+    .mini-float {
+      position: absolute;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 18px 36px rgba(0,0,0,.18);
+      width: 205px;
+    }
+    .mini-float strong {
+      display: block;
+      font-size: 1.65rem;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .mini-float span {
+      color: #4d4642;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      display: block;
+    }
+    .mini-a {
+      left: -12px;
+      top: 100px;
+      animation: floatMini 6s ease-in-out infinite;
+    }
+    .mini-b {
+      right: -8px;
+      top: 64px;
+      animation: floatMini 6.8s ease-in-out infinite 1s;
+    }
+    /* TRUST */
+    .trust {
+      margin-top: 14px;
+      position: relative;
+    }
+    .trust-box {
+      width: var(--wrap);
+      margin: 0 auto;
+      border-radius: 999px;
+      padding: 18px 22px;
+      background: rgba(255,255,255,.76);
+      border: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 1.2fr repeat(4, 1fr);
+      gap: 14px;
+      align-items: center;
+      box-shadow: 0 10px 32px rgba(18,18,18,.06);
+      backdrop-filter: blur(14px);
+    }
+    .trust-box p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+    .trust-pill {
+      text-align: center;
+      padding: 14px 12px;
+      border-radius: 999px;
+      font-weight: 800;
+      background: rgba(159,16,32,.06);
+      border: 1px solid rgba(159,16,32,.08);
+      transition: transform .35s ease;
+    }
+    .trust-pill:hover {
+      transform: translateY(-4px);
+    }
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+    .showcase {
+      min-height: 460px;
+      position: relative;
+      background: linear-gradient(180deg, rgba(255,255,255,.84), rgba(255,255,255,.72)), linear-gradient(135deg, rgba(159,16,32,.10), rgba(214,168,79,.10));
+    }
+    .showcase-inner {
+      position: absolute;
+      inset: 30px;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 18px 30px rgba(18,18,18,.08);
+    }
+    .showcase-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .showcase-badge {
+      position: absolute;
+      left: 24px;
+      bottom: 24px;
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 12px 24px rgba(0,0,0,.12);
+      max-width: 230px;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .about-card {
+      padding: 32px;
+    }
+    .mini-stack {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .mini-card {
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: 0 12px 24px rgba(18,18,18,.05);
+    }
+    .mini-card strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 1rem;
+    }
+    .mini-card span {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+    .stat {
+      padding: 20px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+    .stat strong {
+      display: block;
+      font-size: 1.9rem;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .stat span {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.65;
+    }
+    /* PORTFOLIO */
+    .head-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+    .portfolio-card {
+      grid-column: span 4;
+      min-height: 360px;
+      padding: 26px;
+      border-radius: 30px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 60px rgba(18,18,18,.12);
+    }
+    .portfolio-card:nth-child(1) {
+      background: linear-gradient(140deg, #171717, #2c2124 72%, #661222);
+    }
+    .portfolio-card:nth-child(2) {
+      color: var(--ink);
+      background: linear-gradient(140deg, #fffdf9, #f5ede7 65%, #ead8cb);
+    }
+    .portfolio-card:nth-child(3) {
+      background: linear-gradient(145deg, #9f1020, #6a0f1b 78%, #2f1116);
+    }
+    .portfolio-card:nth-child(4) {
+      background: linear-gradient(140deg, #201f1f, #35252b 72%, #a76d3d);
+    }
+    .portfolio-card:nth-child(5) {
+      color: var(--ink);
+      background: linear-gradient(145deg, #fdf8f2, #f1e7dc 70%, #dac4ac);
+    }
+    .portfolio-card:nth-child(6) {
+      background: linear-gradient(145deg, #1c1b1d, #23161d 65%, #7a0f1b);
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      width: max-content;
+      padding: 0.55rem 0.95rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 800;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .portfolio-card:nth-child(2) .tag, .portfolio-card:nth-child(5) .tag {
+      background: rgba(23,23,23,.06);
+      border-color: rgba(23,23,23,.08);
+    }
+    .portfolio-card h3 {
+      font-size: 1.55rem;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin: 14px 0 10px;
+    }
+    .portfolio-card p {
+      font-size: 0.98rem;
+      line-height: 1.8;
+      opacity: 0.94;
+      max-width: 33ch;
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-top: 18px;
+      font-size: 0.94rem;
+      font-weight: 700;
+    }
+    /* SERVICES */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 28px;
+    }
+    .service-card {
+      padding: 30px;
+      border-radius: 28px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 38px rgba(18,18,18,.05);
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 60px rgba(18,18,18,.12);
+    }
+    .service-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--primary);
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, rgba(159,16,32,.12), rgba(214,168,79,.12));
+    }
+    .service-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.28rem;
+      letter-spacing: -0.03em;
+    }
+    .service-card p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    /* OFFERS */
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .offer-card {
+      padding: 34px;
+      position: relative;
+    }
+    .offer-card::after {
+      content: "";
+      position: absolute;
+      right: -46px;
+      bottom: -58px;
+      width: 180px;
+      height: 180px;
+      border-radius: 42px;
+      transform: rotate(-18deg);
+      background: linear-gradient(135deg, rgba(159,16,32,.12), rgba(214,168,79,.10));
+    }
+    .offer-label {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.7rem 0.95rem;
+      border-radius: 999px;
+      background: rgba(159,16,32,.06);
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .price {
+      margin: 18px 0 12px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+    .offer-card p {
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-bottom: 22px;
+      position: relative;
+      z-index: 1;
+    }
+    .feature-list li {
+      display: flex;
+      gap: 10px;
+      line-height: 1.7;
+    }
+    .feature-list li::before {
+      content: "✦";
+      color: var(--primary);
+      font-weight: 900;
+    }
+    /* TESTIMONIALS */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 28px;
+    }
+    .testimonial {
+      padding: 28px;
+    }
+    .quote {
+      margin-bottom: 22px;
+      font-size: 1rem;
+      line-height: 1.95;
+      color: #2e2a27;
+    }
+    .client {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary), #6f0c19);
+    }
+    .client strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+    .client span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    /* NEWSLETTER */
+    .newsletter-box {
+      padding: 40px;
+      border-radius: 34px;
+      color: #fff;
+      background: radial-gradient(circle at top right, rgba(214,168,79,.25), transparent 24%), linear-gradient(135deg, #181818 0%, #1d1618 48%, #6b1120 100%);
+      box-shadow: var(--shadow);
+    }
+    .newsletter-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.92fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .newsletter-box p {
+      color: rgba(255,255,255,.82);
+      line-height: 1.9;
+    }
+    .newsletter-form {
+      display: grid;
+      gap: 14px;
+    }
+    .newsletter-form input, .newsletter-form button {
+      min-height: 58px;
+      border-radius: 999px;
+      font-size: 0.98rem;
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+    .newsletter-form input {
+      border: none;
+      outline: none;
+      padding: 0 20px;
+    }
+    .newsletter-form input:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    }
+    .newsletter-form button {
+      border: none;
+      font-weight: 900;
+      color: var(--primary);
+      cursor: pointer;
+    }
+    .newsletter-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    }
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.06fr 0.94fr;
+      gap: 24px;
+    }
+    .contact-card, .closing-card {
+      padding: 34px;
+    }
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .contact-item {
+      display: flex;
+      gap: 14px;
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+      transition: transform .35s ease;
+    }
+    .contact-item:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+    .contact-item:hover {
+      transform: translateY(-2px);
+    }
+    .contact-item b {
+      display: block;
+      margin-bottom: 4px;
+    }
+    .contact-item span {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .socials a {
+      min-width: 46px;
+      height: 46px;
+      padding: 0 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: rgba(255,255,255,.8);
+      border: 1px solid var(--line);
+      font-weight: 800;
+      transition: transform .35s ease;
+    }
+    .socials a:hover {
+      transform: translateY(-4px);
+    }
+    .closing-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.72)), linear-gradient(135deg, rgba(159,16,32,.08), rgba(214,168,79,.08));
+    }
+    .closing-card p {
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 22px;
+    }
+    footer {
+      padding: 22px 0 38px;
+      text-align: center;
+      color: #736b64;
+      font-size: 0.92rem;
+    }
+    /* REVEAL ANIMATION */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(36px) scale(0.985);
+      filter: blur(10px);
+      transition: opacity .8s ease, transform .8s cubic-bezier(.22,1,.36,1), filter .8s ease;
+      transition-delay: var(--delay, 0ms);
+    }
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+    /* KEYFRAMES */
+    @keyframes floatSoft {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-14px); }
+    }
+    @keyframes floatMini {
+      0%, 100% { transform: translate3d(0, 0, 0); }
+      50% { transform: translate3d(0, -10px, 0); }
+    }
+    @keyframes gridDrift {
+      0% { transform: translate3d(0, 0, 0); }
+      50% { transform: translate3d(-10px, 8px, 0); }
+      100% { transform: translate3d(0, 0, 0); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); opacity: .55; }
+      50% { transform: scale(1.18); opacity: .85; }
+    }
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .hero-grid, .about-grid, .offer-grid, .newsletter-grid, .contact-grid, .trust-box {
+        grid-template-columns: 1fr;
+      }
+      .portfolio-card {
+        grid-column: span 6;
+      }
+      .service-grid, .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero-stage {
+        min-height: 560px;
+      }
+      .hero-title {
+        max-width: none;
+      }
+    }
+    @media (max-width: 760px) {
+      .section {
+        padding: 72px 0;
+      }
+      .hero {
+        padding: 18px 0 66px;
+      }
+      .hero-title {
+        font-size: clamp(2.6rem, 14vw, 4.5rem);
+      }
+      .hero-stage {
+        min-height: 500px;
+      }
+      .portrait-card {
+        left: 8%;
+        top: 9%;
+        width: 68%;
+        height: 67%;
+      }
+      .banner-float {
+        width: 62%;
+        right: 5%;
+        bottom: 8%;
+      }
+      .mini-a, .mini-b {
+        width: 170px;
+        padding: 14px;
+      }
+      .trust-box {
+        border-radius: 28px;
+        padding: 18px;
+      }
+      .trust-pill {
+        text-align: left;
+      }
+      .stats, .service-grid, .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+      .portfolio-card {
+        grid-column: span 12;
+      }
+      .about-card, .offer-card, .testimonial, .contact-card, .closing-card, .newsletter-box {
+        padding: 24px;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      [data-reveal] {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Brand Identity • Packaging • Creative Direction</span>
+        <h1 class="hero-title">
+          Build a brand people <span class="accent">notice, trust, and remember</span>.
+        </h1>
+        <p class="hero-text">
+          You do not need visuals that only look good. You need a brand presence that feels clear, premium, and convincing at first glance. I help founders, business owners, and growing brands show up with design that attracts the right audience and leaves a strong impression.
+        </p>
+        <div class="btns">
+          <a class="btn btn-primary" href="#work">View featured work</a>
+          <a class="btn btn-secondary" href="#offers">Book a consultation</a>
+        </div>
+        <div class="hero-pills">
+          <div class="pill"><strong>Identity</strong> Distinct Brand Systems</div>
+          <div class="pill"><strong>Packaging</strong> Shelf-Ready Presence</div>
+          <div class="pill"><strong>Training</strong> Creative Confidence</div>
+        </div>
+      </div>
+      <div class="hero-stage">
+        <div class="hero-gridlines"></div>
+        <div class="portrait-card">
+          <img src="images/miracle-portrait.jpg" alt="Miracle Edet Okon portrait" />
+        </div>
+        <div class="mini-float mini-a">
+          <strong>Bold</strong>
+          <span>Design that helps your brand look clear, premium, and memorable.</span>
+        </div>
+        <div class="mini-float mini-b">
+          <strong>Creative</strong>
+          <span>Visual direction that positions your business with confidence.</span>
+        </div>
+        <div class="banner-float">
+          <img src="images/miracle-banner.jpg" alt="Miracle Edet Okon design showcase" />
+          <div class="banner-caption">
+            Design that feels intentional, refined, and built to connect with the right audience.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="trust">
+    <div class="trust-box">
+      <p>
+        Whether you are launching, rebranding, or trying to look more established, you are in the right place for design that feels strategic, polished, and commercially strong.
+      </p>
+      <div class="trust-pill">Brand Identity</div>
+      <div class="trust-pill">Packaging Design</div>
+      <div class="trust-pill">Consultation</div>
+      <div class="trust-pill">Training</div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap about-grid">
+      <div class="panel showcase">
+        <div class="showcase-inner">
+          <img src="images/miracle-showcase.jpg" alt="Miracle Edet Okon featured project" />
+        </div>
+        <div class="showcase-badge">
+          This is the kind of visual polish your brand can step into when clarity and creativity work together.
+        </div>
+      </div>
+      <div class="panel about-card">
+        <span class="eyebrow">Why work with me</span>
+        <h2 class="section-title">Your brand deserves more than nice graphics.</h2>
+        <p class="section-lead">
+          You need visuals that communicate value, build trust quickly, and position your business with confidence. My approach blends creativity, clarity, and strong visual direction so your brand does not blend in.
+        </p>
+        <div class="mini-stack">
+          <div class="mini-card">
+            <strong>Designed for real business growth</strong>
+            <span>
+              Your visuals are shaped to help your brand look more intentional, memorable, and ready for bigger opportunities.
+            </span>
+          </div>
+          <div class="mini-card">
+            <strong>Creative, clear, and conversion-aware</strong>
+            <span>
+              You get design that feels expressive and premium while still making it easy for your audience to understand and trust your brand.
+            </span>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <strong>01</strong>
+            <span>Identity systems that give your brand a stronger and more recognisable presence.</span>
+          </div>
+          <div class="stat">
+            <strong>02</strong>
+            <span>Packaging and promotional visuals created to attract attention and elevate perception.</span>
+          </div>
+          <div class="stat">
+            <strong>03</strong>
+            <span>Consultation and training that help you grow with more clarity and confidence.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="head-row">
+        <div>
+          <span class="eyebrow">Featured work</span>
+          <h2 class="section-title">See how stronger design changes how your brand is perceived.</h2>
+          <p class="section-lead">
+            From packaging to promotional design, these projects show how bold visuals can help a brand feel clearer, stronger, and more premium in the eyes of its audience.
+          </p>
+        </div>
+      </div>
+      <div class="portfolio-grid">
+        <article class="portfolio-card">
+          <div>
+            <span class="tag">Packaging</span>
+            <h3>Packaging Design for Snackle Cookies</h3>
+            <p>Packaging direction that makes the product feel more polished, appealing, and shelf-ready at first glance.</p>
+          </div>
+          <div class="card-meta">
+            <span>Food Branding</span>
+            <span>Featured Project</span>
+          </div>
+        </article>
+        <article class="portfolio-card">
+          <div>
+            <span class="tag">Editorial Flyers</span>
+            <h3>Flyer Portfolio Snippets</h3>
+            <p>Promotional design that grabs attention quickly and helps campaigns feel sharper and more professional.</p>
+          </div>
+          <div class="card-meta">
+            <span>Social Visuals</span>
+            <span>Selected Work</span>
+          </div>
+        </article>
+        <article class="portfolio-card">
+          <div>
+            <span class="tag">Packaging</span>
+            <h3>Packaging Design for Golden Harvest Rice</h3>
+            <p>A packaging project built to communicate value clearly while giving the product a more premium market presence.</p>
+          </div>
+          <div class="card-meta">
+            <span>Brand Packaging</span>
+            <span>Featured Project</span>
+          </div>
+        </article>
+        <article class="portfolio-card">
+          <div>
+            <span class="tag">Label Design</span>
+            <h3>Packaging Label Design for Crunch It Plantain Chips</h3>
+            <p>Label design focused on shelf impact, clarity, and a visual finish that helps the brand stand out.</p>
+          </div>
+          <div class="card-meta">
+            <span>Snack Packaging</span>
+            <span>Selected Work</span>
+          </div>
+        </article>
+        <article class="portfolio-card">
+          <div>
+            <span class="tag">Fitness Brand</span>
+            <h3>BodyFlex Gym Project</h3>
+            <p>A flexible brand direction that shows how strong visuals can adapt across different industries and audiences.</p>
+          </div>
+          <div class="card-meta">
+            <span>Brand Campaign</span>
+            <span>Portfolio Tile</span>
+          </div>
+        </article>
+        <article class="portfolio-card">
+          <div>
+            <span class="tag">Flyer Design</span>
+            <h3>SKRYBE Flyer Design</h3>
+            <p>Bold flyer work that creates instant energy and keeps the message clear, visible, and hard to ignore.</p>
+          </div>
+          <div class="card-meta">
+            <span>Promo Graphics</span>
+            <span>Portfolio Tile</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <span class="eyebrow">Services</span>
+      <h2 class="section-title">Choose the support your brand needs right now.</h2>
+      <p class="section-lead">
+        Whether you need a stronger identity, better packaging, sharper promotional visuals, or expert direction, you can choose the creative support that moves your brand forward with confidence.
+      </p>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon">01</div>
+          <h3>Brand Identity Design</h3>
+          <p>Build a distinct visual system that helps your business look more credible, memorable, and professionally positioned.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">02</div>
+          <h3>Creative Consultation</h3>
+          <p>Get clear guidance on what to improve, what to refine, and how to present your brand with more confidence.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">03</div>
+          <h3>Design Training</h3>
+          <p>Grow your design skill, sharpen your presentation, and position yourself more strongly as a creative professional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="offers">
+    <div class="wrap offer-grid">
+      <div class="panel offer-card">
+        <span class="offer-label">Consultation</span>
+        <h2 class="section-title">Get clear direction for your brand.</h2>
+        <div class="price">Strategy-first</div>
+        <p>
+          This is for you if your brand feels inconsistent, your visuals are not matching your value, or you need expert direction before your next design move.
+        </p>
+        <ul class="feature-list">
+          <li>Brand direction review</li>
+          <li>Visual improvement guidance</li>
+          <li>Messaging and positioning notes</li>
+          <li>Action steps you can apply immediately</li>
+        </ul>
+        <a class="btn btn-primary" href="#contact">Book consultation</a>
+      </div>
+      <div class="panel offer-card">
+        <span class="offer-label">Training</span>
+        <h2 class="section-title">Grow your design skill and creative confidence.</h2>
+        <div class="price">Skill + positioning</div>
+        <p>
+          If you are a designer who wants better work, stronger presentation, and more confidence attracting clients, this training is built to help you grow with structure and intention.
+        </p>
+        <ul class="feature-list">
+          <li>Design feedback and improvement direction</li>
+          <li>Portfolio improvement direction</li>
+          <li>Client attraction positioning</li>
+          <li>Practical growth resources</li>
+        </ul>
+        <a class="btn btn-primary" href="#contact">View training</a>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <span class="eyebrow">Client feedback</span>
+      <h2 class="section-title">What clients experience when the direction feels right.</h2>
+      <p class="section-lead">
+        Every project is built to leave you clearer, more confident, and better positioned than before. That feeling should be visible in the results and in the experience.
+      </p>
+      <div class="testimonial-grid">
+        <div class="panel testimonial">
+          <p class="quote">“The brand presentation felt instantly more premium. The difference was not just beauty — it felt more intentional and easier to trust.”</p>
+          <div class="client">
+            <div class="avatar">A</div>
+            <div>
+              <strong>Adesuwa</strong>
+              <span>Beauty brand founder</span>
+            </div>
+          </div>
+        </div>
+        <div class="panel testimonial">
+          <p class="quote">“I loved how the design direction was both feminine and bold. It gave my business a stronger first impression immediately.”</p>
+          <div class="client">
+            <div class="avatar">K</div>
+            <div>
+              <strong>Kemi</strong>
+              <span>Product business owner</span>
+            </div>
+          </div>
+        </div>
+        <div class="panel testimonial">
+          <p class="quote">“The consultation style felt clear and practical. I left with better structure, better confidence, and a brand path I could actually act on.”</p>
+          <div class="client">
+            <div class="avatar">M</div>
+            <div>
+              <strong>Michael</strong>
+              <span>Creative entrepreneur</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="newsletter-box">
+        <div class="newsletter-grid">
+          <div>
+            <span class="eyebrow" style="background: rgba(255,255,255,.10); color: rgba(255,255,255,.85); border-color: rgba(255,255,255,.12);"> Stay connected </span>
+            <h2 class="section-title" style="color:#fff; margin-top:18px;"> Get brand insights, updates, and new offers first. </h2>
+            <p> Join the list for design tips, creative lessons, new work, and opportunities to learn, grow, and elevate your visual presence. </p>
+          </div>
+          <form class="newsletter-form">
+            <input type="text" placeholder="Your name" />
+            <input type="email" placeholder="Your email address" />
+            <button type="button">Subscribe now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="contact">
+    <div class="wrap contact-grid">
+      <div class="panel contact-card">
+        <span class="eyebrow">Let’s work together</span>
+        <h2 class="section-title">Ready to give your brand a stronger presence?</h2>
+        <p class="section-lead">
+          Tell me what you are building, what kind of design support you need, and where you want your brand to go. Let’s create visuals that match your value.
+        </p>
+        <div class="contact-list">
+          <div class="contact-item">
+            <div>✦</div>
+            <div>
+              <b>Email</b>
+              <span>Reach out for project inquiries, collaborations, and brand conversations.</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div>✦</div>
+            <div>
+              <b>Consultation</b>
+              <span>Book a clarity session or send a direct inquiry when you are ready to move forward.</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div>✦</div>
+            <div>
+              <b>Social presence</b>
+              <span>Follow the work, the process, and the brand journey across social platforms.</span>
+            </div>
+          </div>
+        </div>
+        <div class="socials">
+          <a href="https://web.facebook.com/miracleedet.okon.9" target="_blank">FB</a>
+          <a href="#" target="_blank">IG</a>
+          <a href="#" target="_blank">Be</a>
+          <a href="#" target="_blank">In</a>
+        </div>
+      </div>
+      <div class="panel closing-card">
+        <span class="eyebrow">Start here</span>
+        <h2 class="section-title">Your next level brand presence starts with one decision.</h2>
+        <p>
+          Whether you need design, direction, or training, this is your space to build a brand that looks more intentional, feels more premium, and connects more powerfully with the right audience.
+        </p>
+        <a class="btn btn-primary" href="#top">Back to top</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  Miracle Edet Okon Studio — brand identity, packaging, consultation, and training.
+</footer>
+<script>
+  const revealTargets = document.querySelectorAll( '.hero .eyebrow, .hero-title, .hero-text, .btns, .hero-pills, .hero-stage, .trust-box, .showcase, .about-card, .head-row, .portfolio-card, .service-card, .offer-card, .testimonial, .newsletter-box, .contact-card, .closing-card' );
+  revealTargets.forEach((item, index) => {
+    item.setAttribute('data-reveal', '');
+    item.style.setProperty('--delay', `${Math.min(index * 70, 420)}ms`);
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+  revealTargets.forEach((item, index) => {
+    if (index < 6) {
+      requestAnimationFrame(() => item.classList.add('is-visible'));
+    } else {
+      observer.observe(item);
+    }
+  });
+</script>
+</body>
+</html>
